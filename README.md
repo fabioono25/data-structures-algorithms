@@ -71,6 +71,80 @@ function swapVariables(a, b) {
 
 In these scenarios, the time taken for the operations remains constant regardless of the size of the input data, making algorithms with O(1) constant time complexity ideal for these use-cases.
 
+---
+
+#### O(n) Linear Time Complexity
+
+##### Definition
+
+Linear time complexity algorithms have a runtime proportional to the input size, making them suitable for small to moderate-sized datasets.
+
+##### Advantages
+
+* **Simplicity:** Linear time complexity algorithms are often simple to implement and understand, making them accessible for a wide range of developers.
+* **Scalability:** Linear time complexity algorithms can handle larger datasets efficiently, making them suitable for moderate-sized inputs.
+* **Straightforward Iteration:** Algorithms with linear time complexity often involve straightforward iterations through data structures, making them applicable to various tasks.
+
+##### Disadvantages
+
+* **Limited Scalability:** Linear time complexity algorithms become slow for very large datasets, as their execution time increases linearly with input size.
+* **Inefficient for Complex Operations:** Algorithms with linear time complexity may not be efficient for complex computations or tasks requiring intricate data manipulations.
+* **Not Suitable for Real-Time Systems:** In real-time applications where quick responses are crucial, linear time complexity algorithms might not provide the necessary speed.
+
+##### Use-Cases
+
+**Linear Search:**
+
+Linear search is a straightforward algorithm for finding a target element in an unsorted list or array. It compares each element in the list with the target value until a match is found or the entire list is
+traversed. Linear search has O(n) time complexity because, in the worst case, it may need to check every element in the list.
+
+```javascript
+const linearSearch = (arr, target) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === target) {
+            return i; // Element found at index i
+        }
+    }
+    return -1; // Element not found in the list
+}
+```
+
+**Calculating Sum of Elements:**
+
+Calculating the sum of elements in a list or array involves iterating through each element and adding it to a total sum. As the number of elements in the input increases, the number of iterations required also
+increases linearly, resulting in O(n) time complexity.
+
+```javascript
+const calculateSum(arr) => {
+    let sum = 0;
+    for (let num of arr) {
+        sum += num;
+    }
+    return sum;
+}
+```
+
+**Filtering Elements Based on a Condition:**
+
+Filtering elements that meet a specific condition from a list requires iterating through the entire list. For every element, the condition is checked, and if it's met, the element is included in the output. The
+time complexity is O(n) as every element in the list might need to be examined.
+
+```javascript
+const filterNumbersGreaterThan(arr, threshold) => {
+    let result = [];
+    for (let num of arr) {
+        if (num > threshold) {
+            result.push(num);
+        }
+    }
+    return result;
+}
+```
+
+In these use-cases, the algorithms' runtime grows linearly with the size of the input data, making them suitable for tasks where the number of operations scales directly with the number of elements in the input.
+
+---
+
 ### Space Complexity
 
 Space Complexity measures the amount of memory space an algorithm uses relative to the input size. Focused on how memory requirements increase, given the input size.
