@@ -143,7 +143,49 @@ const filterNumbersGreaterThan(arr, threshold) => {
 
 In these use-cases, the algorithms' runtime grows linearly with the size of the input data, making them suitable for tasks where the number of operations scales directly with the number of elements in the input.
 
+
 ---
+
+
+
+#### The Four Rules in Big-O
+
+* **Worst Case:** consider the worst case scenario (it doesn't matter if the value is found in the first interaction).
+* **Remove Constants:** if I have three loops, respectively O(n + n/2 + 100), we only care when the inputs are getting larger, which leads us to O(n). Same for O(2n) --> O(n)
+* **Different Terms for inputs:** if you iterate in two loops, for distinct arrays, we consider as different time complexities. Example:
+
+```javascript
+function combineArrays(arr1, arr2) {
+    const combinedArray = [];
+
+    // Loop through the first array (arr1): O(n)
+    for (let i = 0; i < arr1.length; i++) {
+        combinedArray.push(arr1[i]);
+    }
+
+    // Loop through the second array (arr2) O(m)
+    for (let j = 0; j < arr2.length; j++) {
+        combinedArray.push(arr2[j]);
+    }
+
+    return combinedArray;
+}
+
+// Example usage
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+const combined = combineArrays(array1, array2);
+console.log("Combined Array:", combined); // O(n + m)
+
+```
+
+On the example above, considering that each array is a different input, the result will be O(n + m).
+
+* **Drop Non-Dominants:**
+
+---
+
+
 
 ### Space Complexity
 
