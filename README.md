@@ -171,7 +171,6 @@ Algorithms with quadratic time complexity have a runtime that is proportional to
 
 ##### Use-Cases
 
-
 **Bubble Sort:**
 Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The algorithm's time complexity is O(n^2) in the worst-case scenario, making it inefficient for large datasets. However, it can be used for educational purposes or for sorting small datasets where simplicity is preferred over efficiency.
 
@@ -216,6 +215,7 @@ function bruteForceStringMatch(text, pattern) {
 
     return occurrences;
 }
+```
 
 **Generating Permutations:**
 Generating permutations of a set involves creating all possible arrangements of the elements. One way to generate permutations is using recursive backtracking, which results in a time complexity of O(n^2) for n elements. While not the most efficient method for large sets, it's a simple approach to generate permutations for smaller sets.
@@ -243,7 +243,116 @@ function generatePermutations(arr) {
     return permutations;
 }
 ```
+
 > These use-cases highlight scenarios where algorithms with quadratic time complexity can be applied, either for educational purposes, small datasets, or when more efficient algorithms are not required or available.
+
+---
+
+O(log n) Logaritmic Time Complexity
+
+##### Definition
+
+Logarithmic time complexity algorithms reduce the size of the problem in each step by a logarithmic factor. These algorithms are often found in divide and conquer strategies, and they efficiently handle large
+datasets by repeatedly dividing the problem space.
+
+##### Advantages
+
+* **Efficiency with Large Datasets:**
+  Algorithms with O(log n) time complexity are highly efficient, especially when dealing with large datasets. They scale well and can handle significant amounts of data without a significant increase in execution time. This efficiency is valuable in applications dealing with extensive data processing.
+* **Efficient Searching:**
+  O(log n) time complexity is commonly associated with binary search algorithms. Searching in sorted data structures (such as sorted arrays or balanced binary search trees) using binary search significantly reduces the search space in each step. This efficiency makes binary search suitable for quick retrieval of specific elements from large datasets.
+* **Balanced Tree Structures:**
+  O(log n) time complexity is achievable for operations like insertion, deletion, and search in balanced tree structures, such as AVL trees and Red-Black trees. These tree structures maintain balance during operations, ensuring that the height of the tree remains logarithmic, leading to efficient operations even as the dataset grows.
+
+##### Disadvantages
+
+* **Complexity in Implementation:**
+  Implementing algorithms with O(log n) time complexity, especially those involving complex data structures like balanced trees, can be challenging. Properly maintaining the balance and ensuring logarithmic height requires careful implementation, which can lead to more complex code.
+* **Limited Applicability:**
+  O(log n) time complexity is not always achievable for all types of operations or data structures. It's applicable mainly to tasks like searching in sorted data structures or efficient divide and conquer algorithms. For certain tasks, finding or designing algorithms with logarithmic time complexity might not be possible.
+* **Memory Overhead:**
+  Some data structures that achieve O(log n) time complexity, such as balanced trees, often require additional memory to maintain their balanced structure. This memory overhead can be a disadvantage, especially in memory-constrained environments. Additionally, the overhead associated with recursive function calls in certain logarithmic algorithms can impact memory usage.
+
+##### Use-Cases
+
+**Binary Search:**
+
+Binary search is a classic example of an O(log n) algorithm. It efficiently finds the position of a target element in a sorted array by repeatedly dividing the search space in half.
+
+```javascript
+function binarySearch(sortedArray, target) {
+    let left = 0;
+    let right = sortedArray.length - 1;
+
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        if (sortedArray[mid] === target) {
+            return mid; // Element found at index mid
+        } else if (sortedArray[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return -1; // Element not found in the array
+}
+
+// Example usage
+const sortedArray = [1, 3, 5, 7, 9, 11, 13, 15];
+const target = 7;
+const resultIndex = binarySearch(sortedArray, target);
+console.log(`Index of ${target} in the array: ${resultIndex}`);
+```
+
+**Finding Nth Fibonacci Number:**
+
+Computing the nth Fibonacci number efficiently using matrix exponentiation techniques can achieve O(log n) time complexity.
+
+```javascript
+function matrixMultiply(matrix1, matrix2) {
+    // Matrix multiplication logic
+}
+
+function power(matrix, n) {
+    // Matrix exponentiation logic
+}
+
+function nthFibonacci(n) {
+    const baseMatrix = [[1, 1], [1, 0]];
+    const resultMatrix = power(baseMatrix, n - 1);
+    return resultMatrix[0][0];
+}
+
+// Example usage
+const n = 5;
+const fibonacciNumber = nthFibonacci(n);
+console.log(`The ${n}th Fibonacci number is: ${fibonacciNumber}`);
+```
+
+**Efficient Exponentiation:**
+
+Calculating exponentiation efficiently using the divide and conquer method can achieve O(log n) time complexity.
+
+```javascript
+function power(base, exponent) {
+    if (exponent === 0) {
+        return 1;
+    }
+    const halfPower = power(base, Math.floor(exponent / 2));
+    if (exponent % 2 === 0) {
+        return halfPower * halfPower;
+    } else {
+        return base * halfPower * halfPower;
+    }
+}
+
+// Example usage
+const base = 2;
+const exponent = 5;
+const result = power(base, exponent);
+console.log(`${base} raised to the power of ${exponent} is: ${result}`);
+```
 
 ---
 
@@ -277,9 +386,28 @@ const combined = combineArrays(array1, array2);
 console.log("Combined Array:", combined); // O(n + m)
 
 ```
+
 > In the example above, considering that each array is a different input, the result will be O(n + m).
 
-* Drop Non-Dominants:**
+* **Drop Non-Dominants:** consider the most relevant term in a mathematical experssion expression, dropping theless significant ones. Here is an example:
+
+```javascript
+function exampleFunction(n) {
+    let quadraticTerm = 3 * n * n;  // Dominant term
+    let linearTerm = 5 * n;
+    let constantTerm = 2;
+
+    let result = quadraticTerm + linearTerm + constantTerm;
+    return result;
+}
+
+// Example usage
+const inputSize = 10;
+const output = exampleFunction(inputSize);
+console.log("Output:", output);
+```
+
+> In this example, the function `exampleFunction(n)` has quadratic (n2**n****2**), linear (n**n**), and constant terms. However, when analyzing its time complexity, we focus on the dominant term (n2**n****2**) and drop the non-dominant linear and constant terms. The time complexity of this function is O(n2)**O****(****n****2****)** after dropping the non-dominant terms.
 
 ---
 
