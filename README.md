@@ -2,17 +2,17 @@
 
 ## Table of Contents
 
-1. [Big-O Notation](#big-o)\
-    1. [Time Complexity](#time-complexity)\
-       1. [O(1) Constant Time Complexity](#constant)\
-       2. [O(1) Constant Time Complexity](#constant)\
-       3. [O(1) Constant Time Complexity](#constant)\
-       4. [O(1) Constant Time Complexity](#constant)\
-       5. [O(1) Constant Time Complexity](#constant)\
-       6. [O(1) Constant Time Complexity](#constant)\
-       7. [O(1) Constant Time Complexity](#constant)\
-    2. [Space Complexity](https://github.com/fabioono25/data-structures-algorithms-js/blob/main/README.md#space-complexity)\
-    3. [The Four Rules of Big-O](#space-complexity)\
+1. [Big-O Notation](#big-o)
+    1. [Time Complexity](#time-complexity)
+       1. [O(1) Constant Time Complexity](#constant)
+       2. [O(1) Constant Time Complexity](#constant)
+       3. [O(1) Constant Time Complexity](#constant)
+       4. [O(1) Constant Time Complexity](#constant)
+       5. [O(1) Constant Time Complexity](#constant)
+       6. [O(1) Constant Time Complexity](#constant)
+       7. [O(1) Constant Time Complexity](#constant)
+    2. [Space Complexity](https://github.com/fabioono25/data-structures-algorithms-js/blob/main/README.md#space-complexity)
+    3. [The Four Rules of Big-O](#space-complexity)
     4. [Links](#space-complexity)
 
 ## Big-O Notation
