@@ -485,7 +485,7 @@ Exponential time complexity algorithms have an execution time that grows exponen
 
 **Subset Generation:**
 
-Enumerating all subsets of a given set is a classic example where an exponential time algorithm can be applied. The number of subsets of a set with n elements is 2n2n. Exponential time algorithms are used to generate all possible subsets, which find applications in combinatorial problems, power set generation, and various mathematical calculations.
+Enumerating all subsets of a given set is a classic example where an exponential time algorithm can be applied. The number of subsets of a set with n elements is 2^n. Exponential time algorithms are used to generate all possible subsets, which find applications in combinatorial problems, power set generation, and various mathematical calculations.
 
 ```javascript
 function generateSubsets(set) {
@@ -604,17 +604,116 @@ Factorial time complexity represents algorithms whose execution time grows facto
 
 ##### Advantages
 
-* .
+* **Guaranteed Optimal Solution:**
+  Algorithms with factorial time complexity explore all possible permutations or combinations of a given set. This exhaustive search guarantees finding the optimal solution if one exists. In many combinatorial problems, the optimal solution can be discovered by examining all permutations or combinations.
+* **Simplicity and Correctness:**
+  Factorial time algorithms are often simple to implement, especially for smaller inputs, as they involve iterating through all possible permutations. Additionally, due to their exhaustive nature, they ensure correctness. These algorithms are straightforward to understand and can be used as brute-force methods for small-scale problems.
+* **Useful for Small Input Sizes:**
+  Factorial time algorithms can be practical for problems with very small input sizes. When the input size is limited and within reasonable bounds, using factorial time algorithms might be acceptable, especially if the problem's complexity demands an exhaustive search for a complete solution.
 
 ##### Disadvantages
 
-* **.
+1. **Exponential Growth of Execution Time:**
+   Factorial time complexity (O(n!)) leads to an explosion in the number of operations required as the input size increases. Even for moderately small inputs, the number of permutations becomes prohibitively large. As a result, the execution time grows at an astronomical rate, making these algorithms impractical for larger inputs.
+2. **Impractical for Moderate to Large Inputs:**
+   Factorial time algorithms become impractical for moderate to large input sizes. The time required to compute all permutations increases factorially, making these algorithms inefficient and slow. They quickly become unusable as the input size grows, even for relatively simple problems.
+3. **Inefficiency and Limited Applicability:**
+   Factorial time algorithms are generally inefficient for most real-world applications. Their inefficiency restricts their applicability to small-scale problems, and they are rarely used in production systems due to their impractical execution times. More efficient algorithms are usually preferred for solving practical problems.
 
 ##### Use-Cases
 
-**xxxx:**
+**Generating Permutations:**
 
-xxxx
+Calculating all permutations of a given set is a classic use-case for O(n!) algorithms. Although inefficient, generating permutations can be useful in certain mathematical and combinatorial problems.
+
+```javascript
+function generatePermutations(inputArray) {
+    if (inputArray.length <= 1) return [inputArray];
+    const permutations = [];
+    for (let i = 0; i < inputArray.length; i++) {
+        const remainingArray = inputArray.slice(0, i).concat(inputArray.slice(i + 1));
+        const partialPermutations = generatePermutations(remainingArray);
+        for (const permutation of partialPermutations) {
+            permutations.push([inputArray[i], ...permutation]);
+        }
+    }
+    return permutations;
+}
+
+// Example usage
+const inputArray = [1, 2, 3];
+const allPermutations = generatePermutations(inputArray);
+console.log("All Permutations:", allPermutations);
+
+```
+
+**Brute-Force Algorithm for Traveling Salesman Problem (TSP):**
+
+A naive approach to solving the Traveling Salesman Problem (TSP) involves checking all permutations of cities to find the shortest route. Although impractical for large datasets, this brute-force method guarantees finding the optimal solution.
+
+```javascript
+function calculateTotalDistance(path, graph) {
+    // Calculate total distance for the given path using graph information
+}
+
+function generateAllPermutations(cities) {
+    // Generate all permutations of cities
+}
+
+function bruteForceTSP(cities, graph) {
+    const permutations = generateAllPermutations(cities);
+    let minDistance = Infinity;
+    let optimalPath = [];
+
+    for (const permutation of permutations) {
+        const distance = calculateTotalDistance(permutation, graph);
+        if (distance < minDistance) {
+            minDistance = distance;
+            optimalPath = permutation;
+        }
+    }
+
+    return { path: optimalPath, distance: minDistance };
+}
+
+// Example usage
+const cities = [1, 2, 3];
+const graph = {
+    1: { 2: 10, 3: 15 },
+    2: { 1: 10, 3: 20 },
+    3: { 1: 15, 2: 20 }
+};
+const result = bruteForceTSP(cities, graph);
+console.log("Optimal TSP Path:", result.path);
+console.log("Total Distance:", result.distance);
+
+```
+
+**Brute-Force Algorithm for Subset Sum Problem:**
+
+The Subset Sum Problem involves finding a subset of a given set of positive integers that adds up to a specific target sum. One way to solve it is by checking all possible subsets (exponential time complexity). Although inefficient, this approach guarantees finding the correct subset if one exists.
+
+```javascript
+function isSubsetSum(set, n, target) {
+    if (target === 0) {
+        return true;
+    }
+    if (n === 0 && target !== 0) {
+        return false;
+    }
+    if (set[n - 1] > target) {
+        return isSubsetSum(set, n - 1, target);
+    }
+    return isSubsetSum(set, n - 1, target) || isSubsetSum(set, n - 1, target - set[n - 1]);
+}
+
+// Example usage
+const inputSet = [3, 34, 4, 12, 5, 2];
+const targetSum = 9;
+const isSubsetPossible = isSubsetSum(inputSet, inputSet.length, targetSum);
+console.log(`Subset with sum ${targetSum} exists: ${isSubsetPossible}`);
+
+```
 
 ---
 
