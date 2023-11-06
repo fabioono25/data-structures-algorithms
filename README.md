@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-1.[Big-O Notation](#big-o)\
+1. [Big-O Notation](#big-o)\
     1. [Time Complexity](#time-complexity)\
        1. [O(1) Constant Time Complexity](#constant)\
        2. [O(1) Constant Time Complexity](#constant)\
