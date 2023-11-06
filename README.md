@@ -1,6 +1,22 @@
 # Data Structures and Algorithms - JavaScript
 
-## Big O Notation
+## Table of Contents
+
+1.[Big-O Notation](#big-o)
+    1. [Time Complexity](#time-complexity)
+       1. [O(1) Constant Time Complexity](#constant)
+       2. [O(1) Constant Time Complexity](#constant)
+       3. [O(1) Constant Time Complexity](#constant)
+       4. [O(1) Constant Time Complexity](#constant)
+       5. [O(1) Constant Time Complexity](#constant)
+       6. [O(1) Constant Time Complexity](#constant)
+       7. [O(1) Constant Time Complexity](#constant)
+    2. [Space Complexity](#space-complexity)
+    3. [The Four Rules of Big-O](#space-complexity)
+    4. [Links](#space-complexity)
+
+
+## Big-O Notation
 
 A mathematical notation used in computer science to describe performance and complexity of an algorithm.
 
@@ -717,7 +733,13 @@ console.log(`Subset with sum ${targetSum} exists: ${isSubsetPossible}`);
 
 ---
 
-#### The Four Rules in Big-O
+### Space Complexity
+
+Space Complexity measures the amount of memory space an algorithm uses relative to the input size. Focused on how memory requirements increase, given the input size.
+
+---
+
+## The Four Rules in Big-O
 
 * **Worst Case:** consider the worst case scenario (it doesn't matter if the value is found in the first interaction).
 * **Remove Constants:** if I have three loops, respectively O(n + n/2 + 100), we only care when the inputs are getting larger, which leads us to O(n). Same for O(2n) --> O(n)
@@ -772,11 +794,7 @@ console.log("Output:", output);
 
 ---
 
-### Space Complexity
-
-Space Complexity measures the amount of memory space an algorithm uses relative to the input size. Focused on how memory requirements increase, given the input size.
-
-### Links
+## Links
 
 [Big-O Complexity Chart](https://www.bigocheatsheet.com/)
 
