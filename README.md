@@ -356,6 +356,75 @@ console.log(`${base} raised to the power of ${exponent} is: ${result}`);
 
 ---
 
+#### O(n log n) Linearithmic Time Complexity
+
+##### Definition
+
+Algorithms with linearithmic time complexity have an execution time that grows in proportion to n log ⁡n, where n**n** is the size of the input data. Many efficient sorting and searchingalgorithms, such as merge sort and heap sort, fall into this category.
+
+##### Advantages
+
+* .
+
+##### Disadvantages
+
+* **Limited Scalability:** Linear time complexity algorithms become slow for very large datasets, as their execution time increases linearly with input size.
+* **Inefficient for Complex Operations:** Algorithms with linear time complexity may not be efficient for complex computations or tasks requiring intricate data manipulations.
+* **Not Suitable for Real-Time Systems:** In real-time applications where quick responses are crucial, linear time complexity algorithms might not provide the necessary speed.
+
+##### Use-Cases
+
+**xxxx:**
+
+xxxx
+
+---
+
+#### O(2^n) Exponential Time Complexity
+
+##### Definition
+
+Exponential time complexity algorithms have an execution time that grows exponentially with the size of the input data. These algorithms become extremely slow as the input size increases, making them impractical for most real-world applications. Recursive algorithms with branching factors fall into this category.
+
+##### Advantages
+
+* .
+
+##### Disadvantages
+
+* **.
+
+##### Use-Cases
+
+**xxxx:**
+
+xxxx
+
+---
+
+
+#### O(n!) Factorial Time Complexity
+
+##### Definition
+
+Factorial time complexity represents algorithms whose execution time grows factorially with the size of the input data. These algorithms are extremely slow and become practically unusable for even small input sizes. Examples include brute-force algorithms generating permutations or combinations.
+
+##### Advantages
+
+* .
+
+##### Disadvantages
+
+* **.
+
+##### Use-Cases
+
+**xxxx:**
+
+xxxx
+
+---
+
 #### The Four Rules in Big-O
 
 * **Worst Case:** consider the worst case scenario (it doesn't matter if the value is found in the first interaction).
@@ -418,3 +487,5 @@ Space Complexity measures the amount of memory space an algorithm uses relative 
 ### Links
 
 [Big-O Complexity Chart](https://www.bigocheatsheet.com/)
+
+[Data Structures + Algorithms (Udemy)](https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/)
