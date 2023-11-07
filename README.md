@@ -43,15 +43,50 @@
         - [Use-Cases](#use-cases-6)
     - [Space Complexity](#space-complexity)
   - [The Four Rules in Big-O](#the-four-rules-in-big-o)
+  - [Data Structures](#data-structures)
+    - [Arrays](#arrays)
+      - [Definition](#definition-7)
+      - [Advantages](#advantages-7)
+      - [Disadvantages](#disadvantages-7)
+      - [Use-Cases](#use-cases-7)
+    - [Linked Lists](#linked-lists)
+      - [Definition](#definition-8)
+      - [Advantages](#advantages-8)
+      - [Disadvantages](#disadvantages-8)
+      - [Use-Cases](#use-cases-8)
+    - [Stacks](#stacks)
+      - [Definition](#definition-9)
+      - [Advantages](#advantages-9)
+      - [Disadvantages](#disadvantages-9)
+      - [Use-Cases](#use-cases-9)
+    - [Queues](#queues)
+      - [Definition](#definition-10)
+      - [Advantages](#advantages-10)
+      - [Disadvantages](#disadvantages-10)
+      - [Use-Cases](#use-cases-10)
+    - [Hash Tables](#hash-tables)
+      - [Definition](#definition-11)
+      - [Advantages](#advantages-11)
+      - [Disadvantages](#disadvantages-11)
+      - [Use-Cases](#use-cases-11)
+    - [Trees](#trees)
+      - [Definition](#definition-12)
+      - [Advantages](#advantages-12)
+      - [Disadvantages](#disadvantages-12)
+      - [Use-Cases](#use-cases-12)
+    - [Graphs](#graphs)
+      - [Definition](#definition-13)
+      - [Advantages](#advantages-13)
+      - [Disadvantages](#disadvantages-13)
+      - [Use-Cases](#use-cases-13)
   - [Links](#links)
 
 ## Big-O Notation
 
 Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument approaches infinity. In computer science, it is used to express the upper bound or worst-case time complexity of an algorithm in terms of the size of its input. It provides a simplified representation of how the runtime or space requirements of an algorithm grow as the input size increases.
 
-![Big-O Complexity Chart](assets/20231105_122936_bigO.png "Big-O Complexity Chart")\
+![Big-O Complexity Chart](assets/20231105_122936_bigO.png "Big-O Complexity Chart")
 Source: [Big-O Cheat Sheet](https://www.bigocheatsheet.com/)
-
 
 ### Time Complexity
 
@@ -662,12 +697,12 @@ Factorial time complexity represents algorithms whose execution time grows facto
 
 ##### Disadvantages
 
-1. **Exponential Growth of Execution Time:**
-   Factorial time complexity (O(n!)) leads to an explosion in the number of operations required as the input size increases. Even for moderately small inputs, the number of permutations becomes prohibitively large. As a result, the execution time grows at an astronomical rate, making these algorithms impractical for larger inputs.
-2. **Impractical for Moderate to Large Inputs:**
-   Factorial time algorithms become impractical for moderate to large input sizes. The time required to compute all permutations increases factorially, making these algorithms inefficient and slow. They quickly become unusable as the input size grows, even for relatively simple problems.
-3. **Inefficiency and Limited Applicability:**
-   Factorial time algorithms are generally inefficient for most real-world applications. Their inefficiency restricts their applicability to small-scale problems, and they are rarely used in production systems due to their impractical execution times. More efficient algorithms are usually preferred for solving practical problems.
+* **Exponential Growth of Execution Time:**
+  Factorial time complexity (O(n!)) leads to an explosion in the number of operations required as the input size increases. Even for moderately small inputs, the number of permutations becomes prohibitively large. As a result, the execution time grows at an astronomical rate, making these algorithms impractical for larger inputs.
+* **Impractical for Moderate to Large Inputs:**
+  Factorial time algorithms become impractical for moderate to large input sizes. The time required to compute all permutations increases factorially, making these algorithms inefficient and slow. They quickly become unusable as the input size grows, even for relatively simple problems.
+* **Inefficiency and Limited Applicability:**
+  Factorial time algorithms are generally inefficient for most real-world applications. Their inefficiency restricts their applicability to small-scale problems, and they are rarely used in production systems due to their impractical execution times. More efficient algorithms are usually preferred for solving practical problems.
 
 ##### Use-Cases
 
@@ -824,6 +859,165 @@ console.log("Output:", output);
 ```
 
 > In this example, the function `exampleFunction(n)` has quadratic (n2**n****2**), linear (n**n**), and constant terms. However, when analyzing its time complexity, we focus on the dominant term (n2**n****2**) and drop the non-dominant linear and constant terms. The time complexity of this function is O(n2)**O****(****n****2****)** after dropping the non-dominant terms.
+
+---
+
+## Data Structures
+
+A data structure is a way of organizing and storing data in a computer so that it can be accessed and manipulated efficiently. It defines the relationship between the data elements and enables operations to be performed on the data. Common data structures include arrays, linked lists, trees, and graphs.
+
+### Arrays
+
+#### Definition
+
+An array is a collection of elements, all of the same data type, stored at contiguous memory locations. Each element in an array is identified by an index or a key.
+
+#### Advantages
+
+* **Fast Access Time:** Elements in an array can be accessed directly using their index, which allows for constant-time access. This means accessing any element in the array takes the same amount of time regardless of the size of the array.
+* **Simplicity:** Arrays are simple and intuitive to use. They provide a straightforward way to store and retrieve data, making them easy to understand and implement.
+* **Memory Efficiency:** Arrays have a contiguous memory allocation, which means they use memory efficiently. There is no overhead for storing pointers or references to other elements, as elements are stored sequentially in memory.
+* **Cache Locality:** Due to contiguous memory storage, arrays exhibit good cache locality. Accessing elements that are close to each other in memory can utilize CPU caches effectively, improving performance.
+* **Predictable Performance:** Array operations have predictable time complexity for accessing elements, making them suitable for applications where predictable performance is crucial.
+
+#### Disadvantages
+
+* **Fixed Size:** Arrays have a fixed size, meaning you need to specify the number of elements when you create them. Changing the size of an array (resizing) is often a costly operation, especially if the array is full, as it may require allocating a new, larger array and copying all elements.
+* **Inefficient Insertions and Deletions:** Inserting or deleting elements in the middle of an array requires shifting elements, which can be computationally expensive, especially for large arrays. This operation has a time complexity of O(n), where n is the number of elements in the array.
+* **Wasted Space:** If the size of the array is larger than the number of elements it holds, there can be wasted memory space, especially if the array size is fixed and larger than necessary.
+* **Lack of Flexibility:** Arrays are not dynamic by default, meaning they cannot easily change in size at runtime. To work around this limitation, dynamic arrays (like ArrayList in Java or vectors in C++) or other data structures like linked lists are often used.
+* **Non-Primitive Data Types:** In many programming languages, arrays can only store elements of the same data type. This limitation can be overcome by using arrays of objects or pointers, but it adds complexity to the code.
+
+#### Use-Cases
+
+**Storing and Manipulating Lists of Data:**
+
+Arrays are widely used to store lists of data in JavaScript. For example, you can use an array to store a list of names, numbers, or any other type of data. You can easily add, remove, or modify elements in the array. For instance:
+
+```javascript
+// Storing a list of names in an array
+let names = ["Alice", "Bob", "Charlie", "David"];
+
+// Adding a new name to the array
+names.push("Eva");
+
+// Removing a name from the array
+names.splice(2, 1); // Removes "Charlie" from the array
+
+// Modifying an element in the array
+names[1] = "Betty"; // Changes "Bob" to "Betty"
+
+```
+
+**Iterating and Processing Data:**
+Arrays are perfect for iterating over elements and performing operations on each element. You can use loops like `for` or array methods like `forEach`, `map`, `filter`, and `reduce` to process the elements in an array. For example:
+
+```javascript
+// Calculating the sum of numbers in an array
+let numbers = [1, 2, 3, 4, 5];
+let sum = 0;
+
+for (let i = 0; i < numbers.length; i++) {
+  sum += numbers[i];
+}
+
+// Using array methods to calculate the sum
+let sumUsingReduce = numbers.reduce((acc, current) => acc + current, 0);
+
+```
+
+**Implementing Data Structures and Algorithms:**
+
+Arrays are fundamental for implementing various data structures like stacks, queues, and hash tables, as well as algorithms such as sorting and searching. For example, you can use an array as a stack by adding elements to the end and removing them from the end, implementing a Last In, First Out (LIFO) behavior. Similarly, you can use an array as a queue by adding elements to the end and removing them from the beginning, implementing a First In, First Out (FIFO) behavior.
+
+```javascript
+// Implementing a stack using an array
+let stack = [];
+stack.push(1); // Pushing an element onto the stack
+let topElement = stack.pop(); // Popping an element from the stack
+
+// Implementing a queue using an array
+let queue = [];
+queue.push(1); // Enqueue an element
+let dequeuedElement = queue.shift(); // Dequeue an element
+
+```
+
+> In computer programming, arrays can be categorized as static or dynamic based on their size flexibility. Static arrays have a fixed size, determined at the time of declaration, while dynamic arrays can resize themselves to accommodate varying numbers of elements.
+>
+> When a dynamic array becomes full, it needs to resize itself to accommodate additional elements. A common resizing strategy involves doubling the array's size. However, this doubling strategy comes with a cost: copying all existing elements from the old array to a new, larger array in a different memory location. This copying operation ensures that there is enough contiguous space in memory to store the expanded array.
+
+---
+
+### Linked Lists
+
+#### Definition
+
+#### Advantages
+
+#### Disadvantages
+
+#### Use-Cases
+
+---
+
+### Stacks
+
+#### Definition
+
+#### Advantages
+
+#### Disadvantages
+
+#### Use-Cases
+
+---
+
+### Queues
+
+#### Definition
+
+#### Advantages
+
+#### Disadvantages
+
+#### Use-Cases
+
+---
+
+### Hash Tables
+
+#### Definition
+
+#### Advantages
+
+#### Disadvantages
+
+#### Use-Cases
+
+---
+
+### Trees
+
+#### Definition
+
+#### Advantages
+
+#### Disadvantages
+
+#### Use-Cases
+
+---
+
+### Graphs
+
+#### Definition
+
+#### Advantages
+
+#### Disadvantages
+
+#### Use-Cases
 
 ---
 
