@@ -2,18 +2,48 @@
 
 ## Table of Contents
 
-1. [Big-O Notation](#big-o)
-    1. [Time Complexity](#time-complexity)
-       1. [O(1) Constant Time Complexity](#constant)
-       2. [O(1) Constant Time Complexity](#constant)
-       3. [O(1) Constant Time Complexity](#constant)
-       4. [O(1) Constant Time Complexity](#constant)
-       5. [O(1) Constant Time Complexity](#constant)
-       6. [O(1) Constant Time Complexity](#constant)
-       7. [O(1) Constant Time Complexity](#constant)
-    2. [Space Complexity](https://github.com/fabioono25/data-structures-algorithms-js/blob/main/README.md#space-complexity)
-    3. [The Four Rules of Big-O](#space-complexity)
-    4. [Links](#space-complexity)
+- [Data Structures and Algorithms - JavaScript](#data-structures-and-algorithms---javascript)
+  - [Table of Contents](#table-of-contents)
+  - [Big-O Notation](#big-o-notation)
+    - [Time Complexity](#time-complexity)
+      - [O(1) Constant Time Complexity](#o1-constant-time-complexity)
+        - [Definition](#definition)
+        - [Advantages](#advantages)
+        - [Disadvantages](#disadvantages)
+        - [Use-Cases](#use-cases)
+      - [O(n) Linear Time Complexity](#on-linear-time-complexity)
+        - [Definition](#definition-1)
+        - [Advantages](#advantages-1)
+        - [Disadvantages](#disadvantages-1)
+        - [Use-Cases](#use-cases-1)
+      - [O(n^2) Quadratic Time Complexity](#on2-quadratic-time-complexity)
+        - [Definition](#definition-2)
+        - [Advantages](#advantages-2)
+        - [Disadvantages](#disadvantages-2)
+        - [Use-Cases](#use-cases-2)
+      - [O(log n) Logaritmic Time Complexity](#olog-n-logaritmic-time-complexity)
+        - [Definition](#definition-3)
+        - [Advantages](#advantages-3)
+        - [Disadvantages](#disadvantages-3)
+        - [Use-Cases](#use-cases-3)
+      - [O(n log n) Linearithmic Time Complexity](#on-log-n-linearithmic-time-complexity)
+        - [Definition](#definition-4)
+        - [Advantages](#advantages-4)
+        - [Disadvantages](#disadvantages-4)
+        - [Use-Cases](#use-cases-4)
+      - [O(2^n) Exponential Time Complexity](#o2n-exponential-time-complexity)
+        - [Definition](#definition-5)
+        - [Advantages](#advantages-5)
+        - [Disadvantages](#disadvantages-5)
+        - [Use-Cases](#use-cases-5)
+      - [O(n!) Factorial Time Complexity](#on-factorial-time-complexity)
+        - [Definition](#definition-6)
+        - [Advantages](#advantages-6)
+        - [Disadvantages](#disadvantages-6)
+        - [Use-Cases](#use-cases-6)
+    - [Space Complexity](#space-complexity)
+  - [The Four Rules in Big-O](#the-four-rules-in-big-o)
+  - [Links](#links)
 
 ## Big-O Notation
 
@@ -24,6 +54,8 @@ A mathematical notation used in computer science to describe performance and com
 ### Time Complexity
 
 Time Complexity measures the amount of time an algorithm takes to run as a function of the input size. Focused on how the execution time increases, given the input size.
+
+---
 
 #### O(1) Constant Time Complexity
 
@@ -263,7 +295,7 @@ function generatePermutations(arr) {
 
 ---
 
-O(log n) Logaritmic Time Complexity
+#### O(log n) Logaritmic Time Complexity
 
 ##### Definition
 
