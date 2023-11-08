@@ -79,6 +79,30 @@
       - [Advantages](#advantages-13)
       - [Disadvantages](#disadvantages-13)
       - [Use-Cases](#use-cases-13)
+  - [Sorting Algorithms](#sorting-algorithms)
+    - [Bubble Sort](#bubble-sort)
+      - [Definition](#definition-14)
+    - [Selection Sort](#selection-sort)
+      - [Definition](#definition-15)
+    - [Insertion Sort](#insertion-sort)
+      - [Definition](#definition-16)
+    - [Merge Sort](#merge-sort)
+      - [Definition](#definition-17)
+    - [Quick Sort](#quick-sort)
+      - [Definition](#definition-18)
+    - [Heao Sort](#heao-sort)
+      - [Definition](#definition-19)
+    - [Radix Sort](#radix-sort)
+      - [Definition](#definition-20)
+  - [Searching Algorithms](#searching-algorithms)
+    - [Linear Search](#linear-search)
+      - [Definition](#definition-21)
+    - [Binary Search](#binary-search)
+      - [Definition](#definition-22)
+    - [Breadth-First Search (BFS)](#breadth-first-search-bfs)
+      - [Definition](#definition-23)
+    - [Depth-First Search (DFS)](#depth-first-search-dfs)
+      - [Definition](#definition-24)
   - [Links](#links)
 
 ## Big-O Notation
@@ -1020,6 +1044,73 @@ let dequeuedElement = queue.shift(); // Dequeue an element
 #### Use-Cases
 
 ---
+## Sorting Algorithms
+
+Sorting algorithms are specific algorithms designed to arrange elements in a specific order, often numerically or alphabetically. These algorithms systematically reorder items within a list or an array, making it easier to search for specific elements or analyze data. Various sorting algorithms, such as bubble sort, merge sort, and quicksort, employ different techniques to efficiently organize data, each with its own advantages and trade-offs in terms of time and space complexity. Sorting algorithms are fundamental in computer science and are extensively used in various applications, including databases, search algorithms, and data analysis.
+
+
+### Bubble Sort
+
+#### Definition
+
+---
+### Selection Sort
+
+#### Definition
+
+---
+### Insertion Sort
+
+#### Definition
+
+---
+### Merge Sort
+
+#### Definition
+
+---
+### Quick Sort
+
+#### Definition
+
+---
+### Heao Sort
+
+#### Definition
+
+---
+### Radix Sort
+
+#### Definition
+
+---
+
+## Searching Algorithms
+
+Searching algorithms are algorithms designed to locate a specific item or a particular value within a collection of data. These algorithms systematically explore the data, looking for the target element and determining its presence or absence. Common searching algorithms include linear search (sequential search) and binary search. Linear search checks each element in the data structure until it finds the target, while binary search works on sorted data by repeatedly dividing the search interval in half. Searching algorithms are crucial for tasks like finding specific records in databases, locating elements in arrays, and enabling efficient search functionality in applications and websites. They play a vital role in information retrieval and data processing algorithms.
+
+
+### Linear Search
+
+#### Definition
+
+---
+### Binary Search
+
+#### Definition
+
+---
+### Breadth-First Search (BFS)
+
+#### Definition
+
+---
+### Depth-First Search (DFS)
+
+#### Definition
+
+---
+
 
 ## Links
 
