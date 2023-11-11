@@ -18,8 +18,8 @@ obj1.a = 'changed';
 console.log('obj1', obj1);
 console.log('obj2', obj2);
 delete obj1;
-console.log('obj1', obj1);
-console.log('obj2', obj2);
+// console.log('obj1', obj1);
+console.log('obj2', obj2); // there is still a pointer to this point in memory
 
 
 // building a linked list from scratch
