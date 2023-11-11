@@ -11,4 +11,15 @@ const basket = ['apples', 'grapes', 'pears'];
 //           8742 --> pears
 //                     372 --> null
 
+// playing with pointer references:
+let obj1 = { a: true };
+let obj2 = obj1;
+obj1.a = 'changed';
+console.log('obj1', obj1);
+console.log('obj2', obj2);
+delete obj1;
+console.log('obj1', obj1);
+console.log('obj2', obj2);
+
+
 // building a linked list from scratch

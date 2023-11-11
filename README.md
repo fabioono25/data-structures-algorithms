@@ -1191,4 +1191,6 @@ Searching algorithms are algorithms designed to locate a specific item or a part
 
 [Data Structures + Algorithms (Udemy)](https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/)
 
-[Visualgo.NET](https://visualgo.net/en/list)
+[Visualgo.NET](https://visualgo.net)
+
+[REPL JS](https://repljs.com/)
