@@ -977,9 +977,23 @@ let dequeuedElement = queue.shift(); // Dequeue an element
 
 #### Definition
 
+A linear data structure where elements are stored in nodes, and each node points to the next element in the list. They can be divided into **Simple Linked List**, a data structure where each element (node) contains data and a reference to the next element in a unidirectional sequence, or **Doubly Linked List**, a data structure where each element (node) contains data, a reference to the next node, and a reference to the previous node, allowing bidirectional traversal..
+
 #### Advantages
 
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+
 #### Disadvantages
+
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
 
 #### Use-Cases
 
@@ -990,8 +1004,19 @@ let dequeuedElement = queue.shift(); // Dequeue an element
 #### Definition
 
 #### Advantages
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+
 
 #### Disadvantages
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
 
 #### Use-Cases
 
@@ -1002,8 +1027,20 @@ let dequeuedElement = queue.shift(); // Dequeue an element
 #### Definition
 
 #### Advantages
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+
 
 #### Disadvantages
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+
 
 #### Use-Cases
 
@@ -1014,8 +1051,20 @@ let dequeuedElement = queue.shift(); // Dequeue an element
 #### Definition
 
 #### Advantages
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+
 
 #### Disadvantages
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+
 
 #### Use-Cases
 
@@ -1026,8 +1075,20 @@ let dequeuedElement = queue.shift(); // Dequeue an element
 #### Definition
 
 #### Advantages
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+
 
 #### Disadvantages
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+
 
 #### Use-Cases
 
@@ -1038,8 +1099,20 @@ let dequeuedElement = queue.shift(); // Dequeue an element
 #### Definition
 
 #### Advantages
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+
 
 #### Disadvantages
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+
 
 #### Use-Cases
 
@@ -1117,3 +1190,5 @@ Searching algorithms are algorithms designed to locate a specific item or a part
 [Big-O Complexity Chart](https://www.bigocheatsheet.com/)
 
 [Data Structures + Algorithms (Udemy)](https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/)
+
+[Visualgo.NET](https://visualgo.net/en/list)
