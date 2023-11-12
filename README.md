@@ -981,21 +981,159 @@ A linear data structure where elements are stored in nodes, and each node points
 
 #### Advantages
 
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
+* **Dynamic Size:** Linked lists can dynamically adjust their size, facilitating easy addition or removal of elements without the need for pre-allocated memory.
+* **Efficient Insertion and Deletion:** Inserting or deleting elements at arbitrary positions in a linked list is more efficient compared to arrays, particularly for dynamic resizing.
+* **No Wasted Memory:** Linked lists avoid wasted memory issues associated with fixed-size arrays when the actual size is smaller than the allocated size.
+* **Ease of Implementation:** Implementing linked lists is relatively straightforward, making them a good choice for scenarios where simplicity in data structure management is a priority.
+* **Support for Various Data Types:** Linked lists can easily accommodate elements of different data types, providing flexibility in designing data structures.
 
 #### Disadvantages
 
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
+* **Random Access Inefficiency:** Linked lists lack direct access to elements by index, resulting in less efficient random access compared to arrays.
+* **Increased Memory Overhead:** Each element in a linked list incurs additional memory overhead due to the storage of references to the next (and possibly previous) node.
+* **Traversal Overhead:** Traversing a linked list requires sequential access, which may be less efficient than random access in scenarios where direct indexing is crucial.
+* **Cache Locality Issues:** Linked lists may exhibit poor cache locality, impacting performance because of non-contiguous memory storage of elements.
+* **Complexity in Implementation:** Implementing and managing linked lists can be more complex than arrays, especially in scenarios where bidirectional traversal or complex operations are required.
 
 #### Use-Cases
+
+**Dynamic Task List:**
+Managing a dynamic list of tasks with the ability to easily add or remove tasks.
+
+```javascript
+class Task {
+  constructor(description) {
+    this.description = description;
+    this.next = null;
+  }
+}
+
+class TaskList {
+  constructor() {
+    this.head = null;
+  }
+
+  addTask(description) {
+    const newTask = new Task(description);
+    newTask.next = this.head;
+    this.head = newTask;
+  }
+
+  removeTask(description) {
+    let current = this.head;
+    let prev = null;
+
+    while (current !== null) {
+      if (current.description === description) {
+        if (prev === null) {
+          this.head = current.next;
+        } else {
+          prev.next = current.next;
+        }
+        return;
+      }
+
+      prev = current;
+      current = current.next;
+    }
+  }
+}
+
+// Example Usage:
+const tasks = new TaskList();
+tasks.addTask("Complete assignment");
+tasks.addTask("Read a book");
+tasks.removeTask("Read a book");
+
+```
+
+**Undo/Redo Functionality:**
+
+Implementing undo/redo functionality in applications where users can perform actions and revert them.
+
+```javascript
+class State {
+  constructor(data, prevState = null) {
+    this.data = data;
+    this.prevState = prevState;
+  }
+}
+
+class StateHistory {
+  constructor() {
+    this.currentState = null;
+  }
+
+  pushState(data) {
+    this.currentState = new State(data, this.currentState);
+  }
+
+  undo() {
+    if (this.currentState !== null) {
+      this.currentState = this.currentState.prevState;
+    }
+  }
+
+  getCurrentState() {
+    return this.currentState ? this.currentState.data : null;
+  }
+}
+
+// Example Usage:
+const history = new StateHistory();
+history.pushState("Initial State");
+history.pushState("Updated State");
+history.undo();
+console.log(history.getCurrentState());  // Output: Initial State
+
+```
+
+**Symbol Table in a Compiler:**
+
+Building a symbol table in a compiler, where identifiers and their associated information are stored dynamically.
+
+```javascript
+class SymbolEntry {
+  constructor(identifier, type) {
+    this.identifier = identifier;
+    this.type = type;
+    this.next = null;
+  }
+}
+
+class SymbolTable {
+  constructor() {
+    this.head = null;
+  }
+
+  addSymbol(identifier, type) {
+    const newSymbol = new SymbolEntry(identifier, type);
+    newSymbol.next = this.head;
+    this.head = newSymbol;
+  }
+
+  findSymbol(identifier) {
+    let current = this.head;
+
+    while (current !== null) {
+      if (current.identifier === identifier) {
+        return current.type;
+      }
+      current = current.next;
+    }
+
+    return null; // Symbol not found
+  }
+}
+
+// Example Usage:
+const symbolTable = new SymbolTable();
+symbolTable.addSymbol("variable1", "int");
+symbolTable.addSymbol("variable2", "float");
+console.log(symbolTable.findSymbol("variable1"));  // Output: int
+
+```
+
 
 ---
 
@@ -1193,4 +1331,4 @@ Searching algorithms are algorithms designed to locate a specific item or a part
 
 [Visualgo.NET](https://visualgo.net)
 
-[REPL JS](https://repljs.com/)
+[Repl](https://replit.com)
