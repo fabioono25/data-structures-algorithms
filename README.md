@@ -49,60 +49,65 @@
       - [Advantages](#advantages-7)
       - [Disadvantages](#disadvantages-7)
       - [Use-Cases](#use-cases-7)
-    - [Linked Lists](#linked-lists)
+    - [Singly Linked Lists](#singly-linked-lists)
       - [Definition](#definition-8)
       - [Advantages](#advantages-8)
       - [Disadvantages](#disadvantages-8)
       - [Use-Cases](#use-cases-8)
-    - [Stacks](#stacks)
+    - [Doubly-Linked Lists](#doubly-linked-lists)
       - [Definition](#definition-9)
       - [Advantages](#advantages-9)
-      - [Disadvantages](#disadvantages-9)
+      - [Disadvantages:](#disadvantages-9)
       - [Use-Cases](#use-cases-9)
-    - [Queues](#queues)
+    - [Stacks](#stacks)
       - [Definition](#definition-10)
       - [Advantages](#advantages-10)
       - [Disadvantages](#disadvantages-10)
       - [Use-Cases](#use-cases-10)
-    - [Hash Tables](#hash-tables)
+    - [Queues](#queues)
       - [Definition](#definition-11)
       - [Advantages](#advantages-11)
       - [Disadvantages](#disadvantages-11)
       - [Use-Cases](#use-cases-11)
-    - [Trees](#trees)
+    - [Hash Tables](#hash-tables)
       - [Definition](#definition-12)
       - [Advantages](#advantages-12)
       - [Disadvantages](#disadvantages-12)
       - [Use-Cases](#use-cases-12)
-    - [Graphs](#graphs)
+    - [Trees](#trees)
       - [Definition](#definition-13)
       - [Advantages](#advantages-13)
       - [Disadvantages](#disadvantages-13)
       - [Use-Cases](#use-cases-13)
+    - [Graphs](#graphs)
+      - [Definition](#definition-14)
+      - [Advantages](#advantages-14)
+      - [Disadvantages](#disadvantages-14)
+      - [Use-Cases](#use-cases-14)
   - [Sorting Algorithms](#sorting-algorithms)
     - [Bubble Sort](#bubble-sort)
-      - [Definition](#definition-14)
-    - [Selection Sort](#selection-sort)
       - [Definition](#definition-15)
-    - [Insertion Sort](#insertion-sort)
+    - [Selection Sort](#selection-sort)
       - [Definition](#definition-16)
-    - [Merge Sort](#merge-sort)
+    - [Insertion Sort](#insertion-sort)
       - [Definition](#definition-17)
-    - [Quick Sort](#quick-sort)
+    - [Merge Sort](#merge-sort)
       - [Definition](#definition-18)
-    - [Heao Sort](#heao-sort)
+    - [Quick Sort](#quick-sort)
       - [Definition](#definition-19)
-    - [Radix Sort](#radix-sort)
+    - [Heao Sort](#heao-sort)
       - [Definition](#definition-20)
+    - [Radix Sort](#radix-sort)
+      - [Definition](#definition-21)
   - [Searching Algorithms](#searching-algorithms)
     - [Linear Search](#linear-search)
-      - [Definition](#definition-21)
-    - [Binary Search](#binary-search)
       - [Definition](#definition-22)
-    - [Breadth-First Search (BFS)](#breadth-first-search-bfs)
+    - [Binary Search](#binary-search)
       - [Definition](#definition-23)
-    - [Depth-First Search (DFS)](#depth-first-search-dfs)
+    - [Breadth-First Search (BFS)](#breadth-first-search-bfs)
       - [Definition](#definition-24)
+    - [Depth-First Search (DFS)](#depth-first-search-dfs)
+      - [Definition](#definition-25)
   - [Links](#links)
 
 ## Big-O Notation
@@ -973,27 +978,109 @@ let dequeuedElement = queue.shift(); // Dequeue an element
 
 ---
 
-### Linked Lists
+### Singly Linked Lists
 
 #### Definition
 
-A linear data structure where elements are stored in nodes, and each node points to the next element in the list. They can be divided into **Simple Linked List**, a data structure where each element (node) contains data and a reference to the next element in a unidirectional sequence, or **Doubly Linked List**, a data structure where each element (node) contains data, a reference to the next node, and a reference to the previous node, allowing bidirectional traversal..
+A linear data structure where elements are stored in nodes, and each node points to the next element in the list. The **Singly Linked List**, a data structure where each element (node) contains data and a reference to the next element in a unidirectional sequence.
 
 #### Advantages
 
-* **Dynamic Size:** Linked lists can dynamically adjust their size, facilitating easy addition or removal of elements without the need for pre-allocated memory.
-* **Efficient Insertion and Deletion:** Inserting or deleting elements at arbitrary positions in a linked list is more efficient compared to arrays, particularly for dynamic resizing.
-* **No Wasted Memory:** Linked lists avoid wasted memory issues associated with fixed-size arrays when the actual size is smaller than the allocated size.
-* **Ease of Implementation:** Implementing linked lists is relatively straightforward, making them a good choice for scenarios where simplicity in data structure management is a priority.
-* **Support for Various Data Types:** Linked lists can easily accommodate elements of different data types, providing flexibility in designing data structures.
+* **Simple Implementation:** Singly linked lists are relatively simple to implement, making them easy to understand and use.
+* **Memory Efficiency:** Singly linked lists are memory-efficient compared to doubly linked lists as they only require one pointer per node.
+* **Dynamic Size:** Singly linked lists can easily adjust their size, allowing for dynamic addition or removal of elements without the need for pre-allocated memory.
+* **Ease of Insertion and Deletion:** Inserting or deleting elements at the beginning of a singly linked list is a constant-time operation, making these operations efficient.
+* **Straightforward Traversal::** Traversing a singly linked list is straightforward, moving from one node to the next using the next pointers.
 
 #### Disadvantages
 
-* **Random Access Inefficiency:** Linked lists lack direct access to elements by index, resulting in less efficient random access compared to arrays.
-* **Increased Memory Overhead:** Each element in a linked list incurs additional memory overhead due to the storage of references to the next (and possibly previous) node.
-* **Traversal Overhead:** Traversing a linked list requires sequential access, which may be less efficient than random access in scenarios where direct indexing is crucial.
-* **Cache Locality Issues:** Linked lists may exhibit poor cache locality, impacting performance because of non-contiguous memory storage of elements.
-* **Complexity in Implementation:** Implementing and managing linked lists can be more complex than arrays, especially in scenarios where bidirectional traversal or complex operations are required.
+* **Limited Traversal Options:** Singly linked lists only support forward traversal, which can be a limitation in certain scenarios where backward traversal is necessary.
+* **Inefficient Reverse Traversal:** Reversing a singly linked list is inefficient and often requires additional data structures or operations.
+* **No Direct Access to Previous Node:** Accessing the previous node in a singly linked list requires traversing from the beginning of the list, leading to inefficiencies.
+* **Memory Overhead for Large Lists:** In large singly linked lists, the memory overhead of storing next pointers for each node can become significant.
+* **Limited Operations on Tail:** Performing operations at the end of a singly linked list, such as finding the tail or deleting the last node, can be less efficient compared to operations at the beginning.
+
+#### Use-Cases
+
+**Symbol Table in a Compiler:**
+
+Building a symbol table in a compiler, where identifiers and their associated information are stored dynamically.
+
+```javascript
+class SymbolEntry {
+  constructor(identifier, type) {
+    this.identifier = identifier;
+    this.type = type;
+    this.next = null;
+  }
+}
+
+class SymbolTable {
+  constructor() {
+    this.head = null;
+  }
+
+  addSymbol(identifier, type) {
+    const newSymbol = new SymbolEntry(identifier, type);
+    newSymbol.next = this.head;
+    this.head = newSymbol;
+  }
+
+  findSymbol(identifier) {
+    let current = this.head;
+
+    while (current !== null) {
+      if (current.identifier === identifier) {
+        return current.type;
+      }
+      current = current.next;
+    }
+
+    return null; // Symbol not found
+  }
+}
+
+// Example Usage:
+const symbolTable = new SymbolTable();
+symbolTable.addSymbol("variable1", "int");
+symbolTable.addSymbol("variable2", "float");
+console.log(symbolTable.findSymbol("variable1"));  // Output: int
+
+```
+
+
+---
+
+### Doubly-Linked Lists
+
+#### Definition
+
+Doubly linked lists are a type of linked list where each node contains a data element and two pointers, one pointing to the next node in the sequence (next pointer) and another pointing to the previous node (previous pointer). This bidirectional linkage allows for more flexible traversal and manipulation compared to singly linked lists. 
+
+#### Advantages
+
+* **Bidirectional Traversal:** Doubly linked lists support bidirectional traversal, allowing efficient movement in both forward and backward directions.
+
+**Efficient Deletion:** Deleting a node in a doubly linked list is more efficient than in a singly linked list because the previous node's pointer is readily available.
+
+**Reverse Traversal:** Reversing a doubly linked list is more efficient than in a singly linked list because each node has a pointer to its previous node.
+
+**Dynamic Size with Tail Pointer:** A doubly linked list with a tail pointer allows for dynamic addition or removal of elements at both the beginning and end in constant time.
+
+**Easier Implementation of Certain Algorithms:** Certain algorithms, such as reversing a linked list or detecting a palindrome, can be implemented more efficiently with a doubly linked list.
+
+#### Disadvantages:
+
+**Increased Memory Usage:** Doubly linked lists use more memory compared to singly linked lists because each node requires two pointers (next and previous).
+
+**Complex Implementation:** Implementing and maintaining doubly linked lists is more complex than singly linked lists, leading to potentially more error-prone code.
+
+**Memory Overhead for Large Lists:** In large doubly linked lists, the memory overhead of storing both next and previous pointers for each node can become significant.
+
+**Limited Operations on Tail:** Although operations at the tail are more efficient than in a singly linked list, they are still less efficient than operations at the head.
+
+**Increased Complexity for Certain Operations:** Some operations, such as insertion in the middle of the list, can be more complex and may require careful handling of multiple pointers.
+
 
 #### Use-Cases
 
@@ -1133,6 +1220,9 @@ symbolTable.addSymbol("variable2", "float");
 console.log(symbolTable.findSymbol("variable1"));  // Output: int
 
 ```
+
+
+---
 
 
 ---
