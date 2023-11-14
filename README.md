@@ -1221,10 +1221,6 @@ console.log(symbolTable.findSymbol("variable1"));  // Output: int
 
 ```
 
-
----
-
-
 ---
 
 ### Stacks
