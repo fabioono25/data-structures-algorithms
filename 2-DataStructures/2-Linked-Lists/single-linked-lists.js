@@ -103,6 +103,24 @@ class LinkedList {
     this.length--;
     return this;
   }
+
+  reverse() { // O(n)
+    if (!this.head.next) {
+      return this.head;
+    }
+    let first = this.head;
+    this.tail = this.head;
+    let second = first.next;
+    while(second) {
+      const temp = second.next; // save the next node
+      second.next = first; // reverse the pointer
+      first = second; // move the pointers forward
+      second = temp;
+    }
+    this.head.next = null;
+    this.head = first;
+    return this;
+  }
 }
 
 const myLinkedList = new LinkedList(10);
@@ -111,8 +129,8 @@ myLinkedList.append(16);
 myLinkedList.prepend(1);
 myLinkedList.insert(2, 99);
 myLinkedList.remove(2);
-// myLinkedList.reverse();
-// console.log('myLinkedList', myLinkedList.print());
+myLinkedList.print();
+myLinkedList.reverse();
 myLinkedList.print();
 
 // 10 --> 5 --> 16
