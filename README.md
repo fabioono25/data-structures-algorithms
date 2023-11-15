@@ -1048,14 +1048,13 @@ console.log(symbolTable.findSymbol("variable1"));  // Output: int
 
 ```
 
-
 ---
 
 ### Doubly-Linked Lists
 
 #### Definition
 
-Doubly linked lists are a type of linked list where each node contains a data element and two pointers, one pointing to the next node in the sequence (next pointer) and another pointing to the previous node (previous pointer). This bidirectional linkage allows for more flexible traversal and manipulation compared to singly linked lists. 
+Doubly linked lists are a type of linked list where each node contains a data element and two pointers, one pointing to the next node in the sequence (next pointer) and another pointing to the previous node (previous pointer). This bidirectional linkage allows for more flexible traversal and manipulation compared to singly linked lists.
 
 #### Advantages
 
@@ -1080,7 +1079,6 @@ Doubly linked lists are a type of linked list where each node contains a data el
 **Limited Operations on Tail:** Although operations at the tail are more efficient than in a singly linked list, they are still less efficient than operations at the head.
 
 **Increased Complexity for Certain Operations:** Some operations, such as insertion in the middle of the list, can be more complex and may require careful handling of multiple pointers.
-
 
 #### Use-Cases
 
@@ -1227,20 +1225,23 @@ console.log(symbolTable.findSymbol("variable1"));  // Output: int
 
 #### Definition
 
-#### Advantages
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
+A stack is a linear data structure that follows the Last In, First Out (LIFO) principle, where elements are added and removed from the same end, typically referred to as the "top." New elements are pushed onto the top, and only the top element can be popped or accessed at any given time.
 
+#### Advantages
+
+* **Simple Implementation:** Stacks are simple to implement, making them easy to understand and use.
+* **Efficient Push and Pop Operations:** Adding and removing elements from the top of the stack (push and pop operations) have constant time complexity.
+* **Space Efficiency:** Stacks can be more memory-efficient than dynamic data structures like linked lists because they have a fixed size.
+* **Support for Undo Mechanism:** Stacks are commonly used to implement undo mechanisms in software applications.
+* **Function Call Management:** Stacks are used in programming languages to manage function calls and store local variables.
 
 #### Disadvantages
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
+
+* **Limited Access:** Stacks offer limited access to elements. Only the top element can be directly accessed.
+* **Fixed Size:** Traditional stacks have a fixed size, and resizing can be challenging, leading to potential overflow or underflow issues.
+* **Not Suitable for Random Access:** Stacks are not suitable for scenarios where random access to elements is required.
+* **Memory Management Overhead:** Stacks may have memory management overhead due to their fixed size, even if the stack is not full.
+* **Limited Applicability:** Stacks are best suited for specific scenarios like managing function calls or undo mechanisms and may not be the most efficient choice for other data access patterns
 
 #### Use-Cases
 
@@ -1250,21 +1251,23 @@ console.log(symbolTable.findSymbol("variable1"));  // Output: int
 
 #### Definition
 
-#### Advantages
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
+A queue is a linear data structure that follows the First In, First Out (FIFO) principle, where elements are added at the rear and removed from the front. It operates like a waiting line, ensuring that the first element enqueued is the first to be dequeued.
 
+#### Advantages
+
+* **Efficient Enqueue and Dequeue Operations:** Adding and removing elements from the front and rear of the queue (enqueue and dequeue operations) have constant time complexity in well-implemented queues.
+* **FIFO Order:** Queues follow the First In, First Out (FIFO) principle, ensuring that elements are processed in the order they were added.
+* **Memory Efficiency:** Queues can be more memory-efficient than dynamic data structures like linked lists because they have a fixed size.
+* **Task Scheduling:** Queues are commonly used in task scheduling and management systems, ensuring tasks are processed in a fair order.
+* **Buffering:** Queues are employed in scenarios where data needs to be buffered or smoothed out, such as in communication systems.
 
 #### Disadvantages
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
 
+* **Limited Access:** Queues offer limited access to elements. Only the front and rear elements can be directly accessed.
+* **Fixed Size:** Traditional queues have a fixed size, and resizing can be challenging, leading to potential overflow or underflow issues.
+* **Not Suitable for Random Access:** Queues are not suitable for scenarios where random access to elements is required.
+* **Memory Management Overhead:** Queues may have memory management overhead due to their fixed size, even if the queue is not full.
+* **Limited Applicability:** Queues are best suited for specific scenarios like task scheduling or buffering and may not be the most efficient choice for other data access patterns.
 
 #### Use-Cases
 
@@ -1275,20 +1278,20 @@ console.log(symbolTable.findSymbol("variable1"));  // Output: int
 #### Definition
 
 #### Advantages
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
 
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
 
 #### Disadvantages
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
 
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
 
 #### Use-Cases
 
@@ -1299,20 +1302,20 @@ console.log(symbolTable.findSymbol("variable1"));  // Output: int
 #### Definition
 
 #### Advantages
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
 
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
 
 #### Disadvantages
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
 
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
 
 #### Use-Cases
 
@@ -1323,59 +1326,65 @@ console.log(symbolTable.findSymbol("variable1"));  // Output: int
 #### Definition
 
 #### Advantages
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
 
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
 
 #### Disadvantages
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
 
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
+* **:** a.
 
 #### Use-Cases
 
 ---
+
 ## Sorting Algorithms
 
 Sorting algorithms are specific algorithms designed to arrange elements in a specific order, often numerically or alphabetically. These algorithms systematically reorder items within a list or an array, making it easier to search for specific elements or analyze data. Various sorting algorithms, such as bubble sort, merge sort, and quicksort, employ different techniques to efficiently organize data, each with its own advantages and trade-offs in terms of time and space complexity. Sorting algorithms are fundamental in computer science and are extensively used in various applications, including databases, search algorithms, and data analysis.
-
 
 ### Bubble Sort
 
 #### Definition
 
 ---
+
 ### Selection Sort
 
 #### Definition
 
 ---
+
 ### Insertion Sort
 
 #### Definition
 
 ---
+
 ### Merge Sort
 
 #### Definition
 
 ---
+
 ### Quick Sort
 
 #### Definition
 
 ---
+
 ### Heao Sort
 
 #### Definition
 
 ---
+
 ### Radix Sort
 
 #### Definition
@@ -1386,28 +1395,29 @@ Sorting algorithms are specific algorithms designed to arrange elements in a spe
 
 Searching algorithms are algorithms designed to locate a specific item or a particular value within a collection of data. These algorithms systematically explore the data, looking for the target element and determining its presence or absence. Common searching algorithms include linear search (sequential search) and binary search. Linear search checks each element in the data structure until it finds the target, while binary search works on sorted data by repeatedly dividing the search interval in half. Searching algorithms are crucial for tasks like finding specific records in databases, locating elements in arrays, and enabling efficient search functionality in applications and websites. They play a vital role in information retrieval and data processing algorithms.
 
-
 ### Linear Search
 
 #### Definition
 
 ---
+
 ### Binary Search
 
 #### Definition
 
 ---
+
 ### Breadth-First Search (BFS)
 
 #### Definition
 
 ---
+
 ### Depth-First Search (DFS)
 
 #### Definition
 
 ---
-
 
 ## Links
 
