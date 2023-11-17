@@ -1277,21 +1277,23 @@ A queue is a linear data structure that follows the First In, First Out (FIFO) p
 
 #### Definition
 
+A data structure that stores key-value pairs and uses a hash function to compute an index into an array where the corresponding value can be found. A hash table is a data structure that implements an associative array abstract data type, providing efficient access and storage of key-value pairs through a hash function. It enables rapid lookup, insertion, and deletion operations with average-case constant time complexity.
+
 #### Advantages
 
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
+* **Fast Lookup:** Hash tables offer fast average-case lookup times, providing constant-time or near-constant-time access to stored elements.
+* **Efficient Insertion and Deletion:** Inserting and deleting elements in a well-designed hash table can also be performed in constant time on average.
+* **Adaptability to Dynamic Data:** Hash tables can dynamically adjust to changing data sizes without a significant increase in average-case time complexity.
+* **Effective for Search Operations:** Hash tables are highly effective for search operations when the key is known, making them suitable for applications like databases and caches.
+* **Optimized Memory Usage:** When designed well, hash tables can offer optimized memory usage, reducing the likelihood of collisions.
 
 #### Disadvantages
 
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
-* **:** a.
+* **Potential for Collisions:** Hash collisions can occur when two different keys produce the same hash value, requiring additional handling mechanisms like chaining or open addressing.
+* **Hash Function Dependency:** The efficiency of a hash table relies heavily on the quality of the hash function, and a poor hash function may lead to increased collisions.
+* **Unordered Output:** The ordering of elements in a hash table is not deterministic and does not follow a specific order, making it unsuitable for scenarios requiring ordered traversal.
+* **Complexity of Implementation:** Designing an efficient and collision-resistant hash table can be complex, requiring careful consideration of the hash function, collision resolution strategy, and load factor.
+* **Space Overhead:** Hash tables may have a space overhead due to potential unused slots and the need for additional data structures to handle collisions.
 
 #### Use-Cases
 
