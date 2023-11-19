@@ -81,8 +81,8 @@
       - [Use-Cases](#use-cases-13)
     - [Graphs](#graphs)
       - [Definition](#definition-14)
-      - [Advantages](#advantages-14)
-      - [Disadvantages](#disadvantages-14)
+    - [**Advantages:**](#advantages-14)
+    - [**Disadvantages:**](#disadvantages-14)
       - [Use-Cases](#use-cases-14)
   - [Sorting Algorithms](#sorting-algorithms)
     - [Bubble Sort](#bubble-sort)
@@ -1434,3 +1434,5 @@ Searching algorithms are algorithms designed to locate a specific item or a part
 [Visualgo.NET](https://visualgo.net)
 
 [Repl](https://replit.com)
+
+[Top 8 Data Structures for Coding Interviews](https://dev.to/fahimulhaq/top-8-data-structures-for-coding-interviews-and-practice-interview-questions-2pb)
