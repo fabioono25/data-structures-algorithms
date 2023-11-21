@@ -7,66 +7,113 @@
   - [Big-O Notation](#big-o-notation)
     - [Time Complexity](#time-complexity)
       - [O(1) Constant Time Complexity](#o1-constant-time-complexity)
+        - [Definition](#definition)
+        - [Advantages](#advantages)
+        - [Disadvantages](#disadvantages)
+        - [Use-Cases](#use-cases)
       - [O(n) Linear Time Complexity](#on-linear-time-complexity)
+        - [Definition](#definition-1)
+        - [Advantages](#advantages-1)
+        - [Disadvantages](#disadvantages-1)
+        - [Use-Cases](#use-cases-1)
       - [O(n^2) Quadratic Time Complexity](#on2-quadratic-time-complexity)
+        - [Definition](#definition-2)
+        - [Advantages](#advantages-2)
+        - [Disadvantages](#disadvantages-2)
+        - [Use-Cases](#use-cases-2)
       - [O(log n) Logaritmic Time Complexity](#olog-n-logaritmic-time-complexity)
+        - [Definition](#definition-3)
+        - [Advantages](#advantages-3)
+        - [Disadvantages](#disadvantages-3)
+        - [Use-Cases](#use-cases-3)
       - [O(n log n) Linearithmic Time Complexity](#on-log-n-linearithmic-time-complexity)
+        - [Definition](#definition-4)
+        - [Advantages](#advantages-4)
+        - [Disadvantages](#disadvantages-4)
+        - [Use-Cases](#use-cases-4)
       - [O(2^n) Exponential Time Complexity](#o2n-exponential-time-complexity)
+        - [Definition](#definition-5)
+        - [Advantages](#advantages-5)
+        - [Disadvantages](#disadvantages-5)
+        - [Use-Cases](#use-cases-5)
       - [O(n!) Factorial Time Complexity](#on-factorial-time-complexity)
+        - [Definition](#definition-6)
+        - [Advantages](#advantages-6)
+        - [Disadvantages](#disadvantages-6)
+        - [Use-Cases](#use-cases-6)
     - [Space Complexity](#space-complexity)
   - [The Four Rules in Big-O](#the-four-rules-in-big-o)
   - [Data Structures](#data-structures)
     - [Arrays](#arrays)
-      - [Advantages](#advantages)
-      - [Disadvantages](#disadvantages)
-      - [Use-Cases](#use-cases)
-    - [Singly Linked Lists](#singly-linked-lists)
-      - [Advantages](#advantages-1)
-      - [Disadvantages](#disadvantages-1)
-      - [Use-Cases](#use-cases-1)
-    - [Doubly-Linked Lists](#doubly-linked-lists)
-      - [Advantages](#advantages-2)
-      - [Disadvantages:](#disadvantages-2)
-      - [Use-Cases](#use-cases-2)
-    - [Stacks](#stacks)
-      - [Advantages](#advantages-3)
-      - [Disadvantages](#disadvantages-3)
-      - [Use-Cases](#use-cases-3)
-    - [Queues](#queues)
-      - [Advantages](#advantages-4)
-      - [Disadvantages](#disadvantages-4)
-      - [Use-Cases](#use-cases-4)
-    - [Hash Tables](#hash-tables)
-      - [Advantages](#advantages-5)
-      - [Disadvantages](#disadvantages-5)
-      - [Use-Cases](#use-cases-5)
-    - [Trees](#trees)
-      - [Advantages](#advantages-6)
-      - [Disadvantages](#disadvantages-6)
-      - [Use-Cases](#use-cases-6)
-    - [Graphs](#graphs)
-    - [**Advantages:**](#advantages-7)
-    - [**Disadvantages:**](#disadvantages-7)
+      - [Definition](#definition-7)
+      - [Advantages](#advantages-7)
+      - [Disadvantages](#disadvantages-7)
       - [Use-Cases](#use-cases-7)
+    - [Singly Linked Lists](#singly-linked-lists)
+      - [Definition](#definition-8)
+      - [Advantages](#advantages-8)
+      - [Disadvantages](#disadvantages-8)
+      - [Use-Cases](#use-cases-8)
+    - [Doubly-Linked Lists](#doubly-linked-lists)
+      - [Definition](#definition-9)
+      - [Advantages](#advantages-9)
+      - [Disadvantages:](#disadvantages-9)
+      - [Use-Cases](#use-cases-9)
+    - [Stacks](#stacks)
+      - [Definition](#definition-10)
+      - [Advantages](#advantages-10)
+      - [Disadvantages](#disadvantages-10)
+      - [Use-Cases](#use-cases-10)
+    - [Queues](#queues)
+      - [Definition](#definition-11)
+      - [Advantages](#advantages-11)
+      - [Disadvantages](#disadvantages-11)
+      - [Use-Cases](#use-cases-11)
+    - [Hash Tables](#hash-tables)
+      - [Definition](#definition-12)
+      - [Advantages](#advantages-12)
+      - [Disadvantages](#disadvantages-12)
+      - [Use-Cases](#use-cases-12)
+    - [Trees](#trees)
+      - [Definition](#definition-13)
+      - [Advantages](#advantages-13)
+      - [Disadvantages](#disadvantages-13)
+      - [Use-Cases](#use-cases-13)
+    - [Graphs](#graphs)
+      - [Definition](#definition-14)
+    - [**Advantages:**](#advantages-14)
+    - [**Disadvantages:**](#disadvantages-14)
+      - [Use-Cases](#use-cases-14)
   - [Recursion](#recursion)
-    - [**Advantages**](#advantages-8)
-    - [**Disadvantages**](#disadvantages-8)
+    - [**Advantages**](#advantages-15)
+    - [**Disadvantages**](#disadvantages-15)
   - [Sorting Algorithms](#sorting-algorithms)
     - [Bubble Sort](#bubble-sort)
-      - [**Advantages:**](#advantages-9)
-      - [**Disadvantages:**](#disadvantages-9)
+      - [Definition](#definition-15)
+      - [**Advantages:**](#advantages-16)
+      - [**Disadvantages:**](#disadvantages-16)
     - [Selection Sort](#selection-sort)
+      - [Definition](#definition-16)
     - [Insertion Sort](#insertion-sort)
+      - [Definition](#definition-17)
     - [Merge Sort](#merge-sort)
+      - [Definition](#definition-18)
     - [Quick Sort](#quick-sort)
+      - [Definition](#definition-19)
     - [Heao Sort](#heao-sort)
+      - [Definition](#definition-20)
     - [Radix Sort](#radix-sort)
+      - [Definition](#definition-21)
   - [Searching Algorithms](#searching-algorithms)
     - [Linear Search](#linear-search)
+      - [Definition](#definition-22)
     - [Binary Search](#binary-search)
+      - [Definition](#definition-23)
     - [Breadth-First Search (BFS)](#breadth-first-search-bfs)
+      - [Definition](#definition-24)
     - [Depth-First Search (DFS)](#depth-first-search-dfs)
-  - [Links and Resources](#links-and-resources)
+      - [Definition](#definition-25)
+  - [Links](#links)
 
 ## Big-O Notation
 
@@ -83,23 +130,23 @@ Time Complexity measures the amount of time an algorithm takes to run as a funct
 
 #### O(1) Constant Time Complexity
 
-**Definition**
+##### Definition
 
 Algorithms with constant time complexity always take the same amount of time to execute, regardless of the size of the input. These algorithms have a fixed and predictable runtime.
 
-**Advantages**
+##### Advantages
 
 * **Predictable Performance:** Algorithms with constant time complexity always have the same execution time, making them **predictable** and **reliable**, regardless of input size.
 * **Efficiency for Small Inputs:** Constant time complexity algorithms are ideal for operations where the input size is always a fixed number or very small, ensuring **fast execution**.
 * **Optimal for Real-Time Systems:** In **real-time applications**, constant time complexity ensures that operations are completed within a fixed time frame, essential for time-sensitive tasks.
 
-**Disadvantages**
+##### Disadvantages
 
 * **Limited Applicability:** Constant time complexity algorithms are limited to specific operations and scenarios where the input size does not affect the algorithm's performance.
 * **Not Suitable for Complex Problems:** Algorithms with constant time complexity cannot handle complex computational tasks or problems that require processing large datasets.
 * **Difficult to Achieve:** Designing algorithms with constant time complexity is challenging and often not achievable for many real-world problems.
 
-**Use-Cases**
+##### Use-Cases
 
 **Accessing Elements in an Array or List:**
 
@@ -146,23 +193,23 @@ In these scenarios, the time taken for the operations remains constant regardles
 
 #### O(n) Linear Time Complexity
 
-**Definition**
+##### Definition
 
 Linear time complexity algorithms have a runtime proportional to the input size, making them suitable for small to moderate-sized datasets.
 
-**Advantages**
+##### Advantages
 
 * **Simplicity:** Linear time complexity algorithms are often simple to implement and understand, making them accessible for a wide range of developers.
 * **Scalability:** Linear time complexity algorithms can handle larger datasets efficiently, making them suitable for moderate-sized inputs.
 * **Straightforward Iteration:** Algorithms with linear time complexity often involve straightforward iterations through data structures, making them applicable to various tasks.
 
-**Disadvantages**
+##### Disadvantages
 
 * **Limited Scalability:** Linear time complexity algorithms become slow for very large datasets, as their execution time increases linearly with input size.
 * **Inefficient for Complex Operations:** Algorithms with linear time complexity may not be efficient for complex computations or tasks requiring intricate data manipulations.
 * **Not Suitable for Real-Time Systems:** In real-time applications where quick responses are crucial, linear time complexity algorithms might not provide the necessary speed.
 
-**Use-Cases**
+##### Use-Cases
 
 **Linear Search:**
 
@@ -218,11 +265,11 @@ In these use-cases, the algorithms' runtime grows linearly with the size of the 
 
 #### O(n^2) Quadratic Time Complexity
 
-**Definition**
+##### Definition
 
 Algorithms with quadratic time complexity have a runtime that is proportional to the square of the input size. Nested loops iterating over the input elements are a common cause of quadratic complexity. Performance deteriorates quickly for larger inputs.
 
-**Advantages**
+##### Advantages
 
 * **Simplicity and Readability:**
   Quadratic algorithms are often simpler to implement and easier to understand. The straightforward nature of nested loops and simple logic can make the code more readable, which is advantageous, especially for educational purposes or in scenarios where code clarity is crucial.
@@ -231,7 +278,7 @@ Algorithms with quadratic time complexity have a runtime that is proportional to
 * **Lack of Complexity Scaling:**
   Quadratic time complexity algorithms may not significantly impact performance when the input size is small and fixed. In situations where the input size remains constant or is limited, the performance difference between quadratic and more efficient algorithms might not be a significant concern.
 
-**Disadvantages**
+##### Disadvantages
 
 * **Inefficiency for Large Inputs:**
   Quadratic algorithms become highly inefficient as the input size increases. Their execution time grows quadratically with the input size, leading to drastically longer processing times for larger datasets. This inefficiency can make them unsuitable for real-world applications dealing with substantial amounts of data.
@@ -240,7 +287,7 @@ Algorithms with quadratic time complexity have a runtime that is proportional to
 * **Limited Applicability:**
   Quadratic time complexity algorithms are not suitable for many real-world applications and scenarios. Tasks involving extensive data processing, searching, sorting, or complex computations typically require more efficient algorithms. Choosing quadratic algorithms in such cases can lead to suboptimal performance and may not meet the required performance standards.
 
-**Use-Cases**
+##### Use-Cases
 
 **Bubble Sort:**
 Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The algorithm's time complexity is O(n^2) in the worst-case scenario, making it inefficient for large datasets. However, it can be used for educational purposes or for sorting small datasets where simplicity is preferred over efficiency.
@@ -321,12 +368,12 @@ function generatePermutations(arr) {
 
 #### O(log n) Logaritmic Time Complexity
 
-**Definition**
+##### Definition
 
 Logarithmic time complexity algorithms reduce the size of the problem in each step by a logarithmic factor. These algorithms are often found in divide and conquer strategies, and they efficiently handle large
 datasets by repeatedly dividing the problem space.
 
-**Advantages**
+##### Advantages
 
 * **Efficiency with Large Datasets:**
   Algorithms with O(log n) time complexity are highly efficient, especially when dealing with large datasets. They scale well and can handle significant amounts of data without a significant increase in execution time. This efficiency is valuable in applications dealing with extensive data processing.
@@ -335,7 +382,7 @@ datasets by repeatedly dividing the problem space.
 * **Balanced Tree Structures:**
   O(log n) time complexity is achievable for operations like insertion, deletion, and search in balanced tree structures, such as AVL trees and Red-Black trees. These tree structures maintain balance during operations, ensuring that the height of the tree remains logarithmic, leading to efficient operations even as the dataset grows.
 
-**Disadvantages**
+##### Disadvantages
 
 * **Complexity in Implementation:**
   Implementing algorithms with O(log n) time complexity, especially those involving complex data structures like balanced trees, can be challenging. Properly maintaining the balance and ensuring logarithmic height requires careful implementation, which can lead to more complex code.
@@ -344,7 +391,7 @@ datasets by repeatedly dividing the problem space.
 * **Memory Overhead:**
   Some data structures that achieve O(log n) time complexity, such as balanced trees, often require additional memory to maintain their balanced structure. This memory overhead can be a disadvantage, especially in memory-constrained environments. Additionally, the overhead associated with recursive function calls in certain logarithmic algorithms can impact memory usage.
 
-**Use-Cases**
+##### Use-Cases
 
 **Binary Search:**
 
@@ -429,11 +476,11 @@ console.log(`${base} raised to the power of ${exponent} is: ${result}`);
 
 #### O(n log n) Linearithmic Time Complexity
 
-**Definition**
+##### Definition
 
 Algorithms with linearithmic time complexity have an execution time that grows in proportion to n log ⁡n, where n**n** is the size of the input data. Many efficient sorting and searching algorithms, such as merge sort and heap sort, fall into this category.
 
-**Advantages**
+##### Advantages
 
 * **Efficient Sorting:**
   Algorithms with O(n log n) time complexity are often associated with **efficient sorting algorithms** like Merge Sort, Heap Sort, and QuickSort. These sorting algorithms are widely used due to their balanced performance, making them suitable for sorting large datasets efficiently.
@@ -442,7 +489,7 @@ Algorithms with linearithmic time complexity have an execution time that grows i
 * **Balanced Performance:**
   O(n log n) algorithms offer a balanced performance across a wide range of input sizes. While they are not as fast as linear algorithms (O(n)) for small datasets or constant time algorithms (O(1)) for specific operations, they provide efficient and manageable execution times for moderate to large datasets, making them versatile for various applications.
 
-**Disadvantages**
+##### Disadvantages
 
 * **Not Always Optimal:**
   O(n log n) time complexity is not always the optimal solution for all problems. For specific tasks with known input sizes or constraints, using algorithms with O(n) or even O(n^2) time complexity might be more efficient. Using O(n log n) algorithms when simpler solutions exist can result in unnecessary complexity.
@@ -451,7 +498,7 @@ Algorithms with linearithmic time complexity have an execution time that grows i
 * **Higher Constant Factors:**
   O(n log n) algorithms often have higher constant factors in their execution times compared to simpler linear algorithms. This means that, even though they have a better overall growth rate than O(n^2) algorithms, they might be slower in practice for small to moderately sized datasets due to these overheads.
 
-**Use-Cases**
+##### Use-Cases
 
 **Sorting Large Datasets:**
 
@@ -530,11 +577,11 @@ console.log("Merged Sorted List:", mergedList);
 
 #### O(2^n) Exponential Time Complexity
 
-**Definition**
+##### Definition
 
 Exponential time complexity algorithms have an execution time that grows exponentially with the size of the input data. These algorithms become extremely slow as the input size increases, making them impractical for most real-world applications. Recursive algorithms with branching factors fall into this category.
 
-**Advantages**
+##### Advantages
 
 * **Simplicity and Readability:**
   Exponential time algorithms are often simpler and easier to understand due to their straightforward recursive nature. This simplicity can make the code more readable and maintainable, especially for educational purposes or when solving small-scale problems where efficiency is not a primary concern.
@@ -543,7 +590,7 @@ Exponential time complexity algorithms have an execution time that grows exponen
 * **Useful for Small Inputs:**
   Exponential algorithms can be practical for problems with small input sizes. When the input size is limited and within reasonable bounds, exponential algorithms can provide acceptable solutions, especially if other more efficient algorithms are not available or the problem is inherently complex.
 
-**Disadvantages**
+##### Disadvantages
 
 * **Exponential Growth:**
   The execution time of exponential algorithms grows exponentially with the input size. Even a slight increase in the input size can lead to a drastic increase in the number of operations performed. This exponential growth quickly makes these algorithms impractical for larger inputs.
@@ -552,7 +599,7 @@ Exponential time complexity algorithms have an execution time that grows exponen
 * **High Time Complexity Classes:**
   Exponential time complexity (O(2^n)) falls into the category of high time complexity classes. Problems belonging to such classes are considered intractable and are generally not solvable in a reasonable amount of time for large inputs. Many problems in this class are classified as NP-hard, indicating their inherent complexity.
 
-**Use-Cases**
+##### Use-Cases
 
 **Subset Generation:**
 
@@ -669,11 +716,11 @@ console.log("Total Distance:", result.distance);
 
 #### O(n!) Factorial Time Complexity
 
-**Definition**
+##### Definition
 
 Factorial time complexity represents algorithms whose execution time grows factorially with the size of the input data. These algorithms are extremely slow and become practically unusable for even small input sizes. Examples include brute-force algorithms generating permutations or combinations.
 
-**Advantages**
+##### Advantages
 
 * **Guaranteed Optimal Solution:**
   Algorithms with factorial time complexity explore all possible permutations or combinations of a given set. This exhaustive search guarantees finding the optimal solution if one exists. In many combinatorial problems, the optimal solution can be discovered by examining all permutations or combinations.
@@ -682,7 +729,7 @@ Factorial time complexity represents algorithms whose execution time grows facto
 * **Useful for Small Input Sizes:**
   Factorial time algorithms can be practical for problems with very small input sizes. When the input size is limited and within reasonable bounds, using factorial time algorithms might be acceptable, especially if the problem's complexity demands an exhaustive search for a complete solution.
 
-**Disadvantages**
+##### Disadvantages
 
 * **Exponential Growth of Execution Time:**
   Factorial time complexity (O(n!)) leads to an explosion in the number of operations required as the input size increases. Even for moderately small inputs, the number of permutations becomes prohibitively large. As a result, the execution time grows at an astronomical rate, making these algorithms impractical for larger inputs.
@@ -691,7 +738,7 @@ Factorial time complexity represents algorithms whose execution time grows facto
 * **Inefficiency and Limited Applicability:**
   Factorial time algorithms are generally inefficient for most real-world applications. Their inefficiency restricts their applicability to small-scale problems, and they are rarely used in production systems due to their impractical execution times. More efficient algorithms are usually preferred for solving practical problems.
 
-**Use-Cases**
+##### Use-Cases
 
 **Generating Permutations:**
 
@@ -855,7 +902,7 @@ A data structure is a way of organizing and storing data in a computer so that i
 
 ### Arrays
 
-**Definition**
+#### Definition
 
 An array is a collection of elements, all of the same data type, stored at contiguous memory locations. Each element in an array is identified by an index or a key.
 
@@ -938,7 +985,7 @@ let dequeuedElement = queue.shift(); // Dequeue an element
 
 ### Singly Linked Lists
 
-**Definition**
+#### Definition
 
 A linear data structure where elements are stored in nodes, and each node points to the next element in the list. The **Singly Linked List**, a data structure where each element (node) contains data and a reference to the next element in a unidirectional sequence.
 
@@ -1010,7 +1057,7 @@ console.log(symbolTable.findSymbol("variable1"));  // Output: int
 
 ### Doubly-Linked Lists
 
-**Definition**
+#### Definition
 
 Doubly linked lists are a type of linked list where each node contains a data element and two pointers, one pointing to the next node in the sequence (next pointer) and another pointing to the previous node (previous pointer). This bidirectional linkage allows for more flexible traversal and manipulation compared to singly linked lists.
 
@@ -1181,7 +1228,7 @@ console.log(symbolTable.findSymbol("variable1"));  // Output: int
 
 ### Stacks
 
-**Definition**
+#### Definition
 
 A stack is a linear data structure that follows the Last In, First Out (LIFO) principle, where elements are added and removed from the same end, typically referred to as the "top." New elements are pushed onto the top, and only the top element can be popped or accessed at any given time.
 
@@ -1207,7 +1254,7 @@ A stack is a linear data structure that follows the Last In, First Out (LIFO) pr
 
 ### Queues
 
-**Definition**
+#### Definition
 
 A queue is a linear data structure that follows the First In, First Out (FIFO) principle, where elements are added at the rear and removed from the front. It operates like a waiting line, ensuring that the first element enqueued is the first to be dequeued.
 
@@ -1233,7 +1280,7 @@ A queue is a linear data structure that follows the First In, First Out (FIFO) p
 
 ### Hash Tables
 
-**Definition**
+#### Definition
 
 A data structure that stores key-value pairs and uses a hash function to compute an index into an array where the corresponding value can be found. A hash table is a data structure that implements an associative array abstract data type, providing efficient access and storage of key-value pairs through a hash function. It enables rapid lookup, insertion, and deletion operations with average-case constant time complexity.
 
@@ -1259,7 +1306,7 @@ A data structure that stores key-value pairs and uses a hash function to compute
 
 ### Trees
 
-**Definition**
+#### Definition
 
 A tree is a hierarchical data structure composed of **nodes**, where each node contains a value and may have **zero or more child nodes**, forming a branching structure. The topmost node in a tree is called the **root**, and nodes with no children are called **leaves**. Nodes in a tree are connected by **edges**, and the relationship between nodes reflects a hierarchical arrangement. Trees are widely used in computer science for representing hierarchical relationships, organizing data, and supporting various algorithms and data storage structures.
 
@@ -1285,7 +1332,7 @@ A tree is a hierarchical data structure composed of **nodes**, where each node c
 
 ### Graphs
 
-**Definition**
+#### Definition
 
 Graphs are a fundamental data structure in computer science and mathematics. They consist of a collection of **nodes (vertices)** and **edges **that connect pairs of nodes. The connections between nodes represent relationships or interactions between the associated entities.
 
@@ -1337,7 +1384,7 @@ Sorting algorithms are specific algorithms designed to arrange elements in a spe
 
 ### Bubble Sort
 
-**Definition**
+#### Definition
 
 Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, indicating that the list is sorted. It is named for the way smaller elements "bubble" to the top of the list during each iteration.
 
@@ -1358,37 +1405,37 @@ Bubble Sort is a simple sorting algorithm that repeatedly steps through the list
 
 ### Selection Sort
 
-**Definition**
+#### Definition
 
 ---
 
 ### Insertion Sort
 
-**Definition**
+#### Definition
 
 ---
 
 ### Merge Sort
 
-**Definition**
+#### Definition
 
 ---
 
 ### Quick Sort
 
-**Definition**
+#### Definition
 
 ---
 
 ### Heao Sort
 
-**Definition**
+#### Definition
 
 ---
 
 ### Radix Sort
 
-**Definition**
+#### Definition
 
 ---
 
@@ -1398,29 +1445,29 @@ Searching algorithms are algorithms designed to locate a specific item or a part
 
 ### Linear Search
 
-**Definition**
+#### Definition
 
 ---
 
 ### Binary Search
 
-**Definition**
+#### Definition
 
 ---
 
 ### Breadth-First Search (BFS)
 
-**Definition**
+#### Definition
 
 ---
 
 ### Depth-First Search (DFS)
 
-**Definition**
+#### Definition
 
 ---
 
-## Links and Resources
+## Links
 
 [Big-O Complexity Chart](https://www.bigocheatsheet.com/)
 
