@@ -85,9 +85,13 @@
     - [**Disadvantages:**](#disadvantages-14)
       - [Use-Cases](#use-cases-14)
   - [Recursion](#recursion)
+    - [**Advantages**](#advantages-15)
+    - [**Disadvantages**](#disadvantages-15)
   - [Sorting Algorithms](#sorting-algorithms)
     - [Bubble Sort](#bubble-sort)
       - [Definition](#definition-15)
+      - [Advantages](#advantages-16)
+      - [Disadvantages](#disadvantages-16)
     - [Selection Sort](#selection-sort)
       - [Definition](#definition-16)
     - [Insertion Sort](#insertion-sort)
@@ -1382,6 +1386,21 @@ Sorting algorithms are specific algorithms designed to arrange elements in a spe
 
 #### Definition
 
+Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, indicating that the list is sorted. It is named for the way smaller elements "bubble" to the top of the list during each iteration.
+
+#### **Advantages:**
+
+* **Simplicity:** Bubble Sort is easy to understand and implement, making it a good choice for educational purposes or small datasets.
+* **In-Place Sorting:** It only requires a constant amount of additional memory for swapping elements, making it an in-place sorting algorithm.
+
+#### **Disadvantages:**
+
+* **Inefficiency with Large Datasets:** Bubble Sort has a time complexity of O(n^2), making it inefficient for large datasets.
+* **Lack of Adaptivity:** The algorithm doesn't adapt to the existing order in the list. It performs the same number of comparisons even if the list is partially sorted.
+* **Poor Performance:** Bubble Sort's performance is poor compared to more advanced sorting algorithms like QuickSort or MergeSort.
+* **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement.
+
+
 ---
 
 ### Selection Sort
@@ -1459,3 +1478,5 @@ Searching algorithms are algorithms designed to locate a specific item or a part
 [Repl](https://replit.com)
 
 [Top 8 Data Structures for Coding Interviews](https://dev.to/fahimulhaq/top-8-data-structures-for-coding-interviews-and-practice-interview-questions-2pb)
+
+[Sorting Algorithms Animations](https://www.toptal.com/developers/sorting-algorithms)
