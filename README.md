@@ -1356,6 +1356,22 @@ Graphs are a fundamental data structure in computer science and mathematics. The
 
 Recursion is a programming technique where a function calls itself, either directly or indirectly, to solve a smaller instance of the same problem. This process continues until a base case is reached, providing a solution for the original problem by combining solutions from the smaller instances. Recursion is often used to simplify the implementation of certain algorithms, make code more readable, and handle problems with inherent recursive structures.
 
+### **Advantages**
+
+* **Simplicity and Readability:** Recursive solutions often result in more concise and readable code, mirroring the natural structure of the problem.
+* **Reduced Complexity:** Recursion can simplify complex problems by breaking them down into smaller, more manageable sub-problems, leading to clearer overall logic.
+* **Divide and Conquer:** Recursive solutions often follow a "divide and conquer" approach, dividing a problem into smaller sub-problems, making them easier to solve.
+* **Elegant Implementation:** Certain problems have elegant and natural recursive solutions, especially those involving hierarchical structures.
+* **Modular Design:** Recursive functions promote modular design, encapsulating specific tasks or logic within functions, enhancing code organization.
+
+### **Disadvantages**
+
+* **Stack Overflow:** Excessive recursive calls can lead to a stack overflow, limiting the practicality of recursion for problems with large input sizes.
+* **Memory Overhead:** Each recursive call adds a new frame to the call stack, potentially leading to high memory usage, particularly with deep recursion.
+* **Performance:** Recursive solutions might be less performant than iterative counterparts due to the overhead of function calls and stack management.
+* **Difficulty in Debugging:** Recursive code can be challenging to debug, especially for complex problems, making bug identification and fixing more difficult.
+* **Potential for Infinite Recursion:** Incorrectly implemented recursion may result in infinite loops, causing the program to hang or crash.
+
 ---
 
 ## Sorting Algorithms
