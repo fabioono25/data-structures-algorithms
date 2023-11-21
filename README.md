@@ -84,6 +84,7 @@
     - [**Advantages:**](#advantages-14)
     - [**Disadvantages:**](#disadvantages-14)
       - [Use-Cases](#use-cases-14)
+  - [Recursion](#recursion)
   - [Sorting Algorithms](#sorting-algorithms)
     - [Bubble Sort](#bubble-sort)
       - [Definition](#definition-15)
@@ -1348,6 +1349,12 @@ Graphs are a fundamental data structure in computer science and mathematics. The
 * **Complexity in Representing Certain Relationships:** While versatile, graphs may not be the most intuitive representation for certain relationships, and other data structures may be more appropriate.
 
 #### Use-Cases
+
+---
+
+## Recursion
+
+Recursion is a programming technique where a function calls itself, either directly or indirectly, to solve a smaller instance of the same problem. This process continues until a base case is reached, providing a solution for the original problem by combining solutions from the smaller instances. Recursion is often used to simplify the implementation of certain algorithms, make code more readable, and handle problems with inherent recursive structures.
 
 ---
 
