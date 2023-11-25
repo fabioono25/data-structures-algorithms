@@ -1,54 +1,65 @@
-// Insertion Sort definition: A sorting algorithm where we gradually create a larger left half which is always sorted
+// Insertion Sort definition: A sorting algorithm where the values are inserted in the correct order
 // Example: [5, 3, 4, 1, 2] ==> [3, 5, 4, 1, 2] ==> [3, 4, 5, 1, 2] ==> [1, 3, 4, 5, 2] ==> [1, 2, 3, 4, 5]
 
-// function selectionSort(array) {
-//   for (i = 0; i < array.length; i++) {  
-//     let minIndex = i;
-//     let temp = array[i];
+function insertionSort(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < array[0]) {
+      // move number to the first position
+      array.unshift(array.splice(i, 1)[0]);
+    } else {
+      // find where number should go
+      for (let j = 1; j < i; j++) {
+        if (array[i] > array[j - 1] && array[i] < array[j]) {
+          // move number to the right spot
+          array.splice(j, 0, array.splice(i, 1)[0]);
+        }
+      }
+    }
+  }
+}
 
-//     for (j = i + 1; j < array.length; j++) {
-//       if (array[j] < array[minIndex]) {
-//         // if the current is lower than the min, we have a new min
-//         minIndex = j;
-//       }
-//     }
+function insertionSort2(array) {
+  for (let i = 1; i < array.length; i++) {
+    let current = array[i];
 
-//     array[i] = array[minIndex];
-//     array[minIndex] = temp;
-//   }
-// }
+    for (let j = i - 1; j >= 0 && array[j] > current; j--) {
+      // if the current is lower than the min, we have a new min
+      array[j + 1] = array[j];
+      array[j] = current;
+    }
+  }
+}
 
-// // is there a way to improve the selection sort?
-// // yes, we can add a variable to check if the array is already sorted
-// // if it is, we can break the loop
-// // we can also add a variable to check if we made any swaps
-// // if we didn't, we can break the loop
-// // example: 
-// function selectionSortOptimized(array) {
-//   for (i = 0; i < array.length; i++) {  
-//     let minIndex = i;
-//     let temp = array[i];
-//     let noSwaps = true;
+// is there a way to improve the insertion sort?
+// yes, we can add a variable to check if the array is already sorted
+// if it is, we can break the loop
+// we can also add a variable to check if we made any swaps
+// if we didn't, we can break the loop
+// example:
+function insertionSortOptimized(array) {
+  for (let i = 1; i < array.length; i++) {
+    let current = array[i];
+    let noSwaps = true;
 
-//     for (j = i + 1; j < array.length; j++) {
-//       if (array[j] < array[minIndex]) {
-//         // if the current is lower than the min, we have a new min
-//         minIndex = j;
-//         noSwaps = false;
-//       }
-//     }
+    for (let j = i - 1; j >= 0 && array[j] > current; j--) {
+      // if the current is lower than the min, we have a new min
+      array[j + 1] = array[j];
+      array[j] = current;
+      noSwaps = false;
+    }
 
-//     if (noSwaps) break;
+    if (noSwaps) break;
+  }
+}
 
-//     array[i] = array[minIndex];
-//     array[minIndex] = temp;
-//   }
-// }
+const arr1 = [5, 3, 4, 1, 2];
+insertionSort(arr1);
+console.log(arr1);
 
-// const numbers = [5, 3, 4, 1, 2];
-// selectionSort(numbers);
-// console.log(numbers);
+const arr2 = [5, 3, 4, 1, 2];
+insertionSort2(arr2);
+console.log(arr2);
 
-// const numbers2 = [5, 3, 4, 1, 2];
-// selectionSortOptimized(numbers2);
-// console.log(numbers2);
+const arr3 = [5, 3, 4, 1, 2];
+insertionSortOptimized(arr3);
+console.log(arr3);

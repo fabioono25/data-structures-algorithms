@@ -89,30 +89,26 @@
     - [**Disadvantages**](#disadvantages-15)
   - [Sorting Algorithms](#sorting-algorithms)
     - [Bubble Sort](#bubble-sort)
-      - [Definition](#definition-15)
-      - [**Advantages:**](#advantages-16)
-      - [**Disadvantages:**](#disadvantages-16)
     - [Selection Sort](#selection-sort)
-      - [Definition](#definition-16)
     - [Insertion Sort](#insertion-sort)
-      - [Definition](#definition-17)
+      - [Definition](#definition-15)
     - [Merge Sort](#merge-sort)
-      - [Definition](#definition-18)
+      - [Definition](#definition-16)
     - [Quick Sort](#quick-sort)
-      - [Definition](#definition-19)
-    - [Heao Sort](#heao-sort)
-      - [Definition](#definition-20)
+      - [Definition](#definition-17)
+    - [Heap Sort](#heap-sort)
+      - [Definition](#definition-18)
     - [Radix Sort](#radix-sort)
-      - [Definition](#definition-21)
+      - [Definition](#definition-19)
   - [Searching Algorithms](#searching-algorithms)
     - [Linear Search](#linear-search)
-      - [Definition](#definition-22)
+      - [Definition](#definition-20)
     - [Binary Search](#binary-search)
-      - [Definition](#definition-23)
+      - [Definition](#definition-21)
     - [Breadth-First Search (BFS)](#breadth-first-search-bfs)
-      - [Definition](#definition-24)
+      - [Definition](#definition-22)
     - [Depth-First Search (DFS)](#depth-first-search-dfs)
-      - [Definition](#definition-25)
+      - [Definition](#definition-23)
   - [Links](#links)
 
 ## Big-O Notation
@@ -1422,12 +1418,35 @@ list is sorted. It has a time complexity of O(n^2) and is generally used for edu
 * **Poor Performance:** Selection Sort's performance is poor compared to more advanced sorting algorithms like QuickSort or MergeSort.
 * **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement.
 
-
 ---
 
 ### Insertion Sort
 
 #### Definition
+
+Insertion Sort is a straightforward sorting algorithm that builds the final sorted array one item at a time. It iterates through the input array, taking one element at each step and inserting it into its correct position relative to the already sorted elements. The algorithm is efficient for small datasets but less practical for larger ones due to its time complexity of O(n^2).
+
+
+* **Advantages:**
+
+  * **Simple Implementation:** Insertion Sort is relatively easy to understand and implement, making it suitable for educational purposes or small datasets.
+  * **Efficient for Small Datasets:** It performs well with small datasets and is often faster than more complex algorithms for lists of limited size.
+* **Disadvantages:**
+
+  * **Inefficiency with Large Datasets:** Insertion Sort has a time complexity of O(n^2), making it inefficient for large datasets.
+  * **Poor Performance:** Insertion Sort's performance is poor compared to more advanced sorting algorithms like QuickSort or MergeSort.
+  * **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement.
+* **Advantages:**
+
+  * **Simple Implementation:** Insertion Sort is relatively easy to understand and implement, making it suitable for educational purposes or small datasets.
+  * **Efficient for Small Datasets:** Performs well with small datasets and is often faster than more complex algorithms for lists of limited size.
+  * **Stable Sorting:** Maintains the relative order of equal elements, making it a stable sorting algorithm.
+  * **Adaptive:** Takes advantage of existing order, with a best-case time complexity of O(n) when the input is nearly sorted.
+* **Disadvantages:**
+
+  * **Inefficiency with Large Datasets:** Insertion Sort has a time complexity of O(n^2), making it inefficient for large datasets.
+  * **Unstable for Large Datasets:** Despite being stable and adaptive, its performance degrades for larger datasets compared to more advanced sorting algorithms.
+  * **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement
 
 ---
 
@@ -1443,7 +1462,7 @@ list is sorted. It has a time complexity of O(n^2) and is generally used for edu
 
 ---
 
-### Heao Sort
+### Heap Sort
 
 #### Definition
 
