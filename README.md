@@ -1454,11 +1454,15 @@ Insertion Sort is a straightforward sorting algorithm that builds the final sort
 
 #### Definition
 
+Merge Sort is a divide-and-conquer sorting algorithm that recursively divides the input array into smaller halves, sorts them individually, and then merges the sorted halves to produce the final sorted array. It has a stable and consistent time complexity of O(n log n).
+
 ---
 
 ### Quick Sort
 
 #### Definition
+
+Quick Sort is a divide-and-conquer sorting algorithm that selects a "pivot" element from the array, partitions the other elements into two sub-arrays based on whether they are less than or greater than the pivot, and then recursively sorts the sub-arrays. It is an in-place and efficient algorithm with an average-case time complexity of O(n log n).
 
 ---
 
@@ -1466,11 +1470,15 @@ Insertion Sort is a straightforward sorting algorithm that builds the final sort
 
 #### Definition
 
+Heap Sort is a comparison-based sorting algorithm that uses a binary heap data structure to create a partially ordered binary tree. It repeatedly extracts the maximum element from the heap, swaps it with the last element, and maintains the heap property. It has a time complexity of O(n log n) and is an in-place sorting algorithm.
+
 ---
 
 ### Radix Sort
 
 #### Definition
+
+Radix Sort is a non-comparative sorting algorithm that works by distributing elements into buckets based on individual digits or radix positions. It processes the digits from the least significant to the most significant or vice versa. Radix Sort is suitable for sorting integers or strings with fixed-length representations and has a linear time complexity in certain scenarios.
 
 ---
 
