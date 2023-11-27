@@ -33,6 +33,7 @@
     - [Quick Sort](#quick-sort)
     - [Heap Sort](#heap-sort)
     - [Radix Sort](#radix-sort)
+    - [Counting Sort](#counting-sort)
   - [Searching Algorithms](#searching-algorithms)
     - [Linear Search](#linear-search)
     - [Binary Search](#binary-search)
@@ -61,15 +62,15 @@ Algorithms with constant time complexity always take the same amount of time to 
 
 **Advantages**
 
-* **Predictable Performance:** Algorithms with constant time complexity always have the same execution time, making them **predictable** and **reliable**, regardless of input size.
-* **Efficiency for Small Inputs:** Constant time complexity algorithms are ideal for operations where the input size is always a fixed number or very small, ensuring **fast execution**.
-* **Optimal for Real-Time Systems:** In **real-time applications**, constant time complexity ensures that operations are completed within a fixed time frame, essential for time-sensitive tasks.
+- **Predictable Performance:** Algorithms with constant time complexity always have the same execution time, making them **predictable** and **reliable**, regardless of input size.
+- **Efficiency for Small Inputs:** Constant time complexity algorithms are ideal for operations where the input size is always a fixed number or very small, ensuring **fast execution**.
+- **Optimal for Real-Time Systems:** In **real-time applications**, constant time complexity ensures that operations are completed within a fixed time frame, essential for time-sensitive tasks.
 
 **Disadvantages**
 
-* **Limited Applicability:** Constant time complexity algorithms are limited to specific operations and scenarios where the input size does not affect the algorithm's performance.
-* **Not Suitable for Complex Problems:** Algorithms with constant time complexity cannot handle complex computational tasks or problems that require processing large datasets.
-* **Difficult to Achieve:** Designing algorithms with constant time complexity is challenging and often not achievable for many real-world problems.
+- **Limited Applicability:** Constant time complexity algorithms are limited to specific operations and scenarios where the input size does not affect the algorithm's performance.
+- **Not Suitable for Complex Problems:** Algorithms with constant time complexity cannot handle complex computational tasks or problems that require processing large datasets.
+- **Difficult to Achieve:** Designing algorithms with constant time complexity is challenging and often not achievable for many real-world problems.
 
 **Use-Cases**
 
@@ -79,7 +80,7 @@ Retrieving an element from an array or list using its index. Regardless of the s
 
 ```javascript
 function getElementAtIndex(arr, index) {
-    return arr[index];
+  return arr[index];
 }
 ```
 
@@ -89,13 +90,13 @@ Accessing values in a hash table (or hashmap) based on a known key. Hash tables 
 
 ```javascript
 const hashMap = {
-    "key1": "value1",
-    "key2": "value2",
-    // ...
+  key1: "value1",
+  key2: "value2",
+  // ...
 };
 
 function getValueForKey(key) {
-    return hashMap[key] || "Key not found";
+  return hashMap[key] || "Key not found";
 }
 ```
 
@@ -105,10 +106,10 @@ Operations on data structures with a fixed size, such as a fixed-size array, inv
 
 ```javascript
 function swapVariables(a, b) {
-    a = a + b;
-    b = a - b;
-    a = a - b;
-    return [a, b];
+  a = a + b;
+  b = a - b;
+  a = a - b;
+  return [a, b];
 }
 ```
 
@@ -124,15 +125,15 @@ Linear time complexity algorithms have a runtime proportional to the input size,
 
 **Advantages**
 
-* **Simplicity:** Linear time complexity algorithms are often simple to implement and understand, making them accessible for a wide range of developers.
-* **Scalability:** Linear time complexity algorithms can handle larger datasets efficiently, making them suitable for moderate-sized inputs.
-* **Straightforward Iteration:** Algorithms with linear time complexity often involve straightforward iterations through data structures, making them applicable to various tasks.
+- **Simplicity:** Linear time complexity algorithms are often simple to implement and understand, making them accessible for a wide range of developers.
+- **Scalability:** Linear time complexity algorithms can handle larger datasets efficiently, making them suitable for moderate-sized inputs.
+- **Straightforward Iteration:** Algorithms with linear time complexity often involve straightforward iterations through data structures, making them applicable to various tasks.
 
 **Disadvantages**
 
-* **Limited Scalability:** Linear time complexity algorithms become slow for very large datasets, as their execution time increases linearly with input size.
-* **Inefficient for Complex Operations:** Algorithms with linear time complexity may not be efficient for complex computations or tasks requiring intricate data manipulations.
-* **Not Suitable for Real-Time Systems:** In real-time applications where quick responses are crucial, linear time complexity algorithms might not provide the necessary speed.
+- **Limited Scalability:** Linear time complexity algorithms become slow for very large datasets, as their execution time increases linearly with input size.
+- **Inefficient for Complex Operations:** Algorithms with linear time complexity may not be efficient for complex computations or tasks requiring intricate data manipulations.
+- **Not Suitable for Real-Time Systems:** In real-time applications where quick responses are crucial, linear time complexity algorithms might not provide the necessary speed.
 
 **Use-Cases**
 
@@ -143,13 +144,13 @@ traversed. Linear search has O(n) time complexity because, in the worst case, it
 
 ```javascript
 const linearSearch = (arr, target) => {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === target) {
-            return i; // Element found at index i
-        }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      return i; // Element found at index i
     }
-    return -1; // Element not found in the list
-}
+  }
+  return -1; // Element not found in the list
+};
 ```
 
 **Calculating Sum of Elements:**
@@ -196,20 +197,20 @@ Algorithms with quadratic time complexity have a runtime that is proportional to
 
 **Advantages**
 
-* **Simplicity and Readability:**
+- **Simplicity and Readability:**
   Quadratic algorithms are often simpler to implement and easier to understand. The straightforward nature of nested loops and simple logic can make the code more readable, which is advantageous, especially for educational purposes or in scenarios where code clarity is crucial.
-* **Suitable for Small Inputs:**
+- **Suitable for Small Inputs:**
   Quadratic time complexity algorithms can be suitable for small input sizes. When dealing with small datasets, the performance difference between quadratic and more efficient algorithms might not be noticeable. In such cases, choosing a simpler quadratic algorithm can save development time and effort.
-* **Lack of Complexity Scaling:**
+- **Lack of Complexity Scaling:**
   Quadratic time complexity algorithms may not significantly impact performance when the input size is small and fixed. In situations where the input size remains constant or is limited, the performance difference between quadratic and more efficient algorithms might not be a significant concern.
 
 **Disadvantages**
 
-* **Inefficiency for Large Inputs:**
+- **Inefficiency for Large Inputs:**
   Quadratic algorithms become highly inefficient as the input size increases. Their execution time grows quadratically with the input size, leading to drastically longer processing times for larger datasets. This inefficiency can make them unsuitable for real-world applications dealing with substantial amounts of data.
-* **Poor Scalability:**
+- **Poor Scalability:**
   Quadratic time complexity algorithms do not scale well. Even a slight increase in the input size can lead to a significant increase in the number of operations performed. As a result, these algorithms might quickly become impractical for tasks involving moderate to large-sized datasets, impacting user experience and system performance.
-* **Limited Applicability:**
+- **Limited Applicability:**
   Quadratic time complexity algorithms are not suitable for many real-world applications and scenarios. Tasks involving extensive data processing, searching, sorting, or complex computations typically require more efficient algorithms. Choosing quadratic algorithms in such cases can lead to suboptimal performance and may not meet the required performance standards.
 
 **Use-Cases**
@@ -219,16 +220,16 @@ Bubble Sort is a simple sorting algorithm that repeatedly steps through the list
 
 ```javascript
 function bubbleSort(arr) {
-    const n = arr.length;
-    for (let i = 0; i < n - 1; i++) {
-        for (let j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                // Swap elements if they are in the wrong order
-                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-            }
-        }
+  const n = arr.length;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        // Swap elements if they are in the wrong order
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      }
     }
-    return arr;
+  }
+  return arr;
 }
 ```
 
@@ -237,26 +238,26 @@ Brute-force string matching compares each character of a pattern string against 
 
 ```javascript
 function bruteForceStringMatch(text, pattern) {
-    const n = text.length;
-    const m = pattern.length;
-    const occurrences = [];
+  const n = text.length;
+  const m = pattern.length;
+  const occurrences = [];
 
-    for (let i = 0; i <= n - m; i++) {
-        let j;
-        for (j = 0; j < m; j++) {
-            if (text[i + j] !== pattern[j]) {
-                // Character mismatch, break the inner loop
-                break;
-            }
-        }
-
-        if (j === m) {
-            // Pattern found, add the starting index to occurrences
-            occurrences.push(i);
-        }
+  for (let i = 0; i <= n - m; i++) {
+    let j;
+    for (j = 0; j < m; j++) {
+      if (text[i + j] !== pattern[j]) {
+        // Character mismatch, break the inner loop
+        break;
+      }
     }
 
-    return occurrences;
+    if (j === m) {
+      // Pattern found, add the starting index to occurrences
+      occurrences.push(i);
+    }
+  }
+
+  return occurrences;
 }
 ```
 
@@ -265,25 +266,25 @@ Generating permutations of a set involves creating all possible arrangements of 
 
 ```javascript
 function generatePermutations(arr) {
-    const permutations = [];
+  const permutations = [];
 
-    function backtrack(start) {
-        if (start === arr.length) {
-            permutations.push([...arr]);
-            return;
-        }
-
-        for (let i = start; i < arr.length; i++) {
-            // Swap elements to create permutations
-            [arr[start], arr[i]] = [arr[i], arr[start]];
-            backtrack(start + 1);
-            // Undo the swap for backtracking
-            [arr[start], arr[i]] = [arr[i], arr[start]];
-        }
+  function backtrack(start) {
+    if (start === arr.length) {
+      permutations.push([...arr]);
+      return;
     }
 
-    backtrack(0);
-    return permutations;
+    for (let i = start; i < arr.length; i++) {
+      // Swap elements to create permutations
+      [arr[start], arr[i]] = [arr[i], arr[start]];
+      backtrack(start + 1);
+      // Undo the swap for backtracking
+      [arr[start], arr[i]] = [arr[i], arr[start]];
+    }
+  }
+
+  backtrack(0);
+  return permutations;
 }
 ```
 
@@ -300,20 +301,20 @@ datasets by repeatedly dividing the problem space.
 
 **Advantages**
 
-* **Efficiency with Large Datasets:**
+- **Efficiency with Large Datasets:**
   Algorithms with O(log n) time complexity are highly efficient, especially when dealing with large datasets. They scale well and can handle significant amounts of data without a significant increase in execution time. This efficiency is valuable in applications dealing with extensive data processing.
-* **Efficient Searching:**
+- **Efficient Searching:**
   O(log n) time complexity is commonly associated with binary search algorithms. Searching in sorted data structures (such as sorted arrays or balanced binary search trees) using binary search significantly reduces the search space in each step. This efficiency makes binary search suitable for quick retrieval of specific elements from large datasets.
-* **Balanced Tree Structures:**
+- **Balanced Tree Structures:**
   O(log n) time complexity is achievable for operations like insertion, deletion, and search in balanced tree structures, such as AVL trees and Red-Black trees. These tree structures maintain balance during operations, ensuring that the height of the tree remains logarithmic, leading to efficient operations even as the dataset grows.
 
 **Disadvantages**
 
-* **Complexity in Implementation:**
+- **Complexity in Implementation:**
   Implementing algorithms with O(log n) time complexity, especially those involving complex data structures like balanced trees, can be challenging. Properly maintaining the balance and ensuring logarithmic height requires careful implementation, which can lead to more complex code.
-* **Limited Applicability:**
+- **Limited Applicability:**
   O(log n) time complexity is not always achievable for all types of operations or data structures. It's applicable mainly to tasks like searching in sorted data structures or efficient divide and conquer algorithms. For certain tasks, finding or designing algorithms with logarithmic time complexity might not be possible.
-* **Memory Overhead:**
+- **Memory Overhead:**
   Some data structures that achieve O(log n) time complexity, such as balanced trees, often require additional memory to maintain their balanced structure. This memory overhead can be a disadvantage, especially in memory-constrained environments. Additionally, the overhead associated with recursive function calls in certain logarithmic algorithms can impact memory usage.
 
 **Use-Cases**
@@ -324,21 +325,21 @@ Binary search is a classic example of an O(log n) algorithm. It efficiently find
 
 ```javascript
 function binarySearch(sortedArray, target) {
-    let left = 0;
-    let right = sortedArray.length - 1;
+  let left = 0;
+  let right = sortedArray.length - 1;
 
-    while (left <= right) {
-        let mid = Math.floor((left + right) / 2);
-        if (sortedArray[mid] === target) {
-            return mid; // Element found at index mid
-        } else if (sortedArray[mid] < target) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
-        }
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    if (sortedArray[mid] === target) {
+      return mid; // Element found at index mid
+    } else if (sortedArray[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
     }
+  }
 
-    return -1; // Element not found in the array
+  return -1; // Element not found in the array
 }
 
 // Example usage
@@ -354,17 +355,20 @@ Computing the nth Fibonacci number efficiently using matrix exponentiation techn
 
 ```javascript
 function matrixMultiply(matrix1, matrix2) {
-    // Matrix multiplication logic
+  // Matrix multiplication logic
 }
 
 function power(matrix, n) {
-    // Matrix exponentiation logic
+  // Matrix exponentiation logic
 }
 
 function nthFibonacci(n) {
-    const baseMatrix = [[1, 1], [1, 0]];
-    const resultMatrix = power(baseMatrix, n - 1);
-    return resultMatrix[0][0];
+  const baseMatrix = [
+    [1, 1],
+    [1, 0],
+  ];
+  const resultMatrix = power(baseMatrix, n - 1);
+  return resultMatrix[0][0];
 }
 
 // Example usage
@@ -379,15 +383,15 @@ Calculating exponentiation efficiently using the divide and conquer method can a
 
 ```javascript
 function power(base, exponent) {
-    if (exponent === 0) {
-        return 1;
-    }
-    const halfPower = power(base, Math.floor(exponent / 2));
-    if (exponent % 2 === 0) {
-        return halfPower * halfPower;
-    } else {
-        return base * halfPower * halfPower;
-    }
+  if (exponent === 0) {
+    return 1;
+  }
+  const halfPower = power(base, Math.floor(exponent / 2));
+  if (exponent % 2 === 0) {
+    return halfPower * halfPower;
+  } else {
+    return base * halfPower * halfPower;
+  }
 }
 
 // Example usage
@@ -407,20 +411,20 @@ Algorithms with linearithmic time complexity have an execution time that grows i
 
 **Advantages**
 
-* **Efficient Sorting:**
+- **Efficient Sorting:**
   Algorithms with O(n log n) time complexity are often associated with **efficient sorting algorithms** like Merge Sort, Heap Sort, and QuickSort. These sorting algorithms are widely used due to their balanced performance, making them suitable for sorting large datasets efficiently.
-* **Divide and Conquer Strategies:**
+- **Divide and Conquer Strategies:**
   Many divide and conquer algorithms achieve O(n log n) time complexity. These algorithms divide the problem into smaller subproblems, solve them independently, and then combine the solutions. This divide and conquer strategy allows for efficient processing of large datasets and is applicable to various computational problems.
-* **Balanced Performance:**
+- **Balanced Performance:**
   O(n log n) algorithms offer a balanced performance across a wide range of input sizes. While they are not as fast as linear algorithms (O(n)) for small datasets or constant time algorithms (O(1)) for specific operations, they provide efficient and manageable execution times for moderate to large datasets, making them versatile for various applications.
 
 **Disadvantages**
 
-* **Not Always Optimal:**
+- **Not Always Optimal:**
   O(n log n) time complexity is not always the optimal solution for all problems. For specific tasks with known input sizes or constraints, using algorithms with O(n) or even O(n^2) time complexity might be more efficient. Using O(n log n) algorithms when simpler solutions exist can result in unnecessary complexity.
-* **Slower than Linear Time Algorithms for Small Inputs:**
+- **Slower than Linear Time Algorithms for Small Inputs:**
   For small input sizes, algorithms with O(n log n) time complexity are slower than linear time algorithms (O(n)). The overhead of the divide and conquer strategy, as well as the additional comparisons and operations involved, can make O(n log n) algorithms less efficient than simpler linear algorithms when the input size is limited.
-* **Higher Constant Factors:**
+- **Higher Constant Factors:**
   O(n log n) algorithms often have higher constant factors in their execution times compared to simpler linear algorithms. This means that, even though they have a better overall growth rate than O(n^2) algorithms, they might be slower in practice for small to moderately sized datasets due to these overheads.
 
 **Use-Cases**
@@ -431,18 +435,18 @@ O(n log n) sorting algorithms like Merge Sort, Heap Sort, and QuickSort are effi
 
 ```javascript
 function mergeSort(arr) {
-    if (arr.length <= 1) {
-        return arr;
-    }
+  if (arr.length <= 1) {
+    return arr;
+  }
 
-    const mid = Math.floor(arr.length / 2);
-    const left = mergeSort(arr.slice(0, mid));
-    const right = mergeSort(arr.slice(mid));
-    return merge(left, right);
+  const mid = Math.floor(arr.length / 2);
+  const left = mergeSort(arr.slice(0, mid));
+  const right = mergeSort(arr.slice(mid));
+  return merge(left, right);
 }
 
 function merge(left, right) {
-    // Merge two sorted arrays logic
+  // Merge two sorted arrays logic
 }
 
 // Example usage
@@ -457,19 +461,19 @@ Algorithms like Binary Search Trees (BST) or Balanced Binary Search Trees (e.g.,
 
 ```javascript
 class Node {
-    constructor(value) {
-        this.value = value;
-        this.left = null;
-        this.right = null;
-    }
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
 }
 
 class BinarySearchTree {
-    constructor() {
-        this.root = null;
-    }
+  constructor() {
+    this.root = null;
+  }
 
-    // BST operations (insertion, searching, deletion) logic
+  // BST operations (insertion, searching, deletion) logic
 }
 
 // Example usage
@@ -489,11 +493,15 @@ Merging multiple sorted lists efficiently can be done in O(n log k) time complex
 
 ```javascript
 function mergeKSortedLists(lists) {
-    // Merge K sorted lists logic
+  // Merge K sorted lists logic
 }
 
 // Example usage
-const sortedLists = [[1, 4, 5], [1, 3, 6], [2, 7, 8]];
+const sortedLists = [
+  [1, 4, 5],
+  [1, 3, 6],
+  [2, 7, 8],
+];
 const mergedList = mergeKSortedLists(sortedLists);
 console.log("Merged Sorted List:", mergedList);
 ```
@@ -508,20 +516,20 @@ Exponential time complexity algorithms have an execution time that grows exponen
 
 **Advantages**
 
-* **Simplicity and Readability:**
+- **Simplicity and Readability:**
   Exponential time algorithms are often simpler and easier to understand due to their straightforward recursive nature. This simplicity can make the code more readable and maintainable, especially for educational purposes or when solving small-scale problems where efficiency is not a primary concern.
-* **Guaranteed Solution:**
+- **Guaranteed Solution:**
   Exponential algorithms explore all possible combinations or subsets of a given input. This exhaustive search ensures that the algorithm finds the correct solution (if one exists) without missing any possibilities. In some cases, this exhaustive approach is necessary to guarantee correctness.
-* **Useful for Small Inputs:**
+- **Useful for Small Inputs:**
   Exponential algorithms can be practical for problems with small input sizes. When the input size is limited and within reasonable bounds, exponential algorithms can provide acceptable solutions, especially if other more efficient algorithms are not available or the problem is inherently complex.
 
 **Disadvantages**
 
-* **Exponential Growth:**
+- **Exponential Growth:**
   The execution time of exponential algorithms grows exponentially with the input size. Even a slight increase in the input size can lead to a drastic increase in the number of operations performed. This exponential growth quickly makes these algorithms impractical for larger inputs.
-* **Impractical for Moderate to Large Inputs:**
+- **Impractical for Moderate to Large Inputs:**
   Exponential algorithms become impractical for moderate to large input sizes. As the input size increases, the number of possible combinations or subsets grows exponentially, leading to extremely long computation times. These algorithms are not suitable for real-world applications with significant amounts of data.
-* **High Time Complexity Classes:**
+- **High Time Complexity Classes:**
   Exponential time complexity (O(2^n)) falls into the category of high time complexity classes. Problems belonging to such classes are considered intractable and are generally not solvable in a reasonable amount of time for large inputs. Many problems in this class are classified as NP-hard, indicating their inherent complexity.
 
 **Use-Cases**
@@ -532,25 +540,24 @@ Enumerating all subsets of a given set is a classic example where an exponential
 
 ```javascript
 function generateSubsets(set) {
-    const subsets = [];
-    const n = set.length;
-    for (let i = 0; i < (1 << n); i++) {
-        const subset = [];
-        for (let j = 0; j < n; j++) {
-            if (i & (1 << j)) {
-                subset.push(set[j]);
-            }
-        }
-        subsets.push(subset);
+  const subsets = [];
+  const n = set.length;
+  for (let i = 0; i < 1 << n; i++) {
+    const subset = [];
+    for (let j = 0; j < n; j++) {
+      if (i & (1 << j)) {
+        subset.push(set[j]);
+      }
     }
-    return subsets;
+    subsets.push(subset);
+  }
+  return subsets;
 }
 
 // Example usage
 const inputSet = [1, 2, 3];
 const allSubsets = generateSubsets(inputSet);
 console.log("All Subsets:", allSubsets);
-
 ```
 
 **Traveling Salesman Problem (TSP):**
@@ -559,40 +566,39 @@ The Traveling Salesman Problem involves finding the shortest possible route that
 
 ```javascript
 function calculateTotalDistance(path, graph) {
-    // Calculate total distance for the given path using graph information
+  // Calculate total distance for the given path using graph information
 }
 
 function generateAllPermutations(cities) {
-    // Generate all permutations of cities
+  // Generate all permutations of cities
 }
 
 function bruteForceTSP(cities, graph) {
-    const permutations = generateAllPermutations(cities);
-    let minDistance = Infinity;
-    let optimalPath = [];
+  const permutations = generateAllPermutations(cities);
+  let minDistance = Infinity;
+  let optimalPath = [];
 
-    for (const permutation of permutations) {
-        const distance = calculateTotalDistance(permutation, graph);
-        if (distance < minDistance) {
-            minDistance = distance;
-            optimalPath = permutation;
-        }
+  for (const permutation of permutations) {
+    const distance = calculateTotalDistance(permutation, graph);
+    if (distance < minDistance) {
+      minDistance = distance;
+      optimalPath = permutation;
     }
+  }
 
-    return { path: optimalPath, distance: minDistance };
+  return { path: optimalPath, distance: minDistance };
 }
 
 // Example usage
 const cities = [1, 2, 3];
 const graph = {
-    1: { 2: 10, 3: 15 },
-    2: { 1: 10, 3: 20 },
-    3: { 1: 15, 2: 20 }
+  1: { 2: 10, 3: 15 },
+  2: { 1: 10, 3: 20 },
+  3: { 1: 15, 2: 20 },
 };
 const result = bruteForceTSP(cities, graph);
 console.log("Optimal TSP Path:", result.path);
 console.log("Total Distance:", result.distance);
-
 ```
 
 **Subset Sum Problem:**
@@ -601,40 +607,39 @@ The Subset Sum Problem involves finding a subset of a given set of positive inte
 
 ```javascript
 function calculateTotalDistance(path, graph) {
-    // Calculate total distance for the given path using graph information
+  // Calculate total distance for the given path using graph information
 }
 
 function generateAllPermutations(cities) {
-    // Generate all permutations of cities
+  // Generate all permutations of cities
 }
 
 function bruteForceTSP(cities, graph) {
-    const permutations = generateAllPermutations(cities);
-    let minDistance = Infinity;
-    let optimalPath = [];
+  const permutations = generateAllPermutations(cities);
+  let minDistance = Infinity;
+  let optimalPath = [];
 
-    for (const permutation of permutations) {
-        const distance = calculateTotalDistance(permutation, graph);
-        if (distance < minDistance) {
-            minDistance = distance;
-            optimalPath = permutation;
-        }
+  for (const permutation of permutations) {
+    const distance = calculateTotalDistance(permutation, graph);
+    if (distance < minDistance) {
+      minDistance = distance;
+      optimalPath = permutation;
     }
+  }
 
-    return { path: optimalPath, distance: minDistance };
+  return { path: optimalPath, distance: minDistance };
 }
 
 // Example usage
 const cities = [1, 2, 3];
 const graph = {
-    1: { 2: 10, 3: 15 },
-    2: { 1: 10, 3: 20 },
-    3: { 1: 15, 2: 20 }
+  1: { 2: 10, 3: 15 },
+  2: { 1: 10, 3: 20 },
+  3: { 1: 15, 2: 20 },
 };
 const result = bruteForceTSP(cities, graph);
 console.log("Optimal TSP Path:", result.path);
 console.log("Total Distance:", result.distance);
-
 ```
 
 ---
@@ -647,20 +652,20 @@ Factorial time complexity represents algorithms whose execution time grows facto
 
 **Advantages**
 
-* **Guaranteed Optimal Solution:**
+- **Guaranteed Optimal Solution:**
   Algorithms with factorial time complexity explore all possible permutations or combinations of a given set. This exhaustive search guarantees finding the optimal solution if one exists. In many combinatorial problems, the optimal solution can be discovered by examining all permutations or combinations.
-* **Simplicity and Correctness:**
+- **Simplicity and Correctness:**
   Factorial time algorithms are often simple to implement, especially for smaller inputs, as they involve iterating through all possible permutations. Additionally, due to their exhaustive nature, they ensure correctness. These algorithms are straightforward to understand and can be used as brute-force methods for small-scale problems.
-* **Useful for Small Input Sizes:**
+- **Useful for Small Input Sizes:**
   Factorial time algorithms can be practical for problems with very small input sizes. When the input size is limited and within reasonable bounds, using factorial time algorithms might be acceptable, especially if the problem's complexity demands an exhaustive search for a complete solution.
 
 **Disadvantages**
 
-* **Exponential Growth of Execution Time:**
+- **Exponential Growth of Execution Time:**
   Factorial time complexity (O(n!)) leads to an explosion in the number of operations required as the input size increases. Even for moderately small inputs, the number of permutations becomes prohibitively large. As a result, the execution time grows at an astronomical rate, making these algorithms impractical for larger inputs.
-* **Impractical for Moderate to Large Inputs:**
+- **Impractical for Moderate to Large Inputs:**
   Factorial time algorithms become impractical for moderate to large input sizes. The time required to compute all permutations increases factorially, making these algorithms inefficient and slow. They quickly become unusable as the input size grows, even for relatively simple problems.
-* **Inefficiency and Limited Applicability:**
+- **Inefficiency and Limited Applicability:**
   Factorial time algorithms are generally inefficient for most real-world applications. Their inefficiency restricts their applicability to small-scale problems, and they are rarely used in production systems due to their impractical execution times. More efficient algorithms are usually preferred for solving practical problems.
 
 **Use-Cases**
@@ -671,23 +676,24 @@ Calculating all permutations of a given set is a classic use-case for O(n!) algo
 
 ```javascript
 function generatePermutations(inputArray) {
-    if (inputArray.length <= 1) return [inputArray];
-    const permutations = [];
-    for (let i = 0; i < inputArray.length; i++) {
-        const remainingArray = inputArray.slice(0, i).concat(inputArray.slice(i + 1));
-        const partialPermutations = generatePermutations(remainingArray);
-        for (const permutation of partialPermutations) {
-            permutations.push([inputArray[i], ...permutation]);
-        }
+  if (inputArray.length <= 1) return [inputArray];
+  const permutations = [];
+  for (let i = 0; i < inputArray.length; i++) {
+    const remainingArray = inputArray
+      .slice(0, i)
+      .concat(inputArray.slice(i + 1));
+    const partialPermutations = generatePermutations(remainingArray);
+    for (const permutation of partialPermutations) {
+      permutations.push([inputArray[i], ...permutation]);
     }
-    return permutations;
+  }
+  return permutations;
 }
 
 // Example usage
 const inputArray = [1, 2, 3];
 const allPermutations = generatePermutations(inputArray);
 console.log("All Permutations:", allPermutations);
-
 ```
 
 **Brute-Force Algorithm for Traveling Salesman Problem (TSP):**
@@ -696,40 +702,39 @@ A naive approach to solving the Traveling Salesman Problem (TSP) involves checki
 
 ```javascript
 function calculateTotalDistance(path, graph) {
-    // Calculate total distance for the given path using graph information
+  // Calculate total distance for the given path using graph information
 }
 
 function generateAllPermutations(cities) {
-    // Generate all permutations of cities
+  // Generate all permutations of cities
 }
 
 function bruteForceTSP(cities, graph) {
-    const permutations = generateAllPermutations(cities);
-    let minDistance = Infinity;
-    let optimalPath = [];
+  const permutations = generateAllPermutations(cities);
+  let minDistance = Infinity;
+  let optimalPath = [];
 
-    for (const permutation of permutations) {
-        const distance = calculateTotalDistance(permutation, graph);
-        if (distance < minDistance) {
-            minDistance = distance;
-            optimalPath = permutation;
-        }
+  for (const permutation of permutations) {
+    const distance = calculateTotalDistance(permutation, graph);
+    if (distance < minDistance) {
+      minDistance = distance;
+      optimalPath = permutation;
     }
+  }
 
-    return { path: optimalPath, distance: minDistance };
+  return { path: optimalPath, distance: minDistance };
 }
 
 // Example usage
 const cities = [1, 2, 3];
 const graph = {
-    1: { 2: 10, 3: 15 },
-    2: { 1: 10, 3: 20 },
-    3: { 1: 15, 2: 20 }
+  1: { 2: 10, 3: 15 },
+  2: { 1: 10, 3: 20 },
+  3: { 1: 15, 2: 20 },
 };
 const result = bruteForceTSP(cities, graph);
 console.log("Optimal TSP Path:", result.path);
 console.log("Total Distance:", result.distance);
-
 ```
 
 **Brute-Force Algorithm for Subset Sum Problem:**
@@ -738,16 +743,19 @@ The Subset Sum Problem involves finding a subset of a given set of positive inte
 
 ```javascript
 function isSubsetSum(set, n, target) {
-    if (target === 0) {
-        return true;
-    }
-    if (n === 0 && target !== 0) {
-        return false;
-    }
-    if (set[n - 1] > target) {
-        return isSubsetSum(set, n - 1, target);
-    }
-    return isSubsetSum(set, n - 1, target) || isSubsetSum(set, n - 1, target - set[n - 1]);
+  if (target === 0) {
+    return true;
+  }
+  if (n === 0 && target !== 0) {
+    return false;
+  }
+  if (set[n - 1] > target) {
+    return isSubsetSum(set, n - 1, target);
+  }
+  return (
+    isSubsetSum(set, n - 1, target) ||
+    isSubsetSum(set, n - 1, target - set[n - 1])
+  );
 }
 
 // Example usage
@@ -755,7 +763,6 @@ const inputSet = [3, 34, 4, 12, 5, 2];
 const targetSum = 9;
 const isSubsetPossible = isSubsetSum(inputSet, inputSet.length, targetSum);
 console.log(`Subset with sum ${targetSum} exists: ${isSubsetPossible}`);
-
 ```
 
 ---
@@ -768,25 +775,25 @@ Space Complexity measures the amount of memory space an algorithm uses relative 
 
 ## The Four Rules in Big-O
 
-* **Worst Case:** consider the worst case scenario (it doesn't matter if the value is found in the first interaction).
-* **Remove Constants:** if I have three loops, respectively O(n + n/2 + 100), we only care when the inputs are getting larger, which leads us to O(n). Same for O(2n) --> O(n)
-* **Different Terms for inputs:** if you iterate in two loops, for distinct arrays, we consider as different time complexities. Example:
+- **Worst Case:** consider the worst case scenario (it doesn't matter if the value is found in the first interaction).
+- **Remove Constants:** if I have three loops, respectively O(n + n/2 + 100), we only care when the inputs are getting larger, which leads us to O(n). Same for O(2n) --> O(n)
+- **Different Terms for inputs:** if you iterate in two loops, for distinct arrays, we consider as different time complexities. Example:
 
 ```javascript
 function combineArrays(arr1, arr2) {
-    const combinedArray = [];
+  const combinedArray = [];
 
-    // Loop through the first array (arr1): O(n)
-    for (let i = 0; i < arr1.length; i++) {
-        combinedArray.push(arr1[i]);
-    }
+  // Loop through the first array (arr1): O(n)
+  for (let i = 0; i < arr1.length; i++) {
+    combinedArray.push(arr1[i]);
+  }
 
-    // Loop through the second array (arr2) O(m)
-    for (let j = 0; j < arr2.length; j++) {
-        combinedArray.push(arr2[j]);
-    }
+  // Loop through the second array (arr2) O(m)
+  for (let j = 0; j < arr2.length; j++) {
+    combinedArray.push(arr2[j]);
+  }
 
-    return combinedArray;
+  return combinedArray;
 }
 
 // Example usage
@@ -794,21 +801,20 @@ const array1 = [1, 2, 3];
 const array2 = [4, 5, 6];
 const combined = combineArrays(array1, array2);
 console.log("Combined Array:", combined); // O(n + m)
-
 ```
 
 > In the example above, considering that each array is a different input, the result will be O(n + m).
 
-* **Drop Non-Dominants:** consider the most relevant term in a mathematical experssion expression, dropping theless significant ones. Here is an example:
+- **Drop Non-Dominants:** consider the most relevant term in a mathematical experssion expression, dropping theless significant ones. Here is an example:
 
 ```javascript
 function exampleFunction(n) {
-    let quadraticTerm = 3 * n * n;  // Dominant term
-    let linearTerm = 5 * n;
-    let constantTerm = 2;
+  let quadraticTerm = 3 * n * n; // Dominant term
+  let linearTerm = 5 * n;
+  let constantTerm = 2;
 
-    let result = quadraticTerm + linearTerm + constantTerm;
-    return result;
+  let result = quadraticTerm + linearTerm + constantTerm;
+  return result;
 }
 
 // Example usage
@@ -817,7 +823,7 @@ const output = exampleFunction(inputSize);
 console.log("Output:", output);
 ```
 
-> In this example, the function `exampleFunction(n)` has quadratic (n2**n****2**), linear (n**n**), and constant terms. However, when analyzing its time complexity, we focus on the dominant term (n2**n****2**) and drop the non-dominant linear and constant terms. The time complexity of this function is O(n2)**O****(****n****2****)** after dropping the non-dominant terms.
+> In this example, the function `exampleFunction(n)` has quadratic (n2**n\*\***2**), linear (n**n**), and constant terms. However, when analyzing its time complexity, we focus on the dominant term (n2**n\***\*2**) and drop the non-dominant linear and constant terms. The time complexity of this function is O(n2)**O\*\***(\***\*n\*\***2\***\*)** after dropping the non-dominant terms.
 
 ---
 
@@ -833,19 +839,19 @@ An array is a collection of elements, all of the same data type, stored at conti
 
 **Advantages**
 
-* **Fast Access Time:** Elements in an array can be accessed directly using their index, which allows for constant-time access. This means accessing any element in the array takes the same amount of time regardless of the size of the array.
-* **Simplicity:** Arrays are simple and intuitive to use. They provide a straightforward way to store and retrieve data, making them easy to understand and implement.
-* **Memory Efficiency:** Arrays have a contiguous memory allocation, which means they use memory efficiently. There is no overhead for storing pointers or references to other elements, as elements are stored sequentially in memory.
-* **Cache Locality:** Due to contiguous memory storage, arrays exhibit good cache locality. Accessing elements that are close to each other in memory can utilize CPU caches effectively, improving performance.
-* **Predictable Performance:** Array operations have predictable time complexity for accessing elements, making them suitable for applications where predictable performance is crucial.
+- **Fast Access Time:** Elements in an array can be accessed directly using their index, which allows for constant-time access. This means accessing any element in the array takes the same amount of time regardless of the size of the array.
+- **Simplicity:** Arrays are simple and intuitive to use. They provide a straightforward way to store and retrieve data, making them easy to understand and implement.
+- **Memory Efficiency:** Arrays have a contiguous memory allocation, which means they use memory efficiently. There is no overhead for storing pointers or references to other elements, as elements are stored sequentially in memory.
+- **Cache Locality:** Due to contiguous memory storage, arrays exhibit good cache locality. Accessing elements that are close to each other in memory can utilize CPU caches effectively, improving performance.
+- **Predictable Performance:** Array operations have predictable time complexity for accessing elements, making them suitable for applications where predictable performance is crucial.
 
 **Disadvantages:**
 
-* **Fixed Size:** Arrays have a fixed size, meaning you need to specify the number of elements when you create them. Changing the size of an array (resizing) is often a costly operation, especially if the array is full, as it may require allocating a new, larger array and copying all elements.
-* **Inefficient Insertions and Deletions:** Inserting or deleting elements in the middle of an array requires shifting elements, which can be computationally expensive, especially for large arrays. This operation has a time complexity of O(n), where n is the number of elements in the array.
-* **Wasted Space:** If the size of the array is larger than the number of elements it holds, there can be wasted memory space, especially if the array size is fixed and larger than necessary.
-* **Lack of Flexibility:** Arrays are not dynamic by default, meaning they cannot easily change in size at runtime. To work around this limitation, dynamic arrays (like ArrayList in Java or vectors in C++) or other data structures like linked lists are often used.
-* **Non-Primitive Data Types:** In many programming languages, arrays can only store elements of the same data type. This limitation can be overcome by using arrays of objects or pointers, but it adds complexity to the code.
+- **Fixed Size:** Arrays have a fixed size, meaning you need to specify the number of elements when you create them. Changing the size of an array (resizing) is often a costly operation, especially if the array is full, as it may require allocating a new, larger array and copying all elements.
+- **Inefficient Insertions and Deletions:** Inserting or deleting elements in the middle of an array requires shifting elements, which can be computationally expensive, especially for large arrays. This operation has a time complexity of O(n), where n is the number of elements in the array.
+- **Wasted Space:** If the size of the array is larger than the number of elements it holds, there can be wasted memory space, especially if the array size is fixed and larger than necessary.
+- **Lack of Flexibility:** Arrays are not dynamic by default, meaning they cannot easily change in size at runtime. To work around this limitation, dynamic arrays (like ArrayList in Java or vectors in C++) or other data structures like linked lists are often used.
+- **Non-Primitive Data Types:** In many programming languages, arrays can only store elements of the same data type. This limitation can be overcome by using arrays of objects or pointers, but it adds complexity to the code.
 
 **Use-Cases:**
 
@@ -865,7 +871,6 @@ names.splice(2, 1); // Removes "Charlie" from the array
 
 // Modifying an element in the array
 names[1] = "Betty"; // Changes "Bob" to "Betty"
-
 ```
 
 **Iterating and Processing Data:**
@@ -882,7 +887,6 @@ for (let i = 0; i < numbers.length; i++) {
 
 // Using array methods to calculate the sum
 let sumUsingReduce = numbers.reduce((acc, current) => acc + current, 0);
-
 ```
 
 **Implementing Data Structures and Algorithms:**
@@ -899,7 +903,6 @@ let topElement = stack.pop(); // Popping an element from the stack
 let queue = [];
 queue.push(1); // Enqueue an element
 let dequeuedElement = queue.shift(); // Dequeue an element
-
 ```
 
 > In computer programming, arrays can be categorized as static or dynamic based on their size flexibility. Static arrays have a fixed size, determined at the time of declaration, while dynamic arrays can resize themselves to accommodate varying numbers of elements.
@@ -916,19 +919,19 @@ A linear data structure where elements are stored in nodes, and each node points
 
 **Advantages**
 
-* **Simple Implementation:** Singly linked lists are relatively simple to implement, making them easy to understand and use.
-* **Memory Efficiency:** Singly linked lists are memory-efficient compared to doubly linked lists as they only require one pointer per node.
-* **Dynamic Size:** Singly linked lists can easily adjust their size, allowing for dynamic addition or removal of elements without the need for pre-allocated memory.
-* **Ease of Insertion and Deletion:** Inserting or deleting elements at the beginning of a singly linked list is a constant-time operation, making these operations efficient.
-* **Straightforward Traversal::** Traversing a singly linked list is straightforward, moving from one node to the next using the next pointers.
+- **Simple Implementation:** Singly linked lists are relatively simple to implement, making them easy to understand and use.
+- **Memory Efficiency:** Singly linked lists are memory-efficient compared to doubly linked lists as they only require one pointer per node.
+- **Dynamic Size:** Singly linked lists can easily adjust their size, allowing for dynamic addition or removal of elements without the need for pre-allocated memory.
+- **Ease of Insertion and Deletion:** Inserting or deleting elements at the beginning of a singly linked list is a constant-time operation, making these operations efficient.
+- **Straightforward Traversal::** Traversing a singly linked list is straightforward, moving from one node to the next using the next pointers.
 
 **Disadvantages:**
 
-* **Limited Traversal Options:** Singly linked lists only support forward traversal, which can be a limitation in certain scenarios where backward traversal is necessary.
-* **Inefficient Reverse Traversal:** Reversing a singly linked list is inefficient and often requires additional data structures or operations.
-* **No Direct Access to Previous Node:** Accessing the previous node in a singly linked list requires traversing from the beginning of the list, leading to inefficiencies.
-* **Memory Overhead for Large Lists:** In large singly linked lists, the memory overhead of storing next pointers for each node can become significant.
-* **Limited Operations on Tail:** Performing operations at the end of a singly linked list, such as finding the tail or deleting the last node, can be less efficient compared to operations at the beginning.
+- **Limited Traversal Options:** Singly linked lists only support forward traversal, which can be a limitation in certain scenarios where backward traversal is necessary.
+- **Inefficient Reverse Traversal:** Reversing a singly linked list is inefficient and often requires additional data structures or operations.
+- **No Direct Access to Previous Node:** Accessing the previous node in a singly linked list requires traversing from the beginning of the list, leading to inefficiencies.
+- **Memory Overhead for Large Lists:** In large singly linked lists, the memory overhead of storing next pointers for each node can become significant.
+- **Limited Operations on Tail:** Performing operations at the end of a singly linked list, such as finding the tail or deleting the last node, can be less efficient compared to operations at the beginning.
 
 **Use-Cases:**
 
@@ -974,8 +977,7 @@ class SymbolTable {
 const symbolTable = new SymbolTable();
 symbolTable.addSymbol("variable1", "int");
 symbolTable.addSymbol("variable2", "float");
-console.log(symbolTable.findSymbol("variable1"));  // Output: int
-
+console.log(symbolTable.findSymbol("variable1")); // Output: int
 ```
 
 ---
@@ -988,7 +990,7 @@ Doubly linked lists are a type of linked list where each node contains a data el
 
 **Advantages:**
 
-* **Bidirectional Traversal:** Doubly linked lists support bidirectional traversal, allowing efficient movement in both forward and backward directions.
+- **Bidirectional Traversal:** Doubly linked lists support bidirectional traversal, allowing efficient movement in both forward and backward directions.
 
 **Efficient Deletion:** Deleting a node in a doubly linked list is more efficient than in a singly linked list because the previous node's pointer is readily available.
 
@@ -1059,7 +1061,6 @@ const tasks = new TaskList();
 tasks.addTask("Complete assignment");
 tasks.addTask("Read a book");
 tasks.removeTask("Read a book");
-
 ```
 
 **Undo/Redo Functionality:**
@@ -1099,8 +1100,7 @@ const history = new StateHistory();
 history.pushState("Initial State");
 history.pushState("Updated State");
 history.undo();
-console.log(history.getCurrentState());  // Output: Initial State
-
+console.log(history.getCurrentState()); // Output: Initial State
 ```
 
 **Symbol Table in a Compiler:**
@@ -1145,8 +1145,7 @@ class SymbolTable {
 const symbolTable = new SymbolTable();
 symbolTable.addSymbol("variable1", "int");
 symbolTable.addSymbol("variable2", "float");
-console.log(symbolTable.findSymbol("variable1"));  // Output: int
-
+console.log(symbolTable.findSymbol("variable1")); // Output: int
 ```
 
 ---
@@ -1159,19 +1158,19 @@ A stack is a linear data structure that follows the Last In, First Out (LIFO) pr
 
 **Advantages**
 
-* **Simple Implementation:** Stacks are simple to implement, making them easy to understand and use.
-* **Efficient Push and Pop Operations:** Adding and removing elements from the top of the stack (push and pop operations) have constant time complexity.
-* **Space Efficiency:** Stacks can be more memory-efficient than dynamic data structures like linked lists because they have a fixed size.
-* **Support for Undo Mechanism:** Stacks are commonly used to implement undo mechanisms in software applications.
-* **Function Call Management:** Stacks are used in programming languages to manage function calls and store local variables.
+- **Simple Implementation:** Stacks are simple to implement, making them easy to understand and use.
+- **Efficient Push and Pop Operations:** Adding and removing elements from the top of the stack (push and pop operations) have constant time complexity.
+- **Space Efficiency:** Stacks can be more memory-efficient than dynamic data structures like linked lists because they have a fixed size.
+- **Support for Undo Mechanism:** Stacks are commonly used to implement undo mechanisms in software applications.
+- **Function Call Management:** Stacks are used in programming languages to manage function calls and store local variables.
 
 **Disadvantages:**
 
-* **Limited Access:** Stacks offer limited access to elements. Only the top element can be directly accessed.
-* **Fixed Size:** Traditional stacks have a fixed size, and resizing can be challenging, leading to potential overflow or underflow issues.
-* **Not Suitable for Random Access:** Stacks are not suitable for scenarios where random access to elements is required.
-* **Memory Management Overhead:** Stacks may have memory management overhead due to their fixed size, even if the stack is not full.
-* **Limited Applicability:** Stacks are best suited for specific scenarios like managing function calls or undo mechanisms and may not be the most efficient choice for other data access patterns
+- **Limited Access:** Stacks offer limited access to elements. Only the top element can be directly accessed.
+- **Fixed Size:** Traditional stacks have a fixed size, and resizing can be challenging, leading to potential overflow or underflow issues.
+- **Not Suitable for Random Access:** Stacks are not suitable for scenarios where random access to elements is required.
+- **Memory Management Overhead:** Stacks may have memory management overhead due to their fixed size, even if the stack is not full.
+- **Limited Applicability:** Stacks are best suited for specific scenarios like managing function calls or undo mechanisms and may not be the most efficient choice for other data access patterns
 
 **Use-Cases:**
 
@@ -1185,19 +1184,19 @@ A queue is a linear data structure that follows the First In, First Out (FIFO) p
 
 **Advantages**
 
-* **Efficient Enqueue and Dequeue Operations:** Adding and removing elements from the front and rear of the queue (enqueue and dequeue operations) have constant time complexity in well-implemented queues.
-* **FIFO Order:** Queues follow the First In, First Out (FIFO) principle, ensuring that elements are processed in the order they were added.
-* **Memory Efficiency:** Queues can be more memory-efficient than dynamic data structures like linked lists because they have a fixed size.
-* **Task Scheduling:** Queues are commonly used in task scheduling and management systems, ensuring tasks are processed in a fair order.
-* **Buffering:** Queues are employed in scenarios where data needs to be buffered or smoothed out, such as in communication systems.
+- **Efficient Enqueue and Dequeue Operations:** Adding and removing elements from the front and rear of the queue (enqueue and dequeue operations) have constant time complexity in well-implemented queues.
+- **FIFO Order:** Queues follow the First In, First Out (FIFO) principle, ensuring that elements are processed in the order they were added.
+- **Memory Efficiency:** Queues can be more memory-efficient than dynamic data structures like linked lists because they have a fixed size.
+- **Task Scheduling:** Queues are commonly used in task scheduling and management systems, ensuring tasks are processed in a fair order.
+- **Buffering:** Queues are employed in scenarios where data needs to be buffered or smoothed out, such as in communication systems.
 
 **Disadvantages:**
 
-* **Limited Access:** Queues offer limited access to elements. Only the front and rear elements can be directly accessed.
-* **Fixed Size:** Traditional queues have a fixed size, and resizing can be challenging, leading to potential overflow or underflow issues.
-* **Not Suitable for Random Access:** Queues are not suitable for scenarios where random access to elements is required.
-* **Memory Management Overhead:** Queues may have memory management overhead due to their fixed size, even if the queue is not full.
-* **Limited Applicability:** Queues are best suited for specific scenarios like task scheduling or buffering and may not be the most efficient choice for other data access patterns.
+- **Limited Access:** Queues offer limited access to elements. Only the front and rear elements can be directly accessed.
+- **Fixed Size:** Traditional queues have a fixed size, and resizing can be challenging, leading to potential overflow or underflow issues.
+- **Not Suitable for Random Access:** Queues are not suitable for scenarios where random access to elements is required.
+- **Memory Management Overhead:** Queues may have memory management overhead due to their fixed size, even if the queue is not full.
+- **Limited Applicability:** Queues are best suited for specific scenarios like task scheduling or buffering and may not be the most efficient choice for other data access patterns.
 
 **Use-Cases:**
 
@@ -1211,19 +1210,19 @@ A data structure that stores key-value pairs and uses a hash function to compute
 
 **Advantages**
 
-* **Fast Lookup:** Hash tables offer fast average-case lookup times, providing constant-time or near-constant-time access to stored elements.
-* **Efficient Insertion and Deletion:** Inserting and deleting elements in a well-designed hash table can also be performed in constant time on average.
-* **Adaptability to Dynamic Data:** Hash tables can dynamically adjust to changing data sizes without a significant increase in average-case time complexity.
-* **Effective for Search Operations:** Hash tables are highly effective for search operations when the key is known, making them suitable for applications like databases and caches.
-* **Optimized Memory Usage:** When designed well, hash tables can offer optimized memory usage, reducing the likelihood of collisions.
+- **Fast Lookup:** Hash tables offer fast average-case lookup times, providing constant-time or near-constant-time access to stored elements.
+- **Efficient Insertion and Deletion:** Inserting and deleting elements in a well-designed hash table can also be performed in constant time on average.
+- **Adaptability to Dynamic Data:** Hash tables can dynamically adjust to changing data sizes without a significant increase in average-case time complexity.
+- **Effective for Search Operations:** Hash tables are highly effective for search operations when the key is known, making them suitable for applications like databases and caches.
+- **Optimized Memory Usage:** When designed well, hash tables can offer optimized memory usage, reducing the likelihood of collisions.
 
 **Disadvantages:**
 
-* **Potential for Collisions:** Hash collisions can occur when two different keys produce the same hash value, requiring additional handling mechanisms like chaining or open addressing.
-* **Hash Function Dependency:** The efficiency of a hash table relies heavily on the quality of the hash function, and a poor hash function may lead to increased collisions.
-* **Unordered Output:** The ordering of elements in a hash table is not deterministic and does not follow a specific order, making it unsuitable for scenarios requiring ordered traversal.
-* **Complexity of Implementation:** Designing an efficient and collision-resistant hash table can be complex, requiring careful consideration of the hash function, collision resolution strategy, and load factor.
-* **Space Overhead:** Hash tables may have a space overhead due to potential unused slots and the need for additional data structures to handle collisions.
+- **Potential for Collisions:** Hash collisions can occur when two different keys produce the same hash value, requiring additional handling mechanisms like chaining or open addressing.
+- **Hash Function Dependency:** The efficiency of a hash table relies heavily on the quality of the hash function, and a poor hash function may lead to increased collisions.
+- **Unordered Output:** The ordering of elements in a hash table is not deterministic and does not follow a specific order, making it unsuitable for scenarios requiring ordered traversal.
+- **Complexity of Implementation:** Designing an efficient and collision-resistant hash table can be complex, requiring careful consideration of the hash function, collision resolution strategy, and load factor.
+- **Space Overhead:** Hash tables may have a space overhead due to potential unused slots and the need for additional data structures to handle collisions.
 
 **Use-Cases:**
 
@@ -1237,19 +1236,19 @@ A tree is a hierarchical data structure composed of **nodes**, where each node c
 
 **Advantages**
 
-* **Hierarchical Organization:** Trees provide a hierarchical structure, allowing for the representation of parent-child relationships among elements.
-* **Efficient Search Operations:** Binary search trees, in particular, enable efficient search operations with average-case logarithmic time complexity.
-* **Natural Representation of Hierarchies:** Trees naturally represent hierarchical relationships, making them suitable for modeling organizational structures, file systems, and other hierarchical entities.
-* **Efficient Insertion and Deletion:** Balanced trees, such as AVL trees and Red-Black trees, offer efficient insertion and deletion operations with logarithmic time complexity.
-* **Versatility in Applications:** Trees are versatile and find applications in various domains, including databases, expression evaluation, decision-making processes, and network routing algorithms.
+- **Hierarchical Organization:** Trees provide a hierarchical structure, allowing for the representation of parent-child relationships among elements.
+- **Efficient Search Operations:** Binary search trees, in particular, enable efficient search operations with average-case logarithmic time complexity.
+- **Natural Representation of Hierarchies:** Trees naturally represent hierarchical relationships, making them suitable for modeling organizational structures, file systems, and other hierarchical entities.
+- **Efficient Insertion and Deletion:** Balanced trees, such as AVL trees and Red-Black trees, offer efficient insertion and deletion operations with logarithmic time complexity.
+- **Versatility in Applications:** Trees are versatile and find applications in various domains, including databases, expression evaluation, decision-making processes, and network routing algorithms.
 
 **Disadvantages:**
 
-* **Complexity of Implementation:** Designing and implementing certain types of trees, especially balanced ones, can be complex and may require careful consideration of balancing criteria.
-* **Potential for Skewed Trees:** Unbalanced trees can lead to performance degradation, particularly in search operations, with worst-case linear time complexity.
-* **Memory Overhead:** Trees may have a memory overhead due to the storage of additional pointers or metadata for maintaining the hierarchical structure.
-* **Difficulty in Ordered Traversal:** Some types of trees, like general trees, do not provide a natural ordering of elements, making ordered traversal challenging.
-* **Limited Applicability for Unrelated Data:** Trees are most effective when representing hierarchical relationships, and their use may be less intuitive for representing unrelated or non-hierarchical data.
+- **Complexity of Implementation:** Designing and implementing certain types of trees, especially balanced ones, can be complex and may require careful consideration of balancing criteria.
+- **Potential for Skewed Trees:** Unbalanced trees can lead to performance degradation, particularly in search operations, with worst-case linear time complexity.
+- **Memory Overhead:** Trees may have a memory overhead due to the storage of additional pointers or metadata for maintaining the hierarchical structure.
+- **Difficulty in Ordered Traversal:** Some types of trees, like general trees, do not provide a natural ordering of elements, making ordered traversal challenging.
+- **Limited Applicability for Unrelated Data:** Trees are most effective when representing hierarchical relationships, and their use may be less intuitive for representing unrelated or non-hierarchical data.
 
 **Use-Cases:**
 
@@ -1263,19 +1262,19 @@ Graphs are a fundamental data structure in computer science and mathematics. The
 
 **Advantages:**
 
-* **Versatility:** Graphs provide a versatile way to represent and model various relationships, from social networks and transportation systems to computer networks and dependencies in software.
-* **Efficient Representation:** Certain relationships, such as connectivity or pairwise interactions, can be efficiently represented and analyzed using graph structures.
-* **Traversal and Pathfinding:** Graph algorithms, such as depth-first search (DFS) and breadth-first search (BFS), are effective for traversing and finding paths in a graph.
-* **Cyclic Relationships:** Graphs can represent cyclic relationships, making them suitable for modeling scenarios where elements can have mutual connections.
-* **Hierarchical Representation:** Trees are a specific type of graph, providing a hierarchical representation, making them suitable for hierarchical structures like file systems.
+- **Versatility:** Graphs provide a versatile way to represent and model various relationships, from social networks and transportation systems to computer networks and dependencies in software.
+- **Efficient Representation:** Certain relationships, such as connectivity or pairwise interactions, can be efficiently represented and analyzed using graph structures.
+- **Traversal and Pathfinding:** Graph algorithms, such as depth-first search (DFS) and breadth-first search (BFS), are effective for traversing and finding paths in a graph.
+- **Cyclic Relationships:** Graphs can represent cyclic relationships, making them suitable for modeling scenarios where elements can have mutual connections.
+- **Hierarchical Representation:** Trees are a specific type of graph, providing a hierarchical representation, making them suitable for hierarchical structures like file systems.
 
 **Disadvantages:**
 
-* **Complexity of Algorithms:** Some graph algorithms, especially those dealing with cyclic graphs or graphs with complex relationships, can be computationally expensive.
-* **Memory Consumption:** Depending on the implementation, graphs may require significant memory, especially for large or dense graphs.
-* **Lack of Natural Ordering:** Graphs do not inherently provide a natural ordering of elements, which may be a disadvantage in scenarios where ordered traversal is essential.
-* **Potential for Ambiguity:** In some cases, the relationships modeled by a graph may introduce ambiguity, requiring additional context for interpretation.
-* **Complexity in Representing Certain Relationships:** While versatile, graphs may not be the most intuitive representation for certain relationships, and other data structures may be more appropriate.
+- **Complexity of Algorithms:** Some graph algorithms, especially those dealing with cyclic graphs or graphs with complex relationships, can be computationally expensive.
+- **Memory Consumption:** Depending on the implementation, graphs may require significant memory, especially for large or dense graphs.
+- **Lack of Natural Ordering:** Graphs do not inherently provide a natural ordering of elements, which may be a disadvantage in scenarios where ordered traversal is essential.
+- **Potential for Ambiguity:** In some cases, the relationships modeled by a graph may introduce ambiguity, requiring additional context for interpretation.
+- **Complexity in Representing Certain Relationships:** While versatile, graphs may not be the most intuitive representation for certain relationships, and other data structures may be more appropriate.
 
 **Use-Cases:**
 
@@ -1289,19 +1288,19 @@ Recursion is a programming technique where a function calls itself, either direc
 
 **Advantages:**
 
-* **Simplicity and Readability:** Recursive solutions often result in more concise and readable code, mirroring the natural structure of the problem.
-* **Reduced Complexity:** Recursion can simplify complex problems by breaking them down into smaller, more manageable sub-problems, leading to clearer overall logic.
-* **Divide and Conquer:** Recursive solutions often follow a "divide and conquer" approach, dividing a problem into smaller sub-problems, making them easier to solve.
-* **Elegant Implementation:** Certain problems have elegant and natural recursive solutions, especially those involving hierarchical structures.
-* **Modular Design:** Recursive functions promote modular design, encapsulating specific tasks or logic within functions, enhancing code organization.
+- **Simplicity and Readability:** Recursive solutions often result in more concise and readable code, mirroring the natural structure of the problem.
+- **Reduced Complexity:** Recursion can simplify complex problems by breaking them down into smaller, more manageable sub-problems, leading to clearer overall logic.
+- **Divide and Conquer:** Recursive solutions often follow a "divide and conquer" approach, dividing a problem into smaller sub-problems, making them easier to solve.
+- **Elegant Implementation:** Certain problems have elegant and natural recursive solutions, especially those involving hierarchical structures.
+- **Modular Design:** Recursive functions promote modular design, encapsulating specific tasks or logic within functions, enhancing code organization.
 
 **Disadvantages:**
 
-* **Stack Overflow:** Excessive recursive calls can lead to a stack overflow, limiting the practicality of recursion for problems with large input sizes.
-* **Memory Overhead:** Each recursive call adds a new frame to the call stack, potentially leading to high memory usage, particularly with deep recursion.
-* **Performance:** Recursive solutions might be less performant than iterative counterparts due to the overhead of function calls and stack management.
-* **Difficulty in Debugging:** Recursive code can be challenging to debug, especially for complex problems, making bug identification and fixing more difficult.
-* **Potential for Infinite Recursion:** Incorrectly implemented recursion may result in infinite loops, causing the program to hang or crash.
+- **Stack Overflow:** Excessive recursive calls can lead to a stack overflow, limiting the practicality of recursion for problems with large input sizes.
+- **Memory Overhead:** Each recursive call adds a new frame to the call stack, potentially leading to high memory usage, particularly with deep recursion.
+- **Performance:** Recursive solutions might be less performant than iterative counterparts due to the overhead of function calls and stack management.
+- **Difficulty in Debugging:** Recursive code can be challenging to debug, especially for complex problems, making bug identification and fixing more difficult.
+- **Potential for Infinite Recursion:** Incorrectly implemented recursion may result in infinite loops, causing the program to hang or crash.
 
 ---
 
@@ -1317,15 +1316,15 @@ Bubble Sort is a simple sorting algorithm that repeatedly steps through the list
 
 **Advantages:**
 
-* **Simplicity:** Bubble Sort is easy to understand and implement, making it a good choice for educational purposes or small datasets.
-* **In-Place Sorting:** It only requires a constant amount of additional memory for swapping elements, making it an in-place sorting algorithm.
+- **Simplicity:** Bubble Sort is easy to understand and implement, making it a good choice for educational purposes or small datasets.
+- **In-Place Sorting:** It only requires a constant amount of additional memory for swapping elements, making it an in-place sorting algorithm.
 
 **Disadvantages:**
 
-* **Inefficiency with Large Datasets:** Bubble Sort has a time complexity of O(n^2), making it inefficient for large datasets.
-* **Lack of Adaptivity:** The algorithm doesn't adapt to the existing order in the list. It performs the same number of comparisons even if the list is partially sorted.
-* **Poor Performance:** Bubble Sort's performance is poor compared to more advanced sorting algorithms like QuickSort or MergeSort.
-* **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement.
+- **Inefficiency with Large Datasets:** Bubble Sort has a time complexity of O(n^2), making it inefficient for large datasets.
+- **Lack of Adaptivity:** The algorithm doesn't adapt to the existing order in the list. It performs the same number of comparisons even if the list is partially sorted.
+- **Poor Performance:** Bubble Sort's performance is poor compared to more advanced sorting algorithms like QuickSort or MergeSort.
+- **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement.
 
 ---
 
@@ -1338,16 +1337,16 @@ list is sorted. It has a time complexity of O(n^2) and is generally used for edu
 
 **Advantages:**
 
-* **Simplicity:** Selection Sort is straightforward to understand and implement, making it suitable for educational purposes or small datasets.
-* **In-Place Sorting:** It sorts the elements in-place, meaning it doesn't require additional memory for storage.
+- **Simplicity:** Selection Sort is straightforward to understand and implement, making it suitable for educational purposes or small datasets.
+- **In-Place Sorting:** It sorts the elements in-place, meaning it doesn't require additional memory for storage.
 
 **Disadvantages:**
 
-* **Inefficiency with Large Datasets:** Selection Sort has a time complexity of O(n^2), making it inefficient for large datasets.
-* **Lack of Adaptivity:** The algorithm doesn't adapt to the existing order in the list. It performs the same number of comparisons even if the list is partially sorted.
-* **Unstable Sorting:** Selection Sort is not a stable sorting algorithm, meaning it may change the relative order of equal elements.
-* **Poor Performance:** Selection Sort's performance is poor compared to more advanced sorting algorithms like QuickSort or MergeSort.
-* **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement.
+- **Inefficiency with Large Datasets:** Selection Sort has a time complexity of O(n^2), making it inefficient for large datasets.
+- **Lack of Adaptivity:** The algorithm doesn't adapt to the existing order in the list. It performs the same number of comparisons even if the list is partially sorted.
+- **Unstable Sorting:** Selection Sort is not a stable sorting algorithm, meaning it may change the relative order of equal elements.
+- **Poor Performance:** Selection Sort's performance is poor compared to more advanced sorting algorithms like QuickSort or MergeSort.
+- **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement.
 
 ---
 
@@ -1357,26 +1356,29 @@ list is sorted. It has a time complexity of O(n^2) and is generally used for edu
 
 Insertion Sort is a straightforward sorting algorithm that builds the final sorted array one item at a time. It iterates through the input array, taking one element at each step and inserting it into its correct position relative to the already sorted elements. The algorithm is efficient for small datasets but less practical for larger ones due to its time complexity of O(n^2).
 
-* **Advantages:**
+- **Advantages:**
 
-  * **Simple Implementation:** Insertion Sort is relatively easy to understand and implement, making it suitable for educational purposes or small datasets.
-  * **Efficient for Small Datasets:** It performs well with small datasets and is often faster than more complex algorithms for lists of limited size.
-* **Disadvantages:**
+  - **Simple Implementation:** Insertion Sort is relatively easy to understand and implement, making it suitable for educational purposes or small datasets.
+  - **Efficient for Small Datasets:** It performs well with small datasets and is often faster than more complex algorithms for lists of limited size.
 
-  * **Inefficiency with Large Datasets:** Insertion Sort has a time complexity of O(n^2), making it inefficient for large datasets.
-  * **Poor Performance:** Insertion Sort's performance is poor compared to more advanced sorting algorithms like QuickSort or MergeSort.
-  * **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement.
-* **Advantages:**
+- **Disadvantages:**
 
-  * **Simple Implementation:** Insertion Sort is relatively easy to understand and implement, making it suitable for educational purposes or small datasets.
-  * **Efficient for Small Datasets:** Performs well with small datasets and is often faster than more complex algorithms for lists of limited size.
-  * **Stable Sorting:** Maintains the relative order of equal elements, making it a stable sorting algorithm.
-  * **Adaptive:** Takes advantage of existing order, with a best-case time complexity of O(n) when the input is nearly sorted.
-* **Disadvantages:**
+  - **Inefficiency with Large Datasets:** Insertion Sort has a time complexity of O(n^2), making it inefficient for large datasets.
+  - **Poor Performance:** Insertion Sort's performance is poor compared to more advanced sorting algorithms like QuickSort or MergeSort.
+  - **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement.
 
-  * **Inefficiency with Large Datasets:** Insertion Sort has a time complexity of O(n^2), making it inefficient for large datasets.
-  * **Unstable for Large Datasets:** Despite being stable and adaptive, its performance degrades for larger datasets compared to more advanced sorting algorithms.
-  * **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement
+- **Advantages:**
+
+  - **Simple Implementation:** Insertion Sort is relatively easy to understand and implement, making it suitable for educational purposes or small datasets.
+  - **Efficient for Small Datasets:** Performs well with small datasets and is often faster than more complex algorithms for lists of limited size.
+  - **Stable Sorting:** Maintains the relative order of equal elements, making it a stable sorting algorithm.
+  - **Adaptive:** Takes advantage of existing order, with a best-case time complexity of O(n) when the input is nearly sorted.
+
+- **Disadvantages:**
+
+  - **Inefficiency with Large Datasets:** Insertion Sort has a time complexity of O(n^2), making it inefficient for large datasets.
+  - **Unstable for Large Datasets:** Despite being stable and adaptive, its performance degrades for larger datasets compared to more advanced sorting algorithms.
+  - **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement
 
 ---
 
@@ -1386,15 +1388,15 @@ Insertion Sort is a straightforward sorting algorithm that builds the final sort
 
 Merge Sort is a divide-and-conquer sorting algorithm that recursively divides the input array into smaller halves, sorts them individually, and then merges the sorted halves to produce the final sorted array. It has a stable and consistent time complexity of **O(n log n)**.
 
-* **Advantages:**
-  * **Stable Sorting:** Maintains the relative order of equal elements, making it a stable sorting algorithm.
-  * **Predictable Performance:** Consistent O(n log n) time complexity, ensuring reliable performance regardless of the input data.
-  * **Suitable for Linked Lists:** Performs efficiently on linked lists due to its divide-and-conquer nature, making it adaptable to various data structures.
-  * **External Sorting:** Well-suited for external sorting applications, where data is too large to fit into memory.
-* **Disadvantages:**
-  * **Space Complexity:** Requires additional memory space for the merging step, which can be a drawback for large datasets.
-  * **Not In-Place:** Merge Sort is not an in-place sorting algorithm, meaning it needs additional memory proportional to the size of the input array.
-  * **Slower for Small Datasets:** The overhead of function calls and additional memory usage makes Merge Sort less efficient than simpler algorithms for small datasets.
+- **Advantages:**
+  - **Stable Sorting:** Maintains the relative order of equal elements, making it a stable sorting algorithm.
+  - **Predictable Performance:** Consistent O(n log n) time complexity, ensuring reliable performance regardless of the input data.
+  - **Suitable for Linked Lists:** Performs efficiently on linked lists due to its divide-and-conquer nature, making it adaptable to various data structures.
+  - **External Sorting:** Well-suited for external sorting applications, where data is too large to fit into memory.
+- **Disadvantages:**
+  - **Space Complexity:** Requires additional memory space for the merging step, which can be a drawback for large datasets.
+  - **Not In-Place:** Merge Sort is not an in-place sorting algorithm, meaning it needs additional memory proportional to the size of the input array.
+  - **Slower for Small Datasets:** The overhead of function calls and additional memory usage makes Merge Sort less efficient than simpler algorithms for small datasets.
 
 ---
 
@@ -1404,16 +1406,16 @@ Merge Sort is a divide-and-conquer sorting algorithm that recursively divides th
 
 Quick Sort is a divide-and-conquer sorting algorithm that selects a "pivot" element from the array, partitions the other elements into two sub-arrays based on whether they are less than or greater than the pivot, and then recursively sorts the sub-arrays. It is an in-place and efficient algorithm with an average-case time complexity of **O(n log n)**.
 
-* **Advantages:**
-  * **Efficiency:** Quick Sort is generally faster than many other sorting algorithms, especially for large datasets.
-  * **In-Place Sorting:** It can be implemented as an in-place sorting algorithm, minimizing the need for additional memory.
-  * **Adaptability:** Quick Sort's performance can be adaptive to the characteristics of the input data, making it efficient for various scenarios.
-  * **Low Overhead:** It has low overhead compared to some algorithms, as it doesn't require the additional memory used by algorithms like Merge Sort.
-* **Disadvantages:**
-  * **Unstable Sorting:** Quick Sort is inherently unstable, meaning the relative order of equal elements might change in the sorted output.
-  * **Dependency on Pivot Choice:** The choice of the pivot element can significantly impact the algorithm's performance, and poor choices may lead to inefficiency.
-  * **Not Suitable for Linked Lists:** Quick Sort's design is less efficient for linked lists compared to array-based data structures.
-  * **Worst-case Time Complexity:** In the worst-case scenario, when the pivot choice consistently divides the array unevenly, Quick Sort can have a time complexity of O(n^2).
+- **Advantages:**
+  - **Efficiency:** Quick Sort is generally faster than many other sorting algorithms, especially for large datasets.
+  - **In-Place Sorting:** It can be implemented as an in-place sorting algorithm, minimizing the need for additional memory.
+  - **Adaptability:** Quick Sort's performance can be adaptive to the characteristics of the input data, making it efficient for various scenarios.
+  - **Low Overhead:** It has low overhead compared to some algorithms, as it doesn't require the additional memory used by algorithms like Merge Sort.
+- **Disadvantages:**
+  - **Unstable Sorting:** Quick Sort is inherently unstable, meaning the relative order of equal elements might change in the sorted output.
+  - **Dependency on Pivot Choice:** The choice of the pivot element can significantly impact the algorithm's performance, and poor choices may lead to inefficiency.
+  - **Not Suitable for Linked Lists:** Quick Sort's design is less efficient for linked lists compared to array-based data structures.
+  - **Worst-case Time Complexity:** In the worst-case scenario, when the pivot choice consistently divides the array unevenly, Quick Sort can have a time complexity of O(n^2).
 
 ---
 
@@ -1423,23 +1425,50 @@ Quick Sort is a divide-and-conquer sorting algorithm that selects a "pivot" elem
 
 Heap Sort is a comparison-based sorting algorithm that uses a binary heap data structure to create a partially ordered binary tree. It repeatedly extracts the maximum element from the heap, swaps it with the last element, and maintains the heap property. It has a time complexity of O(n log n) and is an in-place sorting algorithm.
 
-* **Advantages:**
-  * **In-Place Sorting:** Heap Sort is an in-place sorting algorithm, meaning it requires only a constant amount of additional memory space for sorting.
-  * **Stable Sorting:** Heap Sort is inherently stable, preserving the relative order of equal elements in the input.
-  * **Worst-Case Time Complexity:** Heap Sort has a consistent O(n log n) time complexity in the worst case, making it predictable and efficient for large datasets.
-  * **Efficiency for External Sorting:** It performs well for external sorting applications, where data is too large to fit into memory.
-* **Disadvantages:**
-  * **Not Adaptive:** Heap Sort does not adapt to the existing order of the input data, resulting in consistent time complexity regardless of the initial order.
-  * **Not as Fast as Quick Sort:** While Heap Sort has a reliable time complexity, it is not as fast in practice as some other algorithms like Quick Sort for certain datasets.
-  * **Complexity in Implementation:** Implementing and understanding the heap-building process may introduce complexity compared to simpler algorithms like Bubble Sort or Insertion Sort.
+- **Advantages:**
+  - **In-Place Sorting:** Heap Sort is an in-place sorting algorithm, meaning it requires only a constant amount of additional memory space for sorting.
+  - **Stable Sorting:** Heap Sort is inherently stable, preserving the relative order of equal elements in the input.
+  - **Worst-Case Time Complexity:** Heap Sort has a consistent O(n log n) time complexity in the worst case, making it predictable and efficient for large datasets.
+  - **Efficiency for External Sorting:** It performs well for external sorting applications, where data is too large to fit into memory.
+- **Disadvantages:**
+  - **Not Adaptive:** Heap Sort does not adapt to the existing order of the input data, resulting in consistent time complexity regardless of the initial order.
+  - **Not as Fast as Quick Sort:** While Heap Sort has a reliable time complexity, it is not as fast in practice as some other algorithms like Quick Sort for certain datasets.
+  - **Complexity in Implementation:** Implementing and understanding the heap-building process may introduce complexity compared to simpler algorithms like Bubble Sort or Insertion Sort.
 
 ---
 
 ### Radix Sort
 
-**Definition**
+**Definition:**
 
 Radix Sort is a non-comparative sorting algorithm that works by distributing elements into buckets based on individual digits or radix positions. It processes the digits from the least significant to the most significant or vice versa. Radix Sort is suitable for sorting integers or strings with fixed-length representations and has a linear time complexity in certain scenarios.
+
+- **Advantages:**
+  - **Linear Time Complexity for Fixed-Length Integers:** Radix Sort has a linear time complexity of O(nk) for sorting integers of fixed length k, making it efficient for certain scenarios.
+  - **Stable Sorting:** Radix Sort is a stable sorting algorithm, preserving the relative order of equal elements.
+  - **Applicability to Strings:** Radix Sort is well-suited for sorting strings with fixed-length representations, where it can process characters from the least significant to the most significant digit.
+- **Disadvantages:**
+  - **Not Suitable for Variable-Length Data:** Radix Sort is less suitable for sorting integers or strings with variable lengths, as it relies on a fixed number of passes through the digits.
+  - **Memory Consumption:** Radix Sort may require additional memory space, especially when dealing with large datasets or datasets with a wide range of key values.
+  - **Limited Applicability:** Its applicability is limited to scenarios where the key values have a specific structure, such as fixed-length integers or strings.
+
+---
+
+### Counting Sort
+
+**Definition:**
+
+Counting Sort is a non-comparative sorting algorithm that operates by counting the number of occurrences of each element in the input data. It then uses this information to determine the position of each element in the final sorted array. Counting Sort is particularly efficient when sorting integers with a limited range of values.
+
+- **Advantages:**
+  - **Linear Time Complexity:** Counting Sort has a linear time complexity of O(n + k), where n is the number of elements and k is the range of possible key values, making it highly efficient.
+  - **Stable Sorting:** Counting Sort is inherently stable, preserving the relative order of equal elements in the input.
+  - **No Comparison Operations:** As a non-comparative sorting algorithm, Counting Sort does not rely on pairwise comparisons, resulting in a straightforward and efficient implementation.
+  - **Suitable for Integer Keys:** It is well-suited for sorting integers or data with integer keys when the range of possible values is not excessively large.
+- **Disadvantages:**
+  - **Limited Applicability:** Counting Sort is applicable only when the range of key values (k) is reasonably small. For large or continuously distributed data, its efficiency may be compromised.
+  - **Memory Consumption:** It requires additional memory for storing the count array, which can be a drawback for large datasets with a wide range of key values.
+  - **Not Suitable for Non-integer Data:** Counting Sort is designed for sorting integer data and may not be directly applicable to datasets with non-integer keys.
 
 ---
 
@@ -1486,3 +1515,11 @@ Searching algorithms are algorithms designed to locate a specific item or a part
 [Sorting Algorithms Animations](https://www.toptal.com/developers/sorting-algorithms)
 
 [Heap Sort](https://brilliant.org/wiki/heap-sort/)
+
+[Radix Sort](https://brilliant.org/wiki/radix-sort/)
+
+[Radix Sort Animation](https://www.cs.usfca.edu/~galles/visualization/RadixSort.html)
+
+[Counting Sort](https://brilliant.org/wiki/counting-sort/)
+
+[Counting Sort Animation](https://www.cs.usfca.edu/~galles/visualization/CountingSort.html)
