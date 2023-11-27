@@ -1426,7 +1426,6 @@ list is sorted. It has a time complexity of O(n^2) and is generally used for edu
 
 Insertion Sort is a straightforward sorting algorithm that builds the final sorted array one item at a time. It iterates through the input array, taking one element at each step and inserting it into its correct position relative to the already sorted elements. The algorithm is efficient for small datasets but less practical for larger ones due to its time complexity of O(n^2).
 
-
 * **Advantages:**
 
   * **Simple Implementation:** Insertion Sort is relatively easy to understand and implement, making it suitable for educational purposes or small datasets.
@@ -1454,7 +1453,17 @@ Insertion Sort is a straightforward sorting algorithm that builds the final sort
 
 #### Definition
 
-Merge Sort is a divide-and-conquer sorting algorithm that recursively divides the input array into smaller halves, sorts them individually, and then merges the sorted halves to produce the final sorted array. It has a stable and consistent time complexity of O(n log n).
+Merge Sort is a divide-and-conquer sorting algorithm that recursively divides the input array into smaller halves, sorts them individually, and then merges the sorted halves to produce the final sorted array. It has a stable and consistent time complexity of **O(n log n)**.
+
+* **Advantages:**
+  * **Stable Sorting:** Maintains the relative order of equal elements, making it a stable sorting algorithm.
+  * **Predictable Performance:** Consistent O(n log n) time complexity, ensuring reliable performance regardless of the input data.
+  * **Suitable for Linked Lists:** Performs efficiently on linked lists due to its divide-and-conquer nature, making it adaptable to various data structures.
+  * **External Sorting:** Well-suited for external sorting applications, where data is too large to fit into memory.
+* **Disadvantages:**
+  * **Space Complexity:** Requires additional memory space for the merging step, which can be a drawback for large datasets.
+  * **Not In-Place:** Merge Sort is not an in-place sorting algorithm, meaning it needs additional memory proportional to the size of the input array.
+  * **Slower for Small Datasets:** The overhead of function calls and additional memory usage makes Merge Sort less efficient than simpler algorithms for small datasets.
 
 ---
 
@@ -1462,7 +1471,7 @@ Merge Sort is a divide-and-conquer sorting algorithm that recursively divides th
 
 #### Definition
 
-Quick Sort is a divide-and-conquer sorting algorithm that selects a "pivot" element from the array, partitions the other elements into two sub-arrays based on whether they are less than or greater than the pivot, and then recursively sorts the sub-arrays. It is an in-place and efficient algorithm with an average-case time complexity of O(n log n).
+Quick Sort is a divide-and-conquer sorting algorithm that selects a "pivot" element from the array, partitions the other elements into two sub-arrays based on whether they are less than or greater than the pivot, and then recursively sorts the sub-arrays. It is an in-place and efficient algorithm with an average-case time complexity of **O(n log n)**.
 
 ---
 
