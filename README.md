@@ -1423,6 +1423,16 @@ Quick Sort is a divide-and-conquer sorting algorithm that selects a "pivot" elem
 
 Heap Sort is a comparison-based sorting algorithm that uses a binary heap data structure to create a partially ordered binary tree. It repeatedly extracts the maximum element from the heap, swaps it with the last element, and maintains the heap property. It has a time complexity of O(n log n) and is an in-place sorting algorithm.
 
+* **Advantages:**
+  * **In-Place Sorting:** Heap Sort is an in-place sorting algorithm, meaning it requires only a constant amount of additional memory space for sorting.
+  * **Stable Sorting:** Heap Sort is inherently stable, preserving the relative order of equal elements in the input.
+  * **Worst-Case Time Complexity:** Heap Sort has a consistent O(n log n) time complexity in the worst case, making it predictable and efficient for large datasets.
+  * **Efficiency for External Sorting:** It performs well for external sorting applications, where data is too large to fit into memory.
+* **Disadvantages:**
+  * **Not Adaptive:** Heap Sort does not adapt to the existing order of the input data, resulting in consistent time complexity regardless of the initial order.
+  * **Not as Fast as Quick Sort:** While Heap Sort has a reliable time complexity, it is not as fast in practice as some other algorithms like Quick Sort for certain datasets.
+  * **Complexity in Implementation:** Implementing and understanding the heap-building process may introduce complexity compared to simpler algorithms like Bubble Sort or Insertion Sort.
+
 ---
 
 ### Radix Sort
@@ -1474,3 +1484,5 @@ Searching algorithms are algorithms designed to locate a specific item or a part
 [Top 8 Data Structures for Coding Interviews](https://dev.to/fahimulhaq/top-8-data-structures-for-coding-interviews-and-practice-interview-questions-2pb)
 
 [Sorting Algorithms Animations](https://www.toptal.com/developers/sorting-algorithms)
+
+[Heap Sort](https://brilliant.org/wiki/heap-sort/)
