@@ -1473,6 +1473,17 @@ Merge Sort is a divide-and-conquer sorting algorithm that recursively divides th
 
 Quick Sort is a divide-and-conquer sorting algorithm that selects a "pivot" element from the array, partitions the other elements into two sub-arrays based on whether they are less than or greater than the pivot, and then recursively sorts the sub-arrays. It is an in-place and efficient algorithm with an average-case time complexity of **O(n log n)**.
 
+* **Advantages:**
+  * **Efficiency:** Quick Sort is generally faster than many other sorting algorithms, especially for large datasets.
+  * **In-Place Sorting:** It can be implemented as an in-place sorting algorithm, minimizing the need for additional memory.
+  * **Adaptability:** Quick Sort's performance can be adaptive to the characteristics of the input data, making it efficient for various scenarios.
+  * **Low Overhead:** It has low overhead compared to some algorithms, as it doesn't require the additional memory used by algorithms like Merge Sort.
+* **Disadvantages:**
+  * **Unstable Sorting:** Quick Sort is inherently unstable, meaning the relative order of equal elements might change in the sorted output.
+  * **Dependency on Pivot Choice:** The choice of the pivot element can significantly impact the algorithm's performance, and poor choices may lead to inefficiency.
+  * **Not Suitable for Linked Lists:** Quick Sort's design is less efficient for linked lists compared to array-based data structures.
+  * **Worst-case Time Complexity:** In the worst-case scenario, when the pivot choice consistently divides the array unevenly, Quick Sort can have a time complexity of O(n^2).
+
 ---
 
 ### Heap Sort
