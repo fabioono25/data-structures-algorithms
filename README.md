@@ -1326,6 +1326,15 @@ Bubble Sort is a simple sorting algorithm that repeatedly steps through the list
 - **Poor Performance:** Bubble Sort's performance is poor compared to more advanced sorting algorithms like QuickSort or MergeSort.
 - **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement.
 
+**Real-Life Use Cases:**
+
+Bubble Sort is a simple sorting algorithm that is often used for educational purposes due to its ease of understanding. However, it is not commonly used in real-world applications for sorting large datasets due to its inefficiency. Nevertheless, here are some scenarios where Bubble Sort might be used:
+
+* **Educational Purposes:** Bubble Sort is often taught in introductory computer science courses to help students understand basic sorting algorithms and concepts.
+* **Small Datasets:** In situations where the dataset is very small, and simplicity is prioritized over efficiency, Bubble Sort may be used.
+* **Embedded Systems:** In resource-constrained environments, such as embedded systems with limited computational power, Bubble Sort might be considered due to its simplicity.
+* **Debugging and Testing:** For small datasets used in debugging or testing scenarios, where the simplicity of the algorithm aids in verifying correctness.
+
 ---
 
 ### Selection Sort
@@ -1360,20 +1369,17 @@ Insertion Sort is a straightforward sorting algorithm that builds the final sort
 
   - **Simple Implementation:** Insertion Sort is relatively easy to understand and implement, making it suitable for educational purposes or small datasets.
   - **Efficient for Small Datasets:** It performs well with small datasets and is often faster than more complex algorithms for lists of limited size.
-
 - **Disadvantages:**
 
   - **Inefficiency with Large Datasets:** Insertion Sort has a time complexity of O(n^2), making it inefficient for large datasets.
   - **Poor Performance:** Insertion Sort's performance is poor compared to more advanced sorting algorithms like QuickSort or MergeSort.
   - **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement.
-
 - **Advantages:**
 
   - **Simple Implementation:** Insertion Sort is relatively easy to understand and implement, making it suitable for educational purposes or small datasets.
   - **Efficient for Small Datasets:** Performs well with small datasets and is often faster than more complex algorithms for lists of limited size.
   - **Stable Sorting:** Maintains the relative order of equal elements, making it a stable sorting algorithm.
   - **Adaptive:** Takes advantage of existing order, with a best-case time complexity of O(n) when the input is nearly sorted.
-
 - **Disadvantages:**
 
   - **Inefficiency with Large Datasets:** Insertion Sort has a time complexity of O(n^2), making it inefficient for large datasets.
