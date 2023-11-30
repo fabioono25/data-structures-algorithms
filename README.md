@@ -43,8 +43,6 @@
 
 ## Big-O Notation
 
-Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument approaches infinity. In computer science, it is used to express the upper bound or worst-case time complexity of an algorithm in terms of the size of its input. It provides a simplified representation of how the runtime or space requirements of an algorithm grow as the input size increases.
-
 ![Big-O Complexity Chart](assets/20231105_122936_bigO.png "Big-O Complexity Chart")
 Source: [Big-O Cheat Sheet](https://www.bigocheatsheet.com/)
 
@@ -56,7 +54,7 @@ Time Complexity measures the amount of time an algorithm takes to run as a funct
 
 #### O(1) Constant Time Complexity
 
-#**Definition**
+**Definition**
 
 Algorithms with constant time complexity always take the same amount of time to execute, regardless of the size of the input. These algorithms have a fixed and predictable runtime.
 
@@ -119,7 +117,7 @@ In these scenarios, the time taken for the operations remains constant regardles
 
 #### O(n) Linear Time Complexity
 
-#**Definition**
+**Definition**
 
 Linear time complexity algorithms have a runtime proportional to the input size, making them suitable for small to moderate-sized datasets.
 
@@ -191,7 +189,7 @@ In these use-cases, the algorithms' runtime grows linearly with the size of the 
 
 #### O(n^2) Quadratic Time Complexity
 
-#**Definition**
+**Definition**
 
 Algorithms with quadratic time complexity have a runtime that is proportional to the square of the input size. Nested loops iterating over the input elements are a common cause of quadratic complexity. Performance deteriorates quickly for larger inputs.
 
@@ -294,7 +292,7 @@ function generatePermutations(arr) {
 
 #### O(log n) Logaritmic Time Complexity
 
-#**Definition**
+**Definition**
 
 Logarithmic time complexity algorithms reduce the size of the problem in each step by a logarithmic factor. These algorithms are often found in divide and conquer strategies, and they efficiently handle large
 datasets by repeatedly dividing the problem space.
@@ -405,7 +403,7 @@ console.log(`${base} raised to the power of ${exponent} is: ${result}`);
 
 #### O(n log n) Linearithmic Time Complexity
 
-#**Definition**
+**Definition**
 
 Algorithms with linearithmic time complexity have an execution time that grows in proportion to n log ⁡n, where n**n** is the size of the input data. Many efficient sorting and searching algorithms, such as merge sort and heap sort, fall into this category.
 
@@ -510,7 +508,7 @@ console.log("Merged Sorted List:", mergedList);
 
 #### O(2^n) Exponential Time Complexity
 
-#**Definition**
+**Definition**
 
 Exponential time complexity algorithms have an execution time that grows exponentially with the size of the input data. These algorithms become extremely slow as the input size increases, making them impractical for most real-world applications. Recursive algorithms with branching factors fall into this category.
 
@@ -646,7 +644,7 @@ console.log("Total Distance:", result.distance);
 
 #### O(n!) Factorial Time Complexity
 
-#**Definition**
+**Definition**
 
 Factorial time complexity represents algorithms whose execution time grows factorially with the size of the input data. These algorithms are extremely slow and become practically unusable for even small input sizes. Examples include brute-force algorithms generating permutations or combinations.
 
@@ -1357,7 +1355,6 @@ list is sorted. It has a time complexity of O(n^2) and is generally used for edu
 - **Poor Performance:** Selection Sort's performance is poor compared to more advanced sorting algorithms like QuickSort or MergeSort.
 - **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement.
 
-
 **Real-Life Use Cases:**
 
 Selection Sort, like Insertion Sort, is a simple sorting algorithm that can find practical use in specific scenarios:
@@ -1373,7 +1370,6 @@ Selection Sort, like Insertion Sort, is a simple sorting algorithm that can find
 5. **Stable Sorting is Not Required:**
    * If maintaining the relative order of equal elements is not a requirement, Selection Sort can be a suitable choice for simplicity
 
-
 ---
 
 ### Insertion Sort
@@ -1382,19 +1378,16 @@ Selection Sort, like Insertion Sort, is a simple sorting algorithm that can find
 
 Insertion Sort is a straightforward sorting algorithm that builds the final sorted array one item at a time. It iterates through the input array, taking one element at each step and inserting it into its correct position relative to the already sorted elements. The algorithm is efficient for small datasets but less practical for larger ones due to its time complexity of O(n^2).
 
-
 **Advantages:**
 
 - **Simple Implementation:** Insertion Sort is relatively easy to understand and implement, making it suitable for educational purposes or small datasets.
 - **Efficient for Small Datasets:** It performs well with small datasets and is often faster than more complex algorithms for lists of limited size.
-
 
 **Disadvantages:**
 
 - **Inefficiency with Large Datasets:** Insertion Sort has a time complexity of O(n^2), making it inefficient for large datasets.
 - **Poor Performance:** Insertion Sort's performance is poor compared to more advanced sorting algorithms like QuickSort or MergeSort.
 - **Not Suitable for Real-world Applications:** Due to its inefficiency, it's seldom used in real-world applications where sorting large datasets is a common requirement.
-
 
 **Real-Life Use Cases:**
 
@@ -1434,11 +1427,9 @@ Merge Sort is a divide-and-conquer sorting algorithm that recursively divides th
   - **Not In-Place:** Merge Sort is not an in-place sorting algorithm, meaning it needs additional memory proportional to the size of the input array.
   - **Slower for Small Datasets:** The overhead of function calls and additional memory usage makes Merge Sort less efficient than simpler algorithms for small datasets.
 
-
 **Real-Life Use Cases:**
 
 While Merge Sort might not be the most intuitive choice for small datasets due to its extra memory requirement, its efficiency and stability make it valuable in scenarios dealing with large-scale data and applications where maintaining order is critical. Merge Sort, with its efficient time complexity and stability, finds practical applications in various scenarios:
-
 
 * **External Sorting:**
   * Merge Sort is well-suited for external sorting scenarios where data is too large to fit into memory. It's commonly used in scenarios like sorting large files that do not fit entirely into RAM.
@@ -1478,12 +1469,9 @@ Quick Sort is a divide-and-conquer sorting algorithm that selects a "pivot" elem
   - **Not Suitable for Linked Lists:** Quick Sort's design is less efficient for linked lists compared to array-based data structures.
   - **Worst-case Time Complexity:** In the worst-case scenario, when the pivot choice consistently divides the array unevenly, Quick Sort can have a time complexity of O(n^2).
 
-
-
 **Real-Life Use Cases:**
 
 Quick Sort's efficiency, especially its average-case time complexity of O(n log n), makes it a popular choice in situations where sorting performance is crucial. It is often preferred over other sorting algorithms for its speed and adaptability to different scenarios. Quick Sort is a versatile and efficient sorting algorithm that finds applications in various real-life scenarios:
-
 
 * **General-Purpose Sorting:**
   * Quick Sort is widely used in general-purpose sorting scenarios, such as sorting arrays or lists of data in programming languages or libraries where an efficient sorting algorithm is required.
@@ -1524,11 +1512,9 @@ Heap Sort is a comparison-based sorting algorithm that uses a binary heap data s
   - **Not as Fast as Quick Sort:** While Heap Sort has a reliable time complexity, it is not as fast in practice as some other algorithms like Quick Sort for certain datasets.
   - **Complexity in Implementation:** Implementing and understanding the heap-building process may introduce complexity compared to simpler algorithms like Bubble Sort or Insertion Sort.
 
-
 **Real-Life Use Cases:**
 
 Heap Sort's time complexity of O(n log n), combined with its suitability for priority-based scenarios, makes it a valuable choice in applications where sorting and prioritization are crucial. Heap Sort is commonly used in various real-life scenarios due to its efficiency and suitability for certain applications:
-
 
 * **Priority Queues:**
   * Heap Sort is often used in priority queue implementations, where elements with higher priorities need to be processed before elements with lower priorities.
@@ -1567,7 +1553,6 @@ Radix Sort is a non-comparative sorting algorithm that works by distributing ele
   - **Not Suitable for Variable-Length Data:** Radix Sort is less suitable for sorting integers or strings with variable lengths, as it relies on a fixed number of passes through the digits.
   - **Memory Consumption:** Radix Sort may require additional memory space, especially when dealing with large datasets or datasets with a wide range of key values.
   - **Limited Applicability:** Its applicability is limited to scenarios where the key values have a specific structure, such as fixed-length integers or strings.
-
 
 **Real-Life Use Cases:**
 
@@ -1612,13 +1597,11 @@ Counting Sort is a non-comparative sorting algorithm that operates by counting t
   - **Memory Consumption:** It requires additional memory for storing the count array, which can be a drawback for large datasets with a wide range of key values.
   - **Not Suitable for Non-integer Data:** Counting Sort is designed for sorting integer data and may not be directly applicable to datasets with non-integer keys.
 
-
 **Real-Life Use Cases:**
 
 Counting Sort's linear time complexity makes it efficient for specific scenarios where its assumptions align with the characteristics of the data. It is particularly well-suited for cases where the range of values
 is small and known in advance. Counting Sort is a non-comparative sorting algorithm that works well for
 integers with a limited range. Here are some real-life use cases for Counting Sort:
-
 
 * **Integer Sorting with Limited Range:**
   * Counting Sort is highly efficient when sorting a list of integers with a known and limited range. This can be applicable in scenarios like sorting exam scores, ages, or other integer-based attributes.
@@ -1651,7 +1634,61 @@ Searching algorithms are algorithms designed to locate a specific item or a part
 
 **Definition**
 
----
+Linear Search, also known as sequential search, is a straightforward algorithm for finding a target value within a list or array. It sequentially checks each element in the list until a match is found or the entire list has been searched. If the target is present, linear search returns the index of the first occurrence; otherwise, it indicates that the target is not in the list. Linear search has a time complexity of O(n), where "n" is the number of elements in the list. It is a simple algorithm suitable for unsorted or small datasets but may become inefficient for large or sorted datasets compared to more advanced searching algorithms like binary search.
+
+**Advantages:**
+
+1. **Simplicity:**
+   * Linear search is straightforward and easy to implement, requiring minimal code and understanding.
+2. **Applicability to Unordered Lists:**
+   * It is effective for searching in unordered lists where there is no specific order among the elements.
+3. **No Preprocessing:**
+   * Unlike some other search algorithms, linear search doesn't require any preprocessing of the data.
+4. **Applicability to Linked Lists:**
+   * Linear search can be easily applied to linked lists where random access to elements is not efficient.
+
+**Disadvantages:**
+
+1. **Inefficiency for Large Datasets:**
+   * Linear search has a time complexity of O(n), making it inefficient for large datasets as the search time increases linearly with the size of the list.
+2. **Not Suitable for Sorted Lists:**
+   * In cases where the list is sorted, linear search is less efficient compared to binary search, which has a logarithmic time complexity.
+3. **Redundant Search After Finding the Element:**
+   * Linear search may continue searching even after finding the target element, potentially resulting in unnecessary iterations.
+4. **Limited Performance in High-Performance Applications:**
+   * For applications with stringent performance requirements, linear search may not meet the efficiency standards compared to more advanced search algorithms.
+5. **No Benefit from Sorted Order:**
+   * Unlike binary search, linear search does not benefit from a sorted list. It has to scan the entire list regardless of the order.
+
+**Linear Search Steps:**
+
+1. Start from the beginning of the list.
+2. Compare each element with the target value.
+3. If a match is found, return the index.
+4. If the end of the list is reached without a match, indicate that the target is not present.
+
+**Linear Search Steps:**
+
+```javascript
+function linearSearch(list, target):
+    for i from 0 to length(list) - 1:
+        if list[i] equals target:
+            return i
+    return "Not found"
+```
+
+**Real-World Use-Cases:**
+
+* **Contact Search on Mobile Phones:**
+  * Linear search is used when users search for a specific contact in their mobile phone's address book. The simplicity of linear search is suitable for relatively small contact lists.
+* **To-Do List Task Search:**
+  * In to-do list applications, users often search for specific tasks. Linear search can be applied efficiently for searching through tasks in lists of manageable sizes.
+* **Library Book Search in a Small Library:**
+  * In a small library with a limited number of books, linear search can be used for patrons looking for a specific book without the need for a more complex sorting algorithm.
+* **Inventory Check in a Small Store:**
+  * For small retail stores with a limited inventory, linear search can be employed to check whether a particular product is currently in stock.
+* **Searching for a File in a Directory:**
+  * In everyday file management scenarios on a computer, linear search is often used to find a specific file in a directory, especially when the files are not organized or sorted.
 
 ### Binary Search
 
