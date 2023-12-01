@@ -1698,7 +1698,6 @@ function linearSearch(list, target):
 
 Binary Search is a divide-and-conquer algorithm used for efficiently finding a target element within a sorted array or list. It repeatedly divides the search space in half until the target is found or the search space is empty.
 
-
 **Pros:**
 
 1. **Efficiency:**
@@ -1710,7 +1709,6 @@ Binary Search is a divide-and-conquer algorithm used for efficiently finding a t
 4. **Optimal for Random Access Memory:**
    * Binary search is optimal for scenarios where random access to elements is fast, as it frequently accesses elements at the mid-point of the search space.
 
-
 **Cons:**
 
 1. **Requirement of Sorted Data:**
@@ -1721,7 +1719,6 @@ Binary Search is a divide-and-conquer algorithm used for efficiently finding a t
    * In linked lists, binary search is less practical due to the lack of constant-time random access.
 4. **Array Modification Challenges:**
    * If the array is frequently modified (insertions or deletions), maintaining the sorted order can become computationally expensive.
-
 
 ### **Binary Search Steps:**
 
@@ -1738,40 +1735,38 @@ Binary Search is a divide-and-conquer algorithm used for efficiently finding a t
 5. **Repeat:**
    * Repeat steps 2-4 until the target is found or the search space is empty (`start > end`).
 
-### **Example Code in Python:**
 
-<pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>python</span></div></div></pre>
+function binarySearch(arr, target) {
+    let start = 0;
+    let end = arr.length - 1;
 
-```python
-def binary_search(arr, target):
-    start, end = 0, len(arr) - 1
+    while (start <= end) {
+        const midpoint = Math.floor((start + end) / 2);
+        const midValue = arr[midpoint];
 
-    while start <= end:
-        midpoint = (start + end) // 2
-        mid_value = arr[midpoint]
+        if (midValue === target) {
+            return midpoint;  // Target found, return the index.
+        } else if (midValue < target) {
+            start = midpoint + 1;  // Search the right half.
+        } else {
+            end = midpoint - 1;    // Search the left half.
+        }
+    }
 
-        if mid_value == target:
-            return midpoint  # Target found, return the index.
-        elif mid_value < target:
-            start = midpoint + 1  # Search the right half.
-        else:
-            end = midpoint - 1    # Search the left half.
+    return -1;  // Target not found.
+}
 
-    return -1  # Target not found.
+// Example Usage:
+const sortedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const targetValue = 7;
 
-# Example Usage:
-sorted_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-target_value = 7
+const result = binarySearch(sortedArray, targetValue);
 
-result = binary_search(sorted_array, target_value)
-
-if result != -1:
-    print(f'Target {target_value} found at index {result}.')
-else:
-    print(f'Target {target_value} not found.')
-```
-
-
+if (result !== -1) {
+    console.log(`Target ${targetValue} found at index ${result}.`);
+} else {
+    console.log(`Target ${targetValue} not found.`);
+}
 
 **Real-World Use-Cases:**
 
@@ -1785,7 +1780,6 @@ else:
    * Online shopping platforms often use binary search to quickly locate products based on sorted attributes such as price or popularity.
 5. **Finding a Song in a Sorted Playlist:**
    * In music applications, binary search can be applied to quickly locate a song in a sorted playlist, enhancing user experience in navigation.
-
 
 ---
 
