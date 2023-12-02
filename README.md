@@ -37,13 +37,8 @@
   - [Searching Algorithms](#searching-algorithms)
     - [Linear Search](#linear-search)
     - [Binary Search](#binary-search)
-    - [**Binary Search Steps:**](#binary-search-steps)
     - [Breadth-First Search (BFS)](#breadth-first-search-bfs)
-    - [**Example Code in JavaScript:**](#example-code-in-javascript)
     - [Depth-First Search (DFS)](#depth-first-search-dfs)
-    - [**Steps:**](#steps)
-    - [**Example Code in JavaScript:**](#example-code-in-javascript-1)
-    - [**Real-World Use-Cases:**](#real-world-use-cases)
   - [Links](#links)
 
 ## Big-O Notation
@@ -1723,7 +1718,7 @@ Binary Search is a divide-and-conquer algorithm used for efficiently finding a t
 4. **Array Modification Challenges:**
    * If the array is frequently modified (insertions or deletions), maintaining the sorted order can become computationally expensive.
 
-### **Binary Search Steps:**
+**Binary Search Steps:**
 
 1. **Initialize:**
    * Set the initial values for`start` and`end` to define the search space.
@@ -1831,7 +1826,7 @@ may be enqueued in the queue.
 4. **Continue Until Queue is Empty:**
    * Continue the process until the queue is empty, indicating that all reachable nodes have been visited.
 
-### **Example Code in JavaScript:**
+**Example Code in JavaScript:**
 
 <pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>javascript</span></div></div></pre>
 
@@ -1934,7 +1929,7 @@ Depth-First Search (DFS) is a graph traversal algorithm that explores a graph by
 
 
 
-### **Steps:**
+**Steps:**
 
 1. **Initialize Stack and Visited Set:**
    * Create an empty stack and a set to track visited nodes.
@@ -1948,7 +1943,7 @@ Depth-First Search (DFS) is a graph traversal algorithm that explores a graph by
 4. **Continue Until Stack is Empty:**
    * Continue the process until the stack is empty, indicating that all reachable nodes have been visited.
 
-### **Example Code in JavaScript:**
+**Example Code in JavaScript:**
 
 <pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>javascript</span></div></div></pre>
 
@@ -2009,7 +2004,7 @@ graph.<span class="hljs-title function_">dfs</span>(<span class="hljs-string">'A
 In this example, the `Graph` class represents an undirected graph. The `dfs` method performs Depth-First Search starting from a specified node. The algorithm uses a stack to explore nodes by going as deep as possible along each branch before backtracking. The result is the DFS traversal starting from the node 'A'.
 
 
-### **Real-World Use-Cases:**
+**Real-World Use-Cases:**
 
 1. **Maze Solving:**
    * DFS can be applied to solve mazes by exploring paths until a solution is found.
