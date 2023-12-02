@@ -1,3 +1,6 @@
+
+# Table of Contents
+
 - [Table of Contents](#table-of-contents)
   - [Big-O Notation](#big-o-notation)
     - [Time Complexity](#time-complexity)
@@ -10,8 +13,6 @@
       - [O(n!) Factorial Time Complexity](#on-factorial-time-complexity)
     - [Space Complexity](#space-complexity)
   - [The Four Rules in Big-O](#the-four-rules-in-big-o)
-
-# Table of Contents
 
 ## Big-O Notation
 

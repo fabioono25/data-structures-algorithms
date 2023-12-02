@@ -31,7 +31,7 @@
     - [Depth-First Search (DFS)](#depth-first-search-dfs)
   - [Links](#links)
 
-## [Big-O Notation](#1-BigO/big-o.md)
+## [Big-O Notation](1-BigO/big-o.md)
 
 
 
