@@ -1735,25 +1735,24 @@ Binary Search is a divide-and-conquer algorithm used for efficiently finding a t
 5. **Repeat:**
    * Repeat steps 2-4 until the target is found or the search space is empty (`start > end`).
 
-
 function binarySearch(arr, target) {
-    let start = 0;
-    let end = arr.length - 1;
+let start = 0;
+let end = arr.length - 1;
 
-    while (start <= end) {
-        const midpoint = Math.floor((start + end) / 2);
-        const midValue = arr[midpoint];
+while (start <= end) {
+    const midpoint = Math.floor((start + end) / 2);
+    const midValue = arr[midpoint];
 
-        if (midValue === target) {
-            return midpoint;  // Target found, return the index.
-        } else if (midValue < target) {
-            start = midpoint + 1;  // Search the right half.
-        } else {
-            end = midpoint - 1;    // Search the left half.
-        }
+    if (midValue === target) {
+        return midpoint;  // Target found, return the index.
+    } else if (midValue < target) {
+        start = midpoint + 1;  // Search the right half.
+    } else {
+        end = midpoint - 1;    // Search the left half.
     }
+}
 
-    return -1;  // Target not found.
+return -1;  // Target not found.
 }
 
 // Example Usage:
@@ -1763,9 +1762,9 @@ const targetValue = 7;
 const result = binarySearch(sortedArray, targetValue);
 
 if (result !== -1) {
-    console.log(`Target ${targetValue} found at index ${result}.`);
+console.log(`Target ${targetValue} found at index ${result}.`);
 } else {
-    console.log(`Target ${targetValue} not found.`);
+console.log(`Target ${targetValue} not found.`);
 }
 
 **Real-World Use-Cases:**
@@ -1786,6 +1785,124 @@ if (result !== -1) {
 ### Breadth-First Search (BFS)
 
 **Definition**
+
+Breadth-First Search (BFS) is a graph traversal algorithm that explores a graph level by level, visiting all the neighbors of a node before moving on to the next level. It uses a queue data structure to maintain the order in which nodes are visited. The time complexity of Breadth-First Search (BFS) is O(V + E), where V
+is the number of vertices (nodes) and E is the number of edges in the graph. The space complexity of BFS is O(V), where V is the number of vertices (nodes) in the graph. This is because, in the worst case, all vertices
+may be enqueued in the queue.
+
+
+**Pros:**
+
+1. **Shortest Path:**
+   * BFS can be used to find the shortest path between two nodes in an unweighted graph.
+2. **Completeness:**
+   * If there is a solution, BFS is guaranteed to find it, making it complete for finite graphs.
+3. **Exploration of All Neighbors:**
+   * BFS systematically explores all neighbors of a node before moving on to the next level, ensuring a comprehensive search.
+4. **Closer Nodes First:**
+   * BFS prioritizes nodes closer to the starting point, making it suitable for applications where proximity matters.
+
+
+**Cons:**
+
+1. **Memory Usage:**
+   * BFS may consume more memory compared to depth-first search, especially in graphs with a wide branching factor.
+2. **Not Suitable for Large Graphs:**
+   * In large graphs, BFS may become impractical due to its memory requirements.
+3. **Pathfinding in Weighted Graphs:**
+   * For weighted graphs, BFS may not find the shortest path as it assumes equal weight for all edges.
+
+
+**Steps:**
+
+1. **Initialize Queue and Visited Set:**
+   * Create an empty queue and a set to track visited nodes.
+2. **Enqueue Start Node:**
+   * Enqueue the start node into the queue.
+3. **While Queue is Not Empty:**
+   * While the queue is not empty, perform the following steps:
+     * Dequeue a node from the front of the queue.
+     * Visit the dequeued node.
+     * Enqueue all unvisited neighbors of the dequeued node.
+     * Mark the dequeued node as visited.
+4. **Continue Until Queue is Empty:**
+   * Continue the process until the queue is empty, indicating that all reachable nodes have been visited.
+
+### **Example Code in JavaScript:**
+
+<pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>javascript</span></div></div></pre>
+
+<pre><div class="bg-black rounded-md"><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Graph</span> {
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">adjacencyList</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>();
+    }
+
+    <span class="hljs-title function_">addNode</span>(<span class="hljs-params">node</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">adjacencyList</span>.<span class="hljs-title function_">set</span>(node, []);
+    }
+
+    <span class="hljs-title function_">addEdge</span>(<span class="hljs-params">node1, node2</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">adjacencyList</span>.<span class="hljs-title function_">get</span>(node1).<span class="hljs-title function_">push</span>(node2);
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">adjacencyList</span>.<span class="hljs-title function_">get</span>(node2).<span class="hljs-title function_">push</span>(node1); <span class="hljs-comment">// For undirected graph</span>
+    }
+
+    <span class="hljs-title function_">bfs</span>(<span class="hljs-params">startNode</span>) {
+        <span class="hljs-keyword">const</span> visited = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>();
+        <span class="hljs-keyword">const</span> queue = [];
+
+        queue.<span class="hljs-title function_">push</span>(startNode);
+        visited.<span class="hljs-title function_">add</span>(startNode);
+
+        <span class="hljs-keyword">while</span> (queue.<span class="hljs-property">length</span> > <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">const</span> currentNode = queue.<span class="hljs-title function_">shift</span>();
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Visited Node: <span class="hljs-subst">${currentNode}</span>`</span>);
+
+            <span class="hljs-keyword">const</span> neighbors = <span class="hljs-variable language_">this</span>.<span class="hljs-property">adjacencyList</span>.<span class="hljs-title function_">get</span>(currentNode);
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> neighbor <span class="hljs-keyword">of</span> neighbors) {
+                <span class="hljs-keyword">if</span> (!visited.<span class="hljs-title function_">has</span>(neighbor)) {
+                    queue.<span class="hljs-title function_">push</span>(neighbor);
+                    visited.<span class="hljs-title function_">add</span>(neighbor);
+                }
+            }
+        }
+    }
+}
+
+<span class="hljs-comment">// Example Usage:</span>
+<span class="hljs-keyword">const</span> graph = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Graph</span>();
+
+graph.<span class="hljs-title function_">addNode</span>(<span class="hljs-string">'A'</span>);
+graph.<span class="hljs-title function_">addNode</span>(<span class="hljs-string">'B'</span>);
+graph.<span class="hljs-title function_">addNode</span>(<span class="hljs-string">'C'</span>);
+graph.<span class="hljs-title function_">addNode</span>(<span class="hljs-string">'D'</span>);
+graph.<span class="hljs-title function_">addNode</span>(<span class="hljs-string">'E'</span>);
+
+graph.<span class="hljs-title function_">addEdge</span>(<span class="hljs-string">'A'</span>, <span class="hljs-string">'B'</span>);
+graph.<span class="hljs-title function_">addEdge</span>(<span class="hljs-string">'A'</span>, <span class="hljs-string">'C'</span>);
+graph.<span class="hljs-title function_">addEdge</span>(<span class="hljs-string">'B'</span>, <span class="hljs-string">'D'</span>);
+graph.<span class="hljs-title function_">addEdge</span>(<span class="hljs-string">'C'</span>, <span class="hljs-string">'E'</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'BFS Traversal:'</span>);
+graph.<span class="hljs-title function_">bfs</span>(<span class="hljs-string">'A'</span>);
+</code></div></div></pre>
+
+In this example, the `Graph` class represents an undirected graph. The `bfs` method performs Breadth-First Search starting from a specified node. The algorithm uses a queue to systematically explore nodes level by level, ensuring that neighbors are visited before moving to the next level. The result is the BFS traversal starting from the node 'A'.
+
+
+**Real-World Use-Cases:**
+
+1. **Shortest Path in Networks:**
+   * BFS is used in network routing algorithms to find the shortest path between two devices.
+2. **Web Crawling:**
+   * BFS is applied in web crawling algorithms to systematically visit and index web pages.
+3. **Maze Solving:**
+   * BFS can be used to find the shortest path through a maze or a grid.
+4. **Social Network Analysis:**
+   * In social network analysis, BFS can be used to discover connected components and relationships.
+5. **Garbage Collection:**
+   * BFS is employed in garbage collection algorithms to identify and reclaim memory occupied by unreachable objects.
+
+
 
 ---
 
