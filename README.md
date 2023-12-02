@@ -38,9 +38,12 @@
     - [Linear Search](#linear-search)
     - [Binary Search](#binary-search)
     - [**Binary Search Steps:**](#binary-search-steps)
-    - [**Example Code in Python:**](#example-code-in-python)
     - [Breadth-First Search (BFS)](#breadth-first-search-bfs)
+    - [**Example Code in JavaScript:**](#example-code-in-javascript)
     - [Depth-First Search (DFS)](#depth-first-search-dfs)
+    - [**Steps:**](#steps)
+    - [**Example Code in JavaScript:**](#example-code-in-javascript-1)
+    - [**Real-World Use-Cases:**](#real-world-use-cases)
   - [Links](#links)
 
 ## Big-O Notation
@@ -1909,6 +1912,117 @@ In this example, the `Graph` class represents an undirected graph. The `bfs` met
 ### Depth-First Search (DFS)
 
 **Definition**
+
+Depth-First Search (DFS) is a graph traversal algorithm that explores a graph by visiting as far as possible along each branch before backtracking. It uses a stack or recursion to maintain the order in which nodes are visited. The time complexity of DFS is O(V + E), where V is the number of vertices (nodes) and E is the number of edges in the graph. The space complexity of DFS is O(V) for the stack or recursion depth.
+
+**Pros:**
+
+1. **Memory Efficiency:**
+   * DFS typically uses less memory compared to BFS, as it explores as far as possible along each branch before backtracking.
+2. **Pathfinding in Weighted Graphs:**
+   * DFS can be adapted for pathfinding in weighted graphs by implementing backtracking mechanisms.
+3. **Topological Sorting:**
+   * DFS can be used for topological sorting of directed acyclic graphs, a crucial step in scheduling tasks with dependencies.
+
+
+**Cons:**
+
+1. **Incomplete for Infinite Graphs:**
+   * DFS may not terminate on graphs with infinite paths, leading to incomplete exploration.
+2. **Not Guaranteed to Find Shortest Path:**
+   * DFS does not guarantee finding the shortest path between two nodes in an unweighted graph.
+
+
+
+### **Steps:**
+
+1. **Initialize Stack and Visited Set:**
+   * Create an empty stack and a set to track visited nodes.
+2. **Push Start Node onto Stack:**
+   * Push the start node onto the stack and mark it as visited.
+3. **While Stack is Not Empty:**
+   * While the stack is not empty, perform the following steps:
+     * Pop a node from the stack.
+     * Visit the popped node.
+     * Push all unvisited neighbors of the popped node onto the stack and mark them as visited.
+4. **Continue Until Stack is Empty:**
+   * Continue the process until the stack is empty, indicating that all reachable nodes have been visited.
+
+### **Example Code in JavaScript:**
+
+<pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>javascript</span></div></div></pre>
+
+<pre><div class="bg-black rounded-md"><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Graph</span> {
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">adjacencyList</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>();
+    }
+
+    <span class="hljs-title function_">addNode</span>(<span class="hljs-params">node</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">adjacencyList</span>.<span class="hljs-title function_">set</span>(node, []);
+    }
+
+    <span class="hljs-title function_">addEdge</span>(<span class="hljs-params">node1, node2</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">adjacencyList</span>.<span class="hljs-title function_">get</span>(node1).<span class="hljs-title function_">push</span>(node2);
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">adjacencyList</span>.<span class="hljs-title function_">get</span>(node2).<span class="hljs-title function_">push</span>(node1); <span class="hljs-comment">// For undirected graph</span>
+    }
+
+    <span class="hljs-title function_">dfs</span>(<span class="hljs-params">startNode</span>) {
+        <span class="hljs-keyword">const</span> visited = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>();
+        <span class="hljs-keyword">const</span> stack = [];
+
+        stack.<span class="hljs-title function_">push</span>(startNode);
+        visited.<span class="hljs-title function_">add</span>(startNode);
+
+        <span class="hljs-keyword">while</span> (stack.<span class="hljs-property">length</span> > <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">const</span> currentNode = stack.<span class="hljs-title function_">pop</span>();
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Visited Node: <span class="hljs-subst">${currentNode}</span>`</span>);
+
+            <span class="hljs-keyword">const</span> neighbors = <span class="hljs-variable language_">this</span>.<span class="hljs-property">adjacencyList</span>.<span class="hljs-title function_">get</span>(currentNode);
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> neighbor <span class="hljs-keyword">of</span> neighbors) {
+                <span class="hljs-keyword">if</span> (!visited.<span class="hljs-title function_">has</span>(neighbor)) {
+                    stack.<span class="hljs-title function_">push</span>(neighbor);
+                    visited.<span class="hljs-title function_">add</span>(neighbor);
+                }
+            }
+        }
+    }
+}
+
+<span class="hljs-comment">// Example Usage:</span>
+<span class="hljs-keyword">const</span> graph = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Graph</span>();
+
+graph.<span class="hljs-title function_">addNode</span>(<span class="hljs-string">'A'</span>);
+graph.<span class="hljs-title function_">addNode</span>(<span class="hljs-string">'B'</span>);
+graph.<span class="hljs-title function_">addNode</span>(<span class="hljs-string">'C'</span>);
+graph.<span class="hljs-title function_">addNode</span>(<span class="hljs-string">'D'</span>);
+graph.<span class="hljs-title function_">addNode</span>(<span class="hljs-string">'E'</span>);
+
+graph.<span class="hljs-title function_">addEdge</span>(<span class="hljs-string">'A'</span>, <span class="hljs-string">'B'</span>);
+graph.<span class="hljs-title function_">addEdge</span>(<span class="hljs-string">'A'</span>, <span class="hljs-string">'C'</span>);
+graph.<span class="hljs-title function_">addEdge</span>(<span class="hljs-string">'B'</span>, <span class="hljs-string">'D'</span>);
+graph.<span class="hljs-title function_">addEdge</span>(<span class="hljs-string">'C'</span>, <span class="hljs-string">'E'</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'DFS Traversal:'</span>);
+graph.<span class="hljs-title function_">dfs</span>(<span class="hljs-string">'A'</span>);
+</code></div></div></pre>
+
+In this example, the `Graph` class represents an undirected graph. The `dfs` method performs Depth-First Search starting from a specified node. The algorithm uses a stack to explore nodes by going as deep as possible along each branch before backtracking. The result is the DFS traversal starting from the node 'A'.
+
+
+### **Real-World Use-Cases:**
+
+1. **Maze Solving:**
+   * DFS can be applied to solve mazes by exploring paths until a solution is found.
+2. **Connectivity Checking:**
+   * In network analysis, DFS can determine the connectivity of a network.
+3. **Database Queries:**
+   * DFS is used in certain database query optimization algorithms.
+4. **Puzzle Solving:**
+   * DFS can be used to solve puzzles where different configurations represent nodes in a graph.
+5. **Circuit Design:**
+   * DFS is employed in electronic circuit design to check connectivity and identify loops.
+
+
 
 ---
 
