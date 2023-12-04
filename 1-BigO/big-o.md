@@ -376,7 +376,7 @@ console.log(`${base} raised to the power of ${exponent} is: ${result}`);
 
 **Definition**
 
-Algorithms with linearithmic time complexity have an execution time that grows in proportion to n log ⁡n, where n**n** is the size of the input data. Many efficient sorting and searching algorithms, such as merge sort and heap sort, fall into this category.
+Algorithms with linearithmic time complexity have an execution time that grows in proportion to n log ⁡n, where **n** is the size of the input data. Many efficient sorting and searching algorithms, such as merge sort and heap sort, fall into this category.
 
 **Advantages**
 
@@ -739,6 +739,72 @@ console.log(`Subset with sum ${targetSum} exists: ${isSubsetPossible}`);
 ### Space Complexity
 
 Space Complexity measures the amount of memory space an algorithm uses relative to the input size. Focused on how memory requirements increase, given the input size.
+
+**Array Creation:**
+
+<pre><div class="bg-black rounded-md"><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-comment">// Scenario: Creating a new array to store elements.</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">doubleArray</span>(<span class="hljs-params">arr</span>) {
+  <span class="hljs-keyword">let</span> doubled = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> num <span class="hljs-keyword">of</span> arr) {
+    doubled.<span class="hljs-title function_">push</span>(num * <span class="hljs-number">2</span>);
+  }
+  <span class="hljs-keyword">return</span> doubled;
+}
+</code></div></div></pre>
+
+> In this example, the space complexity is O(n), where n is the length of the input array `arr`, as a new array `doubled` is created.
+
+**Recursive Call Stack:**
+
+<pre><div class="bg-black rounded-md"><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-comment">// Scenario: Recursive function with space complexity due to the call stack.</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">factorial</span>(<span class="hljs-params">n</span>) {
+  <span class="hljs-keyword">if</span> (n <= <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+  }
+  <span class="hljs-keyword">return</span> n * <span class="hljs-title function_">factorial</span>(n - <span class="hljs-number">1</span>);
+}
+</code></div></div></pre>
+
+> The space complexity of the `factorial` function is O(n) due to the recursive call stack, where n is the input to the function.
+
+
+
+**Hash Table:**
+
+<pre><div class="bg-black rounded-md"><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-comment">// Scenario: Using a hash table to store key-value pairs.</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">countOccurrences</span>(<span class="hljs-params">arr</span>) {
+  <span class="hljs-keyword">let</span> occurrences = {};
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> num <span class="hljs-keyword">of</span> arr) {
+    occurrences[num] = (occurrences[num] || <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>;
+  }
+  <span class="hljs-keyword">return</span> occurrences;
+}
+</code></div></div></pre>
+
+> The space complexity in this case is O(n), where n is the length of the input array `arr`, as a hash table (`occurrences`) is used to store counts.
+
+
+
+**Additional Data Structures:**
+
+<pre><div class="bg-black rounded-md"><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-comment">// Scenario: Using additional data structures to solve a problem.</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">findDuplicates</span>(<span class="hljs-params">arr</span>) {
+  <span class="hljs-keyword">let</span> seen = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>();
+  <span class="hljs-keyword">let</span> duplicates = [];
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> num <span class="hljs-keyword">of</span> arr) {
+    <span class="hljs-keyword">if</span> (seen.<span class="hljs-title function_">has</span>(num)) {
+      duplicates.<span class="hljs-title function_">push</span>(num);
+    } <span class="hljs-keyword">else</span> {
+      seen.<span class="hljs-title function_">add</span>(num);
+    }
+  }
+
+  <span class="hljs-keyword">return</span> duplicates;
+}
+</code></div></div></pre>
+
+> Here, a `Set` (`seen`) is used to track unique elements, resulting in a space complexity of O(n), where n is the length of the input array `arr`.
 
 ---
 

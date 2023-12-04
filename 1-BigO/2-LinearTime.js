@@ -24,6 +24,7 @@ const linearSearch = (arr, target) => {
   return -1; // Element not found
 }
 
+// fn: it prints the numbers from 0 to n
 // fn is O(n) because it depends on the size of n
 fn = (n) => {
   for (let i = 0; i < n; i++) {
