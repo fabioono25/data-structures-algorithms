@@ -90,7 +90,7 @@ let dequeuedElement = queue.shift(); // Dequeue an element
 >
 > When a dynamic array becomes full, it needs to resize itself to accommodate additional elements. A common resizing strategy involves doubling the array's size. However, this doubling strategy comes with a cost: copying all existing elements from the old array to a new, larger array in a different memory location. This copying operation ensures that there is enough contiguous space in memory to store the expanded array.
 
-**Problem Scenarios and Description:**
+**Problem Scenarios:**
 
 
 | Problem Scenario                              | Description                                                                                              |
@@ -177,7 +177,26 @@ symbolTable.addSymbol("variable2", "float");
 console.log(symbolTable.findSymbol("variable1")); // Output: int
 ```
 
+**Problem Scenarios:**
+
+
+
+| Problem Scenario                              | Description                                                                                                                    |
+| ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Reversing a singly linked list                | Implement an algorithm to reverse the direction of a singly linked list, changing the order of elements.                       |
+| Detecting a cycle in a singly linked list     | Identify whether a singly linked list contains a cycle by using fast and slow pointers to traverse the list.                   |
+| Finding the middle element of a linked list   | Determine the middle element of a singly linked list efficiently using a two-pointer approach.                                 |
+| Removing duplicates from a linked list        | Eliminate duplicate elements from a singly linked list to maintain a unique set of values.                                     |
+| Merging two sorted linked lists               | Merge two sorted singly linked lists into a single sorted list, considering the order of elements in both lists.               |
+| Detecting the intersection point of two lists | Identify the node at which two singly linked lists intersect, if they do, using a set or two-pointer approach.                 |
+| Swapping nodes in pairs in a linked list      | Rearrange elements in a singly linked list by swapping nodes in pairs to change the order of adjacent elements.                |
+| Checking if a linked list is a palindrome     | Determine whether a singly linked list is a palindrome, meaning it reads the same forward and backward.                        |
+| Implementing a stack using a linked list      | Utilize a singly linked list to implement a stack, maintaining the Last-In-First-Out (LIFO) property for efficient operations. |
+| Flattening a multilevel linked list           | Flatten a multilevel (nested) singly linked list, transforming it into a single-level list for easier traversal and analysis.  |
+
 ---
+
+
 
 ### Doubly-Linked Lists
 
