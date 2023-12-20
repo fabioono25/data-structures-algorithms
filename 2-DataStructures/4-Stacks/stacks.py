@@ -1,4 +1,5 @@
 # Stack definition: a stack is a collection of elements that supports two principle operations: push and pop
+# First item in, last item out
 # LIFO (Last In First Out)
 # Operations: push, pop, peek, is_empty, size
 
