@@ -1,6 +1,6 @@
 # Data Structures and Algorithms
 
-The objective of this material is to provide examples for the most used data structures and algorithms. Most of the examples are coded in Javascript or Python.
+The objective of this material is to provide examples for the most used data structures and algorithms. Most of the examples are written in Javascript or Python.
 
 ## Table of Contents
 
