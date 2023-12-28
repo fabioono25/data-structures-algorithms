@@ -2,6 +2,7 @@
 # Then for each of those nearest nodes, it explores their unexplored neighbor nodes, and so on, until it finds the goal.
 # Time complexity: O(V+E) where V is the number of vertices in the graph and E is the number of edges in the graph.
 # Space complexity: O(V) where V is the number of vertices in the graph.
+# examples of use: social networking, network broadcast, garbage collection, model checking, solving puzzles and games, finding shortest path, etc.
 
 class Node:
     def __init__(self, name):
