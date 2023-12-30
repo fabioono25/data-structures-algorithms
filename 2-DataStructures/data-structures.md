@@ -16,7 +16,11 @@ A data structure is a way of organizing and storing data in a computer so that i
 
 **Definition**
 
-An array is a collection of elements, all of the same data type, stored at contiguous memory locations. Each element in an array is identified by an index or a key.
+An array is a collection of elements, all of the same data type, stored at contiguous memory locations. Each element in an array is identified by an index or a key. Arrays are efficient for storing and accessing data, making the versatility one of its main characteristics.
+
+**Representation**
+
+![](assets/20231230_173133_array.png)
 
 **Advantages**
 
@@ -180,7 +184,6 @@ console.log(symbolTable.findSymbol("variable1")); // Output: int
 **Problem Scenarios:**
 
 
-
 | Problem Scenario                              | Description                                                                                                                    |
 | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | Reversing a singly linked list                | Implement an algorithm to reverse the direction of a singly linked list, changing the order of elements.                       |
@@ -195,8 +198,6 @@ console.log(symbolTable.findSymbol("variable1")); // Output: int
 | Flattening a multilevel linked list           | Flatten a multilevel (nested) singly linked list, transforming it into a single-level list for easier traversal and analysis.  |
 
 ---
-
-
 
 ### Doubly-Linked Lists
 
