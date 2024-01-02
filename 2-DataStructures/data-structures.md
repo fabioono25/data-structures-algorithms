@@ -118,6 +118,10 @@ let dequeuedElement = queue.shift(); // Dequeue an element
 
 A linear data structure where elements are stored in nodes, and each node points to the next element in the list. The **Singly Linked List**, a data structure where each element (node) contains data and a reference to the next element in a unidirectional sequence.
 
+**Representation**
+
+![Single-Linked list (source: Geekforgeeks)](assets/20240102_205109_singly-linked-list.png)
+
 **Advantages**
 
 - **Simple Implementation:** Singly linked lists are relatively simple to implement, making them easy to understand and use.
@@ -204,6 +208,10 @@ console.log(symbolTable.findSymbol("variable1")); // Output: int
 **Definition**
 
 Doubly linked lists are a type of linked list where each node contains a data element and two pointers, one pointing to the next node in the sequence (next pointer) and another pointing to the previous node (previous pointer). This bidirectional linkage allows for more flexible traversal and manipulation compared to singly linked lists.
+
+**Representation**
+
+![Doubly-Linked list (source: Geekforgeeks)](assets/20240102_205131_doubly-linked-list.png)
 
 **Advantages:**
 
@@ -366,6 +374,96 @@ console.log(symbolTable.findSymbol("variable1")); // Output: int
 ```
 
 ---
+
+### Circular Linked Lists
+
+**Definition**
+
+A circular linked list is a type of linked list where the last node of the list points back to the first node, creating a circle or loop in the sequence. Circular linked lists can be either **singly or doubly linked**, similar to their linear counterparts, but with the added feature of circular connectivity.
+
+**Representation**
+
+The representation of a circular linked list is similar to that of a linear linked list, with the last node connecting back to the first node. Here's a simplified diagram:
+
+![Circular Linked list (source: Geekforgeeks)](assets/20240102_205509_circular-linked-list.png)
+For a doubly circular linked list, each node will have both next and previous pointers, forming a circular doubly linked structure.
+
+**Advantages**
+
+* **Efficient Circular Operations:** Circular linked lists can be beneficial for scenarios where circular operations are required, such as in rotating buffers or circular queues.
+* **Easier Implementation of Circular Structures:** When dealing with problems that involve a circular or periodic nature, a circular linked list can provide a more natural representation of the data.
+
+**Disadvantages**
+
+* **Increased Complexity:** Circular linked lists can be more complex to implement and manipulate compared to linear linked lists.
+* **Potential for Infinite Loops:** If not managed properly, circular linked lists can result in infinite loops during traversal if there are issues with pointers or termination conditions.
+
+**Use-Cases**
+
+**Round-Robin Scheduling in Operating Systems:**
+
+In round-robin scheduling, processes are assigned time slices in a circular order. A circular linked list can be used to represent the queue of processes, and each time a process completes its time slice, it moves to the end of the queue.
+
+<pre><div class="bg-black rounded-md"><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Process</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">id</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">id</span> = id;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">next</span> = <span class="hljs-literal">null</span>;
+  }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">RoundRobinScheduler</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">head</span> = <span class="hljs-literal">null</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">currentProcess</span> = <span class="hljs-literal">null</span>;
+  }
+
+  <span class="hljs-title function_">addProcess</span>(<span class="hljs-params">id</span>) {
+    <span class="hljs-keyword">const</span> newProcess = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Process</span>(id);
+
+    <span class="hljs-keyword">if</span> (!<span class="hljs-variable language_">this</span>.<span class="hljs-property">head</span>) {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">head</span> = newProcess;
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">head</span>.<span class="hljs-property">next</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">head</span>; <span class="hljs-comment">// Circular reference</span>
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">currentProcess</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">head</span>;
+    } <span class="hljs-keyword">else</span> {
+      newProcess.<span class="hljs-property">next</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">head</span>.<span class="hljs-property">next</span>;
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">head</span>.<span class="hljs-property">next</span> = newProcess;
+    }
+  }
+
+  <span class="hljs-title function_">getNextProcess</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">currentProcess</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">currentProcess</span>.<span class="hljs-property">next</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">currentProcess</span>.<span class="hljs-property">id</span>;
+  }
+}
+
+<span class="hljs-comment">// Example Usage:</span>
+<span class="hljs-keyword">const</span> scheduler = <span class="hljs-keyword">new</span> <span class="hljs-title class_">RoundRobinScheduler</span>();
+scheduler.<span class="hljs-title function_">addProcess</span>(<span class="hljs-number">1</span>);
+scheduler.<span class="hljs-title function_">addProcess</span>(<span class="hljs-number">2</span>);
+scheduler.<span class="hljs-title function_">addProcess</span>(<span class="hljs-number">3</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(scheduler.<span class="hljs-title function_">getNextProcess</span>()); <span class="hljs-comment">// Output: 1</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(scheduler.<span class="hljs-title function_">getNextProcess</span>()); <span class="hljs-comment">// Output: 2</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(scheduler.<span class="hljs-title function_">getNextProcess</span>()); <span class="hljs-comment">// Output: 3</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(scheduler.<span class="hljs-title function_">getNextProcess</span>()); <span class="hljs-comment">// Output: 1</span>
+</code></div></div></pre>
+
+**Problem Scenarios:**
+
+
+| Problem Scenario                                 | Description                                                                                                                |
+| -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Detecting a cycle in a circular linked list      | Determine whether a circular linked list contains a cycle by using fast and slow pointers to traverse the list.            |
+| Finding the starting point of the cycle          | Identify the node where a cycle starts in a circular linked list, often referred to as the "tortoise and hare" algorithm.  |
+| Converting a circular linked list to linear      | Transform a circular linked list into a linear linked list while maintaining the order of elements.                        |
+| Josephus Problem                                 | Solve the Josephus problem, where every k-th person is eliminated from a circle of n people until only one person remains. |
+| Splitting a circular linked list into two halves | Divide a circular linked list into two halves, enabling further operations such as merging or sorting.                     |
+
+Circular linked lists introduce additional complexities compared to linear linked lists, and their use-cases often involve scenarios where circular relationships or circular operations are essential.
+
+---
+
+
 
 ### Stacks
 
