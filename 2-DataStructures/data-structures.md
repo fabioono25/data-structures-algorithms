@@ -471,6 +471,10 @@ Circular linked lists introduce additional complexities compared to linear linke
 
 A stack is a linear data structure that follows the Last In, First Out (LIFO) principle, where elements are added and removed from the same end, typically referred to as the "top." New elements are pushed onto the top, and only the top element can be popped or accessed at any given time.
 
+**Representation**
+
+![Source: Geegsforgeeks](assets/20240103_211846_stack.png)
+
 **Advantages**
 
 - **Simple Implementation:** Stacks are simple to implement, making them easy to understand and use.
@@ -496,6 +500,9 @@ A stack is a linear data structure that follows the Last In, First Out (LIFO) pr
 **Definition**
 
 A queue is a linear data structure that follows the First In, First Out (FIFO) principle, where elements are added at the rear and removed from the front. It operates like a waiting line, ensuring that the first element enqueued is the first to be dequeued.
+
+**Representation**
+
 
 **Advantages**
 
