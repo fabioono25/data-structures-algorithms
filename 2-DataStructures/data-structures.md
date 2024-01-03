@@ -498,7 +498,6 @@ A stack is a linear data structure that follows the Last In, First Out (LIFO) pr
 - **Browser Back Button:** Web browsers use stacks to implement the back button functionality. Each visited page is pushed onto the stack, and pressing the back button pops the most recently visited page, navigating the user through their browsing history.
 - **Parsing and Syntax Checking:** Stacks are crucial in parsing and syntax checking during the compilation of programming languages. They help ensure that the syntax of the code is correct by keeping track of nested symbols such as parentheses and braces.
 
-
 ---
 
 ### Queues
@@ -509,7 +508,7 @@ A queue is a linear data structure that follows the First In, First Out (FIFO) p
 
 **Representation**
 
-![Source: Geegsforgeeks](../assets/queues.png)
+![Source: Geegsforgeeks](../assets/queue.png)
 
 **Advantages**
 
