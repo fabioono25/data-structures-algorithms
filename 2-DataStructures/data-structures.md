@@ -2,6 +2,7 @@
   - [Arrays](#arrays)
   - [Singly Linked Lists](#singly-linked-lists)
   - [Doubly-Linked Lists](#doubly-linked-lists)
+  - [Circular Linked Lists](#circular-linked-lists)
   - [Stacks](#stacks)
   - [Queues](#queues)
   - [Hash Tables](#hash-tables)
@@ -20,7 +21,7 @@ An array is a collection of elements, all of the same data type, stored at conti
 
 **Representation**
 
-![](assets/20231230_173133_array.png)
+![](../assets/array.png)
 
 **Advantages**
 
@@ -120,7 +121,7 @@ A linear data structure where elements are stored in nodes, and each node points
 
 **Representation**
 
-![Single-Linked list (source: Geekforgeeks)](assets/20240102_205109_singly-linked-list.png)
+![Single-Linked list (source: Geekforgeeks)](../assets/singly-linked-list.png)
 
 **Advantages**
 
@@ -211,7 +212,7 @@ Doubly linked lists are a type of linked list where each node contains a data el
 
 **Representation**
 
-![Doubly-Linked list (source: Geekforgeeks)](assets/20240102_205131_doubly-linked-list.png)
+![Doubly-Linked list (source: Geekforgeeks)](../assets/doubly-linked-list.png)
 
 **Advantages:**
 
@@ -385,7 +386,7 @@ A circular linked list is a type of linked list where the last node of the list 
 
 The representation of a circular linked list is similar to that of a linear linked list, with the last node connecting back to the first node. Here's a simplified diagram:
 
-![Circular Linked list (source: Geekforgeeks)](assets/20240102_205509_circular-linked-list.png)
+![Circular Linked list (source: Geekforgeeks)](../assets/circular-linked-list.png)
 For a doubly circular linked list, each node will have both next and previous pointers, forming a circular doubly linked structure.
 
 **Advantages**
@@ -463,8 +464,6 @@ Circular linked lists introduce additional complexities compared to linear linke
 
 ---
 
-
-
 ### Stacks
 
 **Definition**
@@ -473,7 +472,7 @@ A stack is a linear data structure that follows the Last In, First Out (LIFO) pr
 
 **Representation**
 
-![Source: Geegsforgeeks](assets/20240103_211846_stack.png)
+![Source: Geegsforgeeks](../assets/stack.png)
 
 **Advantages**
 
@@ -493,6 +492,13 @@ A stack is a linear data structure that follows the Last In, First Out (LIFO) pr
 
 **Use-Cases:**
 
+- **Function Call Management:** Stacks play a crucial role in managing function calls in programming languages. Each time a function is called, its local variables and execution context are pushed onto the stack, and when the function returns, this context is popped.
+- **Undo Mechanisms in Applications:** The ability to undo actions is a common and essential feature in many applications. Stacks are used to keep track of user actions, allowing for efficient undo functionality by simply popping the most recent action from the stack.
+- **Expression Evaluation (Postfix/Prefix Notation):** Stacks are fundamental for evaluating expressions in postfix or prefix notation. As operands and operators are encountered, they are pushed or popped from the stack, facilitating efficient evaluation.
+- **Browser Back Button:** Web browsers use stacks to implement the back button functionality. Each visited page is pushed onto the stack, and pressing the back button pops the most recently visited page, navigating the user through their browsing history.
+- **Parsing and Syntax Checking:** Stacks are crucial in parsing and syntax checking during the compilation of programming languages. They help ensure that the syntax of the code is correct by keeping track of nested symbols such as parentheses and braces.
+
+
 ---
 
 ### Queues
@@ -503,6 +509,7 @@ A queue is a linear data structure that follows the First In, First Out (FIFO) p
 
 **Representation**
 
+![Source: Geegsforgeeks](../assets/queues.png)
 
 **Advantages**
 
@@ -521,6 +528,12 @@ A queue is a linear data structure that follows the First In, First Out (FIFO) p
 - **Limited Applicability:** Queues are best suited for specific scenarios like task scheduling or buffering and may not be the most efficient choice for other data access patterns.
 
 **Use-Cases:**
+
+* **Job Scheduling:** Queues are commonly used in job scheduling systems. They facilitate the orderly processing of jobs or tasks, where each job is processed in the order it was added, following a First In, First Out (FIFO) order.
+* **Breadth-First Search (BFS) in Graphs:** BFS traversal of graphs is often implemented using a queue. Nodes are enqueued and explored level by level, ensuring that nodes at the same level are processed before moving on to the next level.
+* **Print Queue in Operating Systems:** Operating systems manage print jobs using queues. Print requests are enqueued, and the system processes them in the order they are received, providing fair and orderly printing.
+* **Task Processing in Concurrent Systems:** Queues are employed in concurrent programming to manage tasks among multiple threads or processes. Tasks are enqueued, and worker threads or processes dequeue and execute them, providing a mechanism for load balancing.
+* **Message Queues in Communication Systems:** In distributed systems, message queues facilitate communication between different components or services. Producers enqueue messages, and consumers dequeue and process them asynchronously, enabling reliable communication.
 
 ---
 
