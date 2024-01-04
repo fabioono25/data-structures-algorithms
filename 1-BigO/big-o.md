@@ -14,7 +14,7 @@
 
 Big-O notation is a mathematical representation used in computer science to describe the upper bound or worst-case time complexity of an algorithm in terms of the input size. It provides a simplified and asymptotic analysis, expressing how an algorithm's performance scales with larger input sizes. The notation is expressed as O(f(n)), where f(n) is a function describing the growth rate of the algorithm's time complexity concerning the input size (n).
 
-![Big-O Complexity Chart](../assets/20231105_122936_bigO.png "Big-O Complexity Chart")
+![Big-O Complexity Chart](../assets/bigO.png "Big-O Complexity Chart")
 Source: [Big-O Cheat Sheet](https://www.bigocheatsheet.com/)
 
 ### Time Complexity
