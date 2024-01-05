@@ -540,7 +540,7 @@ A queue is a linear data structure that follows the First In, First Out (FIFO) p
 
 **Definition**
 
-A data structure that stores key-value pairs and uses a hash function to compute an index into an array where the corresponding value can be found. A hash table is a data structure that implements an associative array abstract data type, providing efficient access and storage of key-value pairs through a hash function. It enables rapid lookup, insertion, and deletion operations with average-case constant time complexity.
+A data structure that stores **key-value pairs** and uses a **hash function** to compute an index into an array where the corresponding value can be found. A hash table is a data structure that implements an associative array abstract data type, providing efficient access and storage of key-value pairs through a hash function. It enables rapid lookup, insertion, and deletion operations with average-case constant time complexity.
 
 **Representation**
 
