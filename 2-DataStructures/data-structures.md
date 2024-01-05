@@ -542,6 +542,10 @@ A queue is a linear data structure that follows the First In, First Out (FIFO) p
 
 A data structure that stores key-value pairs and uses a hash function to compute an index into an array where the corresponding value can be found. A hash table is a data structure that implements an associative array abstract data type, providing efficient access and storage of key-value pairs through a hash function. It enables rapid lookup, insertion, and deletion operations with average-case constant time complexity.
 
+**Representation**
+
+![Source: Geegsforgeeks](../assets/hash-table.png)
+
 **Advantages**
 
 - **Fast Lookup:** Hash tables offer fast average-case lookup times, providing constant-time or near-constant-time access to stored elements.
@@ -568,6 +572,10 @@ A data structure that stores key-value pairs and uses a hash function to compute
 
 A tree is a hierarchical data structure composed of **nodes**, where each node contains a value and may have **zero or more child nodes**, forming a branching structure. The topmost node in a tree is called the **root**, and nodes with no children are called **leaves**. Nodes in a tree are connected by **edges**, and the relationship between nodes reflects a hierarchical arrangement. Trees are widely used in computer science for representing hierarchical relationships, organizing data, and supporting various algorithms and data storage structures.
 
+**Representation**
+
+![Source: Geegsforgeeks](../assets/trees.png)
+
 **Advantages**
 
 - **Hierarchical Organization:** Trees provide a hierarchical structure, allowing for the representation of parent-child relationships among elements.
@@ -593,6 +601,10 @@ A tree is a hierarchical data structure composed of **nodes**, where each node c
 **Definition**
 
 Graphs are a fundamental data structure in computer science and mathematics. They consist of a collection of **nodes (vertices)** and **edges **that connect pairs of nodes. The connections between nodes represent relationships or interactions between the associated entities.
+
+**Representation**
+
+![Source: Geegsforgeeks](../assets/graph.png)
 
 **Advantages:**
 
