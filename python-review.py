@@ -81,3 +81,56 @@ print(25*'-')
 print()
 
 print("WORKING WITH LOOPS: ")
+
+
+print(25*'-')
+print()
+
+print("WORKING WITH CLASSES: ")
+
+
+print(25*'-')
+print()
+
+print("WORKING WITH MATH: ")
+
+
+
+print(25*'-')
+print()
+
+print("WORKING WITH FUNCTIONS: ")
+
+
+print(25*'-')
+print()
+
+print("WORKING WITH ARRAYS: ")
+
+
+print(25*'-')
+print()
+
+print("WORKING WITH QUEUES: ")
+
+
+print(25*'-')
+print()
+
+print("WORKING WITH HASHSETS: ")
+
+print(25*'-')
+print()
+
+print("WORKING WITH HASHMAPS: ")
+
+
+print(25*'-')
+print()
+
+print("WORKING WITH TUPLES: ")
+
+print(25*'-')
+print()
+
+print("WORKING WITH HEAPS: ")
