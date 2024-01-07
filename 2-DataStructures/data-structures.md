@@ -8,6 +8,7 @@
   - [Hash Tables](#hash-tables)
   - [Trees](#trees)
   - [Graphs](#graphs)
+  - [Heaps](#heaps)
 
 ## Data Structures
 
@@ -637,3 +638,41 @@ Graphs are a fundamental data structure in computer science and mathematics. The
 * **Web Page Ranking (PageRank Algorithm):** Graphs play a crucial role in web page ranking algorithms like Google's PageRank. Web pages are nodes, and hyperlinks between pages are edges. PageRank determines the importance of a page based on its connectivity.
 
 ---
+
+### Heaps
+
+**Definition**
+
+A heap is a specialized tree-based data structure that satisfies the heap property, where the key of each node is either greater than or equal to (max heap) or less than or equal to (min heap) the keys of its children. In a max heap, the root node represents the maximum element in the heap, while in a min heap, the root node represents the minimum element. Heaps are commonly used for efficient implementation of priority queues and heap sort algorithms.
+
+**Representation**
+
+![Source: Geegsforgeeks](../assets/graph.png)
+
+**Advantages**
+
+* **Efficient Priority Queue:** Heaps provide efficient insertion and extraction of the maximum (or minimum) element, making them ideal for implementing priority queues in applications where quick access to the highest-priority element is crucial.
+* **Heap Sort:** The heap data structure enables an in-place sorting algorithm known as heap sort, which has a consistent O(n log n) time complexity for worst, average, and best cases.
+* **Efficient K-Way Merge:** Heaps are used in external sorting and k-way merging algorithms, allowing for efficient merging of multiple sorted sequences.
+* **Graph Algorithms:** Heaps play a key role in various graph algorithms, such as Dijkstra's algorithm for finding the shortest path and Prim's algorithm for finding a minimum spanning tree.
+* **Memory Efficiency:** Heaps can be implemented with arrays, resulting in a memory-efficient representation. The array-based structure ensures good cache locality and reduces pointer overhead.
+
+
+
+**Disadvantages**
+
+* **Lack of Random Access:** Heaps do not provide efficient random access to elements. While it is quick to access the maximum (or minimum) element, accessing other elements requires traversal from the root.
+* **Limited Use in Search Operations:** Heaps are not well-suited for search operations, as they lack efficient mechanisms for locating and retrieving elements based on their values.
+* **Dynamic Size:** If the size of the heap needs to change dynamically, resizing the heap can be an expensive operation, especially when implemented with arrays.
+* **Complexity of Implementation:** Implementing and maintaining the heap property during insertion and deletion operations can be complex compared to simpler data structures like arrays or linked lists.
+* **Multiple Heap Instances:** In some scenarios, managing multiple instances of heaps can lead to increased complexity and memory usage.
+
+
+
+**Use-Cases**
+
+* **Task Scheduling and Job Prioritization:** Heaps are commonly used to manage tasks and jobs in systems where prioritization is crucial, such as operating systems and task scheduling applications.
+* **Efficient Selection of Extreme Values:** Heaps are employed when quick access to the maximum or minimum element in a collection is needed, as seen in real-time systems, monitoring applications, or event-driven scenarios.
+* **Network Routing:** Dijkstra's algorithm, which relies on a priority queue (often implemented using heaps), is widely used for finding the shortest paths in network routing.
+* **Event-driven Simulation:** Heaps are utilized in event-driven simulations where events are scheduled based on their occurrence times, and the next event to be processed is the one with the earliest occurrence time.
+* **Merge Operations and External Sorting:** Heaps are beneficial in merging multiple sorted sequences efficiently, as seen in external sorting algorithms or scenarios where data streams need to be merged while maintaining order.
