@@ -82,19 +82,71 @@ print()
 
 print("WORKING WITH LOOPS: ")
 
+n = 0
+while n < 5:
+    print('Value of n is', n)
+    n += 1
+
+
+for i in range(5):
+    print('Value of i is', i)
+
+for i in range(3, 8):
+    print('Value of i is', i)
+
+
+for i in range(10, 1, -2):
+    print('Value of i is', i)
 
 print(25*'-')
 print()
 
 print("WORKING WITH CLASSES: ")
+class Person:
+    # constructor
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def say_hello(self):
+        print('Hello, my name is', self.name, 'and I am', self.age, 'years old')
+
+person = Person('John', 12)
+person.say_hello()
 
 
 print(25*'-')
 print()
 
 print("WORKING WITH MATH: ")
+print(' 5 / 2 = ', 5 / 2)
+print(' 5 // 2 = ', 5 // 2)
+print(' -3 // 2 = ', -3 // 2)
+print('-3 / 2 = ', -3 / 2)
+print('int(-3 / 2) = ', int(-3 / 2))
+print(' 5 % 2 = ', 5 % 2)
+print('-10 % 3 = ', -10 % 3) # Careful. Why? See https://stackoverflow.com/questions/11720656/modulo-operation-with-negative-numbers
 
+import math
+from multiprocessing import heap
+print('math.fmod(-10, 3) = ', math.fmod(-10, 3))
 
+print('math.floor(3 / 2): ', math.floor(3 / 2))
+print('math.ceil(3 / 2): ', math.ceil(3 / 2))
+print('math.sqrt(2): ', math.sqrt(2))
+print('math.pow(2, 3): ', math.pow(2, 3))
+
+# print min int
+print('min int: ', -2**31)
+
+# print max int
+print('max int: ', 2**31 - 1)
+
+# Python numbers are infinite: they never overflow
+print('max int + 1000: ', 2**31 + 9999)
+
+# But still less than infinity
+print(math.pow(2, 200) < float("inf"))
 
 print(25*'-')
 print()
