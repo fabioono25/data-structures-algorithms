@@ -1,6 +1,8 @@
 # This is a review of Python basics for coding interviews:
 
 # variables (dynamically typed):
+from multiprocessing import heap
+import math
 print("WORKING WITH VARIABLES: ")
 
 n = 300
@@ -47,7 +49,7 @@ print('s[-3:]=', s[-3:])
 # reverse
 print('s[::-1]=', s[::-1])
 # concatenation
-s += ' Welcome to Python World!' # a new string is created (immutability)
+s += ' Welcome to Python World!'  # a new string is created (immutability)
 print('s=', s)
 
 print('Converting values: ', int('1') + 233 + int('314'))
@@ -98,10 +100,16 @@ for i in range(3, 8):
 for i in range(10, 1, -2):
     print('Value of i is', i)
 
+# List comprehension example:
+squares = [i * i for i in range(10)]
+print('squares=', squares)
+
 print(25*'-')
 print()
 
 print("WORKING WITH CLASSES: ")
+
+
 class Person:
     # constructor
     def __init__(self, name, age):
@@ -109,7 +117,9 @@ class Person:
         self.age = age
 
     def say_hello(self):
-        print('Hello, my name is', self.name, 'and I am', self.age, 'years old')
+        print('Hello, my name is', self.name,
+              'and I am', self.age, 'years old')
+
 
 person = Person('John', 12)
 person.say_hello()
@@ -125,10 +135,9 @@ print(' -3 // 2 = ', -3 // 2)
 print('-3 / 2 = ', -3 / 2)
 print('int(-3 / 2) = ', int(-3 / 2))
 print(' 5 % 2 = ', 5 % 2)
-print('-10 % 3 = ', -10 % 3) # Careful. Why? See https://stackoverflow.com/questions/11720656/modulo-operation-with-negative-numbers
+# Careful. Why? See https://stackoverflow.com/questions/11720656/modulo-operation-with-negative-numbers
+print('-10 % 3 = ', -10 % 3)
 
-import math
-from multiprocessing import heap
 print('math.fmod(-10, 3) = ', math.fmod(-10, 3))
 
 print('math.floor(3 / 2): ', math.floor(3 / 2))
@@ -154,11 +163,120 @@ print()
 print("WORKING WITH FUNCTIONS: ")
 
 
+def myFunc(n, m):
+    return n + m
+
+
+print('myFunc(1, 2): ', myFunc(1, 2))
+
+
+def outer(n, m):
+    def inner(n, m):
+        return n + m
+    return inner(n, m)
+
+
+print('outer(1, 2): ', outer(1, 2))
+
+# Can modify objects but not reassign
+# unless using nonlocal keyword
+
+
+def double(arr, val):
+    def helper():
+        # Modifying array works
+        for i, n in enumerate(arr):
+            arr[i] *= 2
+
+        # will only modify val in the helper scope
+        # val *= 2
+
+        # this will modify val outside helper scope
+        nonlocal val
+        val *= 2
+    helper()
+    print(arr, val)
+
+
+nums = [1, 2]
+val = 3
+double(nums, val)
+
 print(25*'-')
 print()
 
 print("WORKING WITH ARRAYS: ")
 
+# arrays are called lists in Python (dynamic)
+arr = [1, 2, 3, 4, 5]
+print('arr=', arr)
+
+# using as stack
+arr.append(6)
+arr.append(7)
+arr.append(8)
+arr.pop()
+print('arr=', arr)
+arr.insert(1, 22)
+print('arr=', arr)
+print('arr[-1]', arr[-1])
+print('arr[-2:]', arr[-2:])
+
+# slicing an array
+print('arr[2:4]', arr[2:4])  # last index non-inclusive
+print('arr[2:20]', arr[2:20])  # last index non-inclusive
+
+# initialize arr of size n with default value of 1
+n = 5
+arr = [1] * n
+print('arr=', arr)
+print('len(arr)=', len(arr))
+
+# unpacking
+a, b, c = [1, 2, 3]
+print('a=', a, 'b=', b, 'c=', c)
+# a, b = [1, 2, 3]
+# print('a=', a, 'b=', b) error
+
+nums = [1, 2, 3]
+
+# using index to loop
+for i in range(len(nums)):
+    print('nums[i]=', nums[i])
+
+# using index and value
+for i, n in enumerate(nums):
+    print('i=', i, 'n=', n)
+
+# loop and unpacking
+nums1 = [1, 2, 3]
+nums2 = [4, 5, 6]
+for n1, n2 in zip(nums1, nums2):
+    print('n1=', n1, 'n2=', n2)
+
+nums1.reverse()
+print('nums1=', nums1)
+nums1.sort()
+print('nums1=', nums1)
+nums1.sort(reverse=True)
+print('nums1=', nums1)
+
+arr = ["bob", "alice", "jane", "doe"]
+arr.sort()
+print('arr=', arr)
+
+# custom sort by length of string
+arr.sort(key=len)
+print('arr=', arr)
+
+# array comprehension
+arr = [i for i in range(4)]
+print('arr=', arr)
+
+# 2-D lists
+arr = [[0] * 4 for i in range(4)]
+print(arr)
+print(arr[0][0], arr[3][3])
 
 print(25*'-')
 print()
