@@ -1,6 +1,7 @@
 # This is a review of Python basics for coding interviews:
 
 # variables (dynamically typed):
+from collections import deque
 from multiprocessing import heap
 import math
 print("WORKING WITH VARIABLES: ")
@@ -283,7 +284,6 @@ print()
 
 print("WORKING WITH QUEUES: ")
 
-from collections import deque
 
 queue = deque()
 queue.append(1)
@@ -324,7 +324,36 @@ print('mySet=', mySet)
 print(25*'-')
 print()
 
-print("WORKING WITH HASHMAPS: ")
+print("WORKING WITH HASHMAPS-DICTIONARIES: ")
+
+myMap = {}
+myMap['alice'] = 123
+myMap['bob'] = 456
+myMap['jane'] = 789
+print('myMap=', myMap)
+print('len(myMap)=', len(myMap))
+
+myMap['alice'] = 999
+myMap.pop('bob')
+print('alice' in myMap)
+
+myMap = {'alice': 111, 'bob': 222, 'jane': 333}
+print('myMap=', myMap)
+
+# Dict comprehension
+myMap = {i: i * i for i in range(4)}
+print('myMap=', myMap)
+
+# looping through maps
+myMap = {'alice': 1, 'bob': 2, 'jane': 3}
+for key in myMap:
+    print('key=', key, 'value=', myMap[key])
+
+for val in myMap.values():
+    print('val=', val)
+
+for key, val in myMap.items():
+    print('key=', key, 'val=', val)
 
 
 print(25*'-')
