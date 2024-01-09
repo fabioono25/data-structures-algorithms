@@ -1,6 +1,7 @@
 # This is a review of Python basics for coding interviews:
 
 # variables (dynamically typed):
+import heapq
 from collections import deque
 from multiprocessing import heap
 import math
@@ -361,7 +362,60 @@ print()
 
 print("WORKING WITH TUPLES: ")
 
+# like arrays, but immutable
+tup = (1, 2, 3)
+print('tup=', tup)
+print('tu[0]=', tup[0])
+print('tu[1:]=', tup[1:])
+print('tu[-1]=', tup[-1])
+
+# Can't modify
+# tup[0] = 0
+
+# Can be used as key for hash map/set
+myMap = {(1, 2): 3}
+print(myMap[(1, 2)])
+
+mySet = set()
+mySet.add((1, 2))
+print((1, 2) in mySet)
+
+# Lists can't be keys
+# myMap[[3, 4]] = 5
+
 print(25*'-')
 print()
 
 print("WORKING WITH HEAPS: ")
+
+
+# under the hood are arrays
+minHeap = []
+heapq.heappush(minHeap, 3)
+heapq.heappush(minHeap, 2)
+heapq.heappush(minHeap, 4)
+
+# Min is always at index 0
+print(minHeap[0])
+
+while len(minHeap):
+    print(heapq.heappop(minHeap))
+
+# No max heaps by default, work around is
+# to use min heap and multiply by -1 when push & pop.
+maxHeap = []
+heapq.heappush(maxHeap, -3)
+heapq.heappush(maxHeap, -2)
+heapq.heappush(maxHeap, -4)
+
+# Max is always at index 0
+print(-1 * maxHeap[0])
+
+while len(maxHeap):
+    print(-1 * heapq.heappop(maxHeap))
+
+# Build heap from initial values
+arr = [2, 1, 8, 4, 5]
+heapq.heapify(arr)
+while arr:
+    print(heapq.heappop(arr))
