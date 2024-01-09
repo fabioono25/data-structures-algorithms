@@ -283,11 +283,43 @@ print()
 
 print("WORKING WITH QUEUES: ")
 
+from collections import deque
+
+queue = deque()
+queue.append(1)
+queue.append(2)
+queue.append(3)
+print('queue=', queue)
+print('queue.popleft()=', queue.popleft())
+print('queue.popleft()=', queue.popleft())
+print('queue.appendleft()=', queue.appendleft(11))
+print('queue=', queue)
+queue.pop()
+print('queue=', queue)
+
 
 print(25*'-')
 print()
 
 print("WORKING WITH HASHSETS: ")
+
+mySet = set()
+mySet.add(1)
+mySet.add(2)
+mySet.add(3)
+mySet.add(3)
+print('mySet=', mySet)
+print('len(mySet)=', len(mySet))
+
+print('1 in mySet=', 1 in mySet)
+print('4 in mySet=', 4 in mySet)
+
+mySet.remove(1)
+print('mySet=', mySet)
+
+# set comprehension
+mySet = {i for i in range(4)}
+print('mySet=', mySet)
 
 print(25*'-')
 print()
