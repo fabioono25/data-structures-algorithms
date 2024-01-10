@@ -5,7 +5,7 @@ The objective of this material is to provide examples for the most used data str
 ## Table of Contents
 
 - ### [Big-O Notation](./1-BigO/big-o.md)
-- ### [Data Structures](.2-DataStructures/data-structures.md)
+- ### [Data Structures](./2-DataStructures/data-structures.md)
 - ### [Algorithms](./3-Algorithms/algorithms.md)
 
 ---
