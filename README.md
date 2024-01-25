@@ -35,3 +35,7 @@ The objective of this material is to provide examples for the most used data str
 [Counting Sort Animation](https://www.cs.usfca.edu/~galles/visualization/CountingSort.html)
 
 [GeeksforGeeks - Learn Data Structures and Algorithms](https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial/?ref=lbp)
+
+[Sliding Window Technique](https://www.youtube.com/watch?v=9-3BXsfrpbY&list=PLqM7alHXFySEQDk2MDfbwEdjd2svVJH9p)
+
+[Sliding window technique - Inside code](https://www.youtube.com/watch?v=p-ss2JNynmw)
