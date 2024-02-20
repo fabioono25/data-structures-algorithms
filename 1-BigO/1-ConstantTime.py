@@ -1,4 +1,14 @@
 # O(1)/Constant Time Complexity: The time complexity of an algorithm is said to be constant time if the time taken by the algorithm is the same for all inputs of size n.
+# Pros:
+# 1. Predictable performance: The time taken by the algorithm remains constant regardless of the input size. This makes it easier to estimate and plan for the algorithm's performance.
+# 2. Efficient for small inputs: Constant time algorithms are highly efficient for small input sizes since the time taken is constant and does not depend on the input size.
+# 3. Scalability: Constant time algorithms can handle large inputs without a significant increase in execution time, making them scalable.
+# 4. Simplifies algorithm analysis: Constant time complexity simplifies the analysis of algorithms and allows for easier comparison between different algorithms.
+# Cons:
+# 1. Limited applicability: Constant time algorithms are not suitable for all problems and may not be efficient for large input sizes.
+# 2. Limited flexibility: Constant time algorithms may not be flexible enough to handle complex problems that require variable time complexity.
+# 3. Limited performance: Constant time algorithms may not be able to achieve the same level of performance as algorithms with higher time complexity.
+
 
 # in the example below, the idea is to show how the time complexity of the algorithm is constant time for all inputs of size n.
 # no matter the size of the input, the time taken by the algorithm will always be the same.
