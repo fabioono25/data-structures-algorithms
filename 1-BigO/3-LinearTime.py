@@ -54,6 +54,25 @@ def count_occurrences(arr, target):
 def count_occurrences2(arr, target):
   return arr.count(target)
 
+# the for loop has a time complexity of O(n) and the while loop has a time complexity of O(log n)
+def print_values(n):
+    for i in range(n):
+        print(i)
+    j = 1
+    while j <= n:
+        print(j)
+        j *= 2
+
+# the first while loop has a time complexity of O(log n) and the second while loop has a time complexity of O(log n)
+def print_values2(n):
+    i = 1
+    while i <= n:
+        print(i)
+        i *= 2
+    j = 1
+    while j <= n:
+        print(j)
+        j *= 2
 
 print("Max of [1, 2, 3, 4, 5, 6]: ", find_max([1, 2, 3, 4, 5, 6]))
 print("Max of [1, 2, 3, 4, 5, 6]: ", find_max2([1, 2, 3, 4, 5, 6]))
@@ -63,3 +82,8 @@ print("fn of 5: ", fn(5))
 print("Sum of [1, 2, 3, 4, 5, 6]: ", sum_elements([1, 2, 3, 4, 5, 6]))
 print("Count of occurrences of 3 in [1, 2, 3, 4, 5, 6]: ", count_occurrences([1, 2, 3, 4, 5, 6], 3))
 print("Count of occurrences of 3 in [1, 2, 3, 4, 5, 6]: ", count_occurrences2([1, 2, 3, 4, 5, 6], 3))
+
+print('example1:')
+print_values(10)
+print('example2:')
+print_values2(10)
