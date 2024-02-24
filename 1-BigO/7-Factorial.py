@@ -1,3 +1,12 @@
+# O(n!) - Factorial Time Complexity: Factorial time complexity is the worst case time complexity. It occurs when the number of operations required to solve a problem grows and shrinks factorially with the size of the input data. It is the slowest time complexity. It is represented as O(n!).
+# Pros:
+# - It is easy to implement.
+# - It is a brute-force algorithm.
+# Cons:
+# - It is the slowest time complexity.
+# - It is not efficient for large inputs.
+# - It is not suitable for real-world applications.
+
 # Example 1: Generating permutations
 def example1(arr):
     if not arr:

@@ -1,3 +1,12 @@
+# O(n^2) - Quadratic Time: Quadratic time complexity is the worst case time complexity. It occurs when the number of operations required to solve a problem grows quadratically with the size of the input data. It is represented as O(n^2).
+# Pros:
+# - It is easy to implement.
+# - It is suitable for small inputs.
+# Cons:
+# - It is not efficient for large inputs.
+# - It is not suitable for real-world applications.
+# - It is not suitable for real-time applications.
+
 # Example 1: Nested for loops
 def print_all_pairs(array):
     for i in array:

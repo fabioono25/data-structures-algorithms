@@ -1,3 +1,12 @@
+# O(2^n) - Exponential Time Complexity: Exponential time complexity is the worst case time complexity. It occurs when the number of operations required to solve a problem doubles with each addition to the input data. It is represented as O(2^n).
+# Pros:
+# - It is easy to implement.
+# - It is a brute-force algorithm.
+# Cons:
+# - It is not efficient for large inputs.
+# - It is not suitable for real-world applications.
+# - It is not suitable for real-time applications.
+
 # Example 1
 def example1(n):
     if n <= 1:
