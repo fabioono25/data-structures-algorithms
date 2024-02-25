@@ -18,7 +18,7 @@ def example1(n):
 def example2(arr):
     if not arr:
         return
-    first = arr.pop(0)
+    arr.pop(0)
     example2(arr)
     example2(arr)
 
@@ -26,7 +26,7 @@ def example2(arr):
 def subset(arr):
     if not arr:
         return [[]]
-    first = arr.pop(0)
+    arr.pop(0)
     subsets = subset(arr)
     new_subsets = [([first] + subset) for subset in subsets]
     return subsets + new_subsets
